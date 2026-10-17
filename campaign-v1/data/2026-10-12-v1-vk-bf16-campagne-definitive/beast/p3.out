@@ -1,0 +1,11 @@
+round 1 ·  09:36:45 up 45 min,  2 users,  load average: 1.07, 1.26, 1.84
+round 2 ·  09:37:43 up 46 min,  2 users,  load average: 0.87, 1.17, 1.77
+round 3 ·  09:38:42 up 47 min,  2 users,  load average: 0.74, 1.07, 1.70
+round 4 ·  09:39:41 up 48 min,  2 users,  load average: 0.74, 1.01, 1.64
+round 5 ·  09:40:39 up 49 min,  2 users,  load average: 0.71, 0.95, 1.58
+vllm ·  09:41:38 up 50 min,  2 users,  load average: 0.63, 0.89, 1.51
+vllm 0.8B out255 exit 0
+vllm 0.8B out1 exit 0
+vllm 4B out255 exit 0
+vllm 4B out1 exit 0
+ALLDONE

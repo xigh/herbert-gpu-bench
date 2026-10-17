@@ -1,0 +1,1 @@
+e692613 NVIDIA default: prefill blocks of 2048 rows for the 0.8B (width 1024)

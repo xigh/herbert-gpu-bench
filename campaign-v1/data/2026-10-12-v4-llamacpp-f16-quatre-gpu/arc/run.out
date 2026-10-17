@@ -1,0 +1,18 @@
+bench round 1 · 13:29:24
+bench round 2 · 13:30:59
+bench round 3 · 13:32:34
+bench round 4 · 13:34:09
+bench round 5 · 13:35:43
+0.8B llama-vk-f16 client exit 0 · 13:40:26
+llama-vk-f16 Qwen3.5-0.8B p   10: in [20, 21] · TTFT 140.55 ms · prefill 142 tok/s (51.4 %) · decode 52.96 tok/s (0.9 %) · out [128] · n=15
+llama-vk-f16 Qwen3.5-0.8B p  100: in [109, 110, 111] · TTFT 270.54 ms · prefill 407 tok/s (66.6 %) · decode 52.68 tok/s (0.5 %) · out [128] · n=15
+llama-vk-f16 Qwen3.5-0.8B p  500: in [510, 511] · TTFT 441.07 ms · prefill 1156 tok/s (31.6 %) · decode 52.52 tok/s (0.4 %) · out [128] · n=15
+llama-vk-f16 Qwen3.5-0.8B p 2048: in [2058, 2059] · TTFT 1605.03 ms · prefill 1283 tok/s (49.2 %) · decode 51.12 tok/s (2.0 %) · out [128] · n=15
+llama-vk-f16 Qwen3.5-0.8B p 4096: in [4105, 4106, 4107] · TTFT 3459.42 ms · prefill 1187 tok/s (25.8 %) · decode 49.99 tok/s (2.2 %) · out [128] · n=15
+4B llama-vk-f16 client exit 0 · 13:59:44
+llama-vk-f16 Qwen3.5-4B p   10: in [20, 21] · TTFT 472.44 ms · prefill 42 tok/s (41.7 %) · decode 11.28 tok/s (0.5 %) · out [128] · n=15
+llama-vk-f16 Qwen3.5-4B p  100: in [109, 110, 111] · TTFT 784.11 ms · prefill 140 tok/s (55.1 %) · decode 11.24 tok/s (0.3 %) · out [128] · n=15
+llama-vk-f16 Qwen3.5-4B p  500: in [510, 511] · TTFT 1456.91 ms · prefill 350 tok/s (29.8 %) · decode 11.23 tok/s (0.4 %) · out [128] · n=15
+llama-vk-f16 Qwen3.5-4B p 2048: in [2058, 2059] · TTFT 4951.52 ms · prefill 416 tok/s (21.3 %) · decode 11.13 tok/s (0.5 %) · out [128] · n=15
+llama-vk-f16 Qwen3.5-4B p 4096: in [4105, 4106, 4107] · TTFT 10810.58 ms · prefill 380 tok/s (14.3 %) · decode 10.97 tok/s (0.5 %) · out [128] · n=15
+ALLDONE-V4

@@ -1,0 +1,1 @@
+herbert Qwen3.5-0.8B p   10: in {20, 21} · TTFT 10.89 ms · prefill 1836 tok/s (28.3 %) · decode 241.63 tok/s (1.5 %) · out {128} · n=15

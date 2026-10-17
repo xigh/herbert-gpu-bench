@@ -1,0 +1,2 @@
+[isa] avx2=yes fma=yes avxvnni=yes avx512f=no avx512bf16=no → GEMM lanes ymm
+error: Model loading error: weights: not enough physical memory — 8.7 GiB planned plus 3.0 GiB of margin, 9.2 GiB of 30.5 GiB available

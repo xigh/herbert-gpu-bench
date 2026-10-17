@@ -1,0 +1,21 @@
+[  0%] Performing build step for 'vulkan-shaders-gen'
+[  0%] Built target llama-common-base
+[  0%] Built target cpp-httplib
+[  1%] Built target ggml-base
+gmake[4]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+[  6%] Built target ggml-cpu
+[100%] Built target vulkan-shaders-gen
+[  6%] Performing install step for 'vulkan-shaders-gen'
+-- Up-to-date: /home/zexigh/llama.cpp-08ffba21e/build-vk/Release/./vulkan-shaders-gen
+[  8%] Completed 'vulkan-shaders-gen'
+[  9%] Built target vulkan-shaders-gen
+[ 77%] Built target ggml-vulkan
+[ 77%] Built target ggml
+[ 87%] Built target llama
+[100%] Built target llama-common
+[100%] Building CXX object tools/quantize/CMakeFiles/llama-quantize-impl.dir/quantize.cpp.o
+[100%] Linking CXX shared library ../../bin/libllama-quantize-impl.so
+[100%] Built target llama-quantize-impl
+[100%] Building CXX object tools/quantize/CMakeFiles/llama-quantize.dir/main.cpp.o
+[100%] Linking CXX executable ../../bin/llama-quantize
+[100%] Built target llama-quantize

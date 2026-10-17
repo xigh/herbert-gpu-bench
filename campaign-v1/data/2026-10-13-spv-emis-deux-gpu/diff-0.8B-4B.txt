@@ -1,0 +1,28 @@
+57,59c57,59
+<   %uint_7168 = OpConstant %uint 7168
+<    %uint_128 = OpConstant %uint 128
+<   %uint_7167 = OpConstant %uint 7167
+---
+>  %uint_18432 = OpConstant %uint 18432
+>    %uint_320 = OpConstant %uint 320
+>  %uint_18431 = OpConstant %uint 18431
+88c88
+<          %41 = OpULessThan %bool %39 %uint_7168
+---
+>          %41 = OpULessThan %bool %39 %uint_18432
+93,95c93,95
+<          %48 = OpULessThan %bool %47 %uint_7168
+<          %49 = OpSelect %uint %48 %47 %uint_7167
+<          %50 = OpIMul %uint %49 %uint_128
+---
+>          %48 = OpULessThan %bool %47 %uint_18432
+>          %49 = OpSelect %uint %48 %47 %uint_18431
+>          %50 = OpIMul %uint %49 %uint_320
+105c105
+<          %65 = OpULessThan %bool %64 %uint_128
+---
+>          %65 = OpULessThan %bool %64 %uint_320
+175c175
+<         %131 = OpULessThan %bool %130 %uint_7168
+---
+>         %131 = OpULessThan %bool %130 %uint_18432

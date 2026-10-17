@@ -1,0 +1,6 @@
+Wed Oct 14 12:46:27 UTC 2026
+Condition : une autre tâche en pause (SIGSTOP), python pid 265574 garde 6,4 Go sur la 4080 sans calculer
+pid, process_name, used_gpu_memory [MiB]
+265574, /home/zexigh/venvs/other-task/bin/python, 6390 MiB
+clocks.current.sm [MHz], clocks.current.memory [MHz], pstate
+2805 MHz, 10801 MHz, P2

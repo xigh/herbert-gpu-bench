@@ -1,0 +1,19 @@
+Tue Oct 13 05:42:52 UTC 2026
+7.0.0-38-generic
+cc51363
+08ffba21e 2026-10-12 08:00:26 +0200
+ggml_vulkan: Found 2 Vulkan devices:
+ggml_vulkan: 0 = AMD Ryzen 9 9900X 12-Core Processor (RADV RAPHAEL_MENDOCINO) (radv) | uma: 1 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 32 | shared memory: 65536 | int dot: 0 | matrix cores: none
+ggml_vulkan: 1 = NVIDIA GeForce RTX 4080 (NVIDIA) | uma: 0 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 0 | matrix cores: NV_coopmat2
+Available devices:
+  Vulkan0: AMD Ryzen 9 9900X 12-Core Processor (RADV RAPHAEL_MENDOCINO) (97475 MiB, 97393 MiB free)
+  Vulkan1: NVIDIA GeForce RTX 4080 (16376 MiB, 15914 MiB free)
+llama.cpp Vulkan device: Vulkan0
+name, driver_version, clocks.current.sm [MHz], clocks.current.memory [MHz], pstate
+NVIDIA GeForce RTX 4080, 595.99.02, 2805 MHz, 11201 MHz, P0
+add342c48a8b50b8602e5bf4e1f3d767fa591f5b58665ef27cb11ae9af8e3dd0  /home/zexigh/herbert-vk-f16-cc51363/target-bf16/release/herbert-vk-chat
+0e72f515ad9ae177a6c7a73e3d02b528797e3e85d5b101b703ce1980a9036db8  /home/zexigh/herbert-vk-f16-cc51363/target/release/herbert-vk-chat
+d73fb021fe70eb2922f644d699c90ea0fa67a2d2e17c4a38d73d881dbb89cc0f  /home/zexigh/herbert-vk-f16-cc51363/target-bf16/release/herbert-vk-serve
+5b4cd0bdf2f4eebcb7157767503f316be77870d0739f15edb7aa445fdf942e8a  /home/zexigh/herbert-vk-f16-cc51363/target/release/herbert-vk-serve
+7a5fffa842c45a0e78201f149b10f53564aab5061fa11f2aa3d437c0a58c72a6  /opt3/bench-qwen35/Qwen3.5-0.8B-F16.gguf
+21dbc382f411fd30ce027ceaa406c458f0b21dc605a53280050b03da09acc429  /opt3/bench-qwen35/Qwen3.5-4B-F16.gguf

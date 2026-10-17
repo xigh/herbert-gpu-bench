@@ -1,0 +1,8 @@
+exit 0 
+  Downloaded thiserror v2.0.21
+  Downloaded thiserror-impl v2.0.21
+   Compiling thiserror v2.0.21
+   Compiling thiserror v1.0.69
+   Compiling thiserror-impl v2.0.21
+   Compiling thiserror-impl v1.0.69
+    Finished `release` profile [optimized] target(s) in 55.73s

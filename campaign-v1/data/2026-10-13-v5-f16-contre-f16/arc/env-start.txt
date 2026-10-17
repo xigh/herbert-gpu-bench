@@ -1,0 +1,15 @@
+Tue Oct 13 05:22:54 AM UTC 2026
+7.0.0-31-generic
+cc51363
+08ffba21e 2026-10-12 08:00:26 +0200
+ggml_vulkan: Found 1 Vulkan devices:
+ggml_vulkan: 0 = Intel(R) Graphics (LNL) (Intel open-source Mesa driver) | uma: 1 | fp16: 1 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: KHR_coopmat
+Available devices:
+  Vulkan0: Intel(R) Graphics (LNL) (23399 MiB, 18413 MiB free)
+llama.cpp Vulkan device: Vulkan0
+1ac21495ceacf3593804fba81c1cdbd4a2fa02895cbe7a6c2c96dbab1a40764a  /home/zexigh/herbert-vk-f16-cc51363/target-bf16/release/herbert-vk-chat
+cf4d8a241c4de79fd6c8074c68a87da03a910d730860f569a4ec8ebe2f764fb7  /home/zexigh/herbert-vk-f16-cc51363/target/release/herbert-vk-chat
+bb3b7ba3b338088a9ac07d994ed1d0db75bc475d5f57c359c63902ea60231ed5  /home/zexigh/herbert-vk-f16-cc51363/target-bf16/release/herbert-vk-serve
+c5fe1350d740c7fd33a303cd4455e6295fd9d3bbc7cabcd115c3f09065e399ec  /home/zexigh/herbert-vk-f16-cc51363/target/release/herbert-vk-serve
+b90615eef3120806e69b9fe5eaa23527ed1510b8d8dfcd7eb0ed3f06a305ae39  /home/zexigh/gguf/Qwen3.5-0.8B-F16.gguf
+21dbc382f411fd30ce027ceaa406c458f0b21dc605a53280050b03da09acc429  /home/zexigh/gguf/Qwen3.5-4B-F16.gguf

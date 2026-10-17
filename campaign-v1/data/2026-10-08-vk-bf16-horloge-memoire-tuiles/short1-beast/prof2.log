@@ -1,0 +1,43 @@
+[vulkan] NVIDIA GeForce RTX 4080 [NVIDIA DISCRETE_GPU] Vulkan 1.4.329 · subgroup 32 (32..=32) · coopmat true · bf16 true [(16, 16, 16)] · coopmat2 true · driver 0x94d6c1c0
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=1024 prefill.split=0 rec.slices=8 rec.cols=32 sdpa.split=8 sdpa.prefill=2 rec.chunk=4 rec.pcols=16 rec.pslices=16 rec.vec=1 rec.stage=0 rec.pair=0 conv.cols=32 proj.pad=64 prefill.pipe=3 sdpa.bq=16 sdpa.bk=32 sdpa.qt=1 sdpa.qreg=1 gemm=2 gemm.wave=32 gemm.mt=64 gemm.nt=64 gemm.kt=64 gemm.tm=1 gemm.tn=1 gemm.sgm=8 gemm.sgn=1 gemm.stage=0 gemm.simt=1 gemm.simtk=16 gemm.simtr=0 gemm.mfirst=1 gemm.shapes=2 gemm.pack=0 weights.local=0 fuse.norm=1 fuse.swiglu=1 fuse.dn=0 host.poll=0 copy.logits=0
+[vulkan] device memory: type 4 heap 0 (16.0 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 3 heap 1 (139.8 GiB) HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×297, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 2560, 32 layers, 16 heads / 4 kv × 256, intermediate 9216, vocab 248320, rotary 64, linear k 16×128 v 32×128, tied head true
+[vulkan] 8.15 GiB on the device, 0.5 MiB on the host, KV for 4096 positions, activations for 1024 rows
+[vulkan] 38 pipelines emitted and built
+[vulkan] step of 254 operations recorded, timed per operation
+[engine] loaded in 4.0 s, mounted in 0.02 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+[warmup 1] 128 prompt tokens in 0.035 s (3644.3 tok/s) · 1 generated in 0.00 s (20131.66 tok/s)
+[warmup 2] 128 prompt tokens in 0.035 s (3688.3 tok/s) · 1 generated in 0.00 s (116740.60 tok/s)
+
+>>> Here are my notes on a hybrid language model, repeated as I took them during several meetings.
+
+Meeting 1: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of ke
+Based
+[ids] 27775
+[decoded] "Based"
+[turn 1] 128 prompt tokens in 0.032 s (4032.2 tok/s) · 1 generated in 0.00 s (30001.20 tok/s) · position 128
+[profile prefill] 1 steps of 128 rows on average · median GPU 30873.0 µs (4146.0 rows/s), host wall 31584.1 µs (4052.7 rows/s) · 367 operations
+[profile prefill] each step, rows:GPU ms/wall ms: 128:30.9/31.6
+[profile prefill]    10885.9 µs  35.3 %  ×32  gemm_coop_2560x18432_bf16_t64x64x64_1x1_8x1_wg_mf_sg32  (first step 10885.9 µs)
+[profile prefill]     5875.6 µs  19.0 %  ×24  gemm_coop_2560x12352_bf16_t64x64x64_1x1_8x1_wg_mf_sg32  (first step 5875.6 µs)
+[profile prefill]     5777.2 µs  18.7 %  ×32  gemm_coop_9216x2560_res_t64x64x64_1x1_8x1_wg_mf_sg32  (first step 5777.2 µs)
+[profile prefill]     2651.9 µs   8.6 %  ×32  gemm_coop_4096x2560_res_t64x64x64_1x1_8x1_wg_mf_sg32  (first step 2651.9 µs)
+[profile prefill]     1839.1 µs   6.0 %  ×1   matvec_2560x248320_bf16_r1_sg32  (first step 1839.1 µs)
+[profile prefill]     1532.0 µs   5.0 %  ×8   gemm_coop_2560x10240_bf16_t64x64x64_1x1_8x1_wg_mf_sg32  (first step 1532.0 µs)
+[profile prefill]      491.1 µs   1.6 %  ×24  dn_tc_state_k16v32_c32d32_sg32  (first step 491.1 µs)
+[profile prefill]      477.0 µs   1.5 %  ×24  dn_tc_prep_k16v32_c32_sg32  (first step 477.0 µs)
+[profile prefill]      409.1 µs   1.3 %  ×64  rmsnorm_rows_2560_p1_sg32  (first step 409.1 µs)
+[profile prefill]      240.9 µs   0.8 %  ×8   sdpa_tc_h16kv4d256_k32_qr_sg32  (first step 240.9 µs)
+[profile prefill]      209.1 µs   0.7 %  ×32  swiglu_rows_9216_sg32  (first step 209.1 µs)
+[profile prefill]      139.8 µs   0.5 %  ×24  dn_conv_seg_8192x4_c32_sg32  (first step 139.8 µs)
+[profile prefill]      136.4 µs   0.4 %  ×24  dn_gated_norm_rows_v32_sg32  (first step 136.4 µs)
+[profile prefill]      116.4 µs   0.4 %  ×24  dn_l2_gates_rows_k16v32_sg32  (first step 116.4 µs)
+[profile prefill]       66.6 µs   0.2 %  ×8   qk_rope_append_rows_h16kv4d256_sg32  (first step 66.6 µs)
+[profile prefill]       10.0 µs   0.0 %  ×1   embed_rows_2560_sg32  (first step 10.0 µs)
+[profile prefill]        5.1 µs   0.0 %  ×1   rmsnorm_2560_p1_sg32  (first step 5.1 µs)
+[profile prefill]        3.1 µs   0.0 %  ×1   argmax_partial_248320_sg32  (first step 3.1 µs)
+[profile prefill]        2.9 µs   0.0 %  ×1   copy_out  (first step 2.9 µs)
+[profile prefill]        2.0 µs   0.0 %  ×1   argmax_final_61_sg32  (first step 2.0 µs)
+[profile prefill]        1.8 µs   0.0 %  ×1   copy_in  (first step 1.8 µs)

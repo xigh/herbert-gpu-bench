@@ -1,0 +1,30 @@
+[vulkan] NVIDIA GeForce RTX 4080 [NVIDIA DISCRETE_GPU] Vulkan 1.4.329 · subgroup 32 (32..=32) · coopmat true · bf16 true [(16, 16, 16)] · coopmat2 true · driver 0x94d6c1c0
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=1024 prefill.split=0 rec.slices=8 rec.cols=32 sdpa.split=8 sdpa.prefill=2 rec.chunk=4 rec.pcols=16 rec.pslices=16 rec.vec=1 rec.stage=0 rec.pair=0 conv.cols=32 proj.pad=64 prefill.pipe=3 sdpa.bq=16 sdpa.bk=32 sdpa.qt=1 sdpa.qreg=1 gemm=2 gemm.wave=32 gemm.mt=64 gemm.nt=64 gemm.kt=64 gemm.tm=1 gemm.tn=1 gemm.sgm=8 gemm.sgn=1 gemm.stage=0 gemm.simt=1 gemm.simtk=16 gemm.simtr=0 gemm.mfirst=1 gemm.shapes=2 gemm.pack=0 gemm.direct=0 weights.local=0 fuse.norm=1 fuse.swiglu=1 fuse.dn=0 host.poll=0 copy.logits=0
+[vulkan] device memory: type 4 heap 0 (16.0 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 3 heap 1 (139.8 GiB) HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×297, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 2560, 32 layers, 16 heads / 4 kv × 256, intermediate 9216, vocab 248320, rotary 64, linear k 16×128 v 32×128, tied head true
+[vulkan] 8.15 GiB on the device, 0.5 MiB on the host, KV for 4096 positions, activations for 1024 rows
+[vulkan] 38 pipelines emitted and built
+[vulkan] step of 254 operations recorded
+[engine] loaded in 4.0 s, mounted in 0.02 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+
+>>> Here are my notes on a hybrid language model, repeated as I took them during several meetings.
+
+Meeting 1: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 2: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a p
+Based on your notes, it appears you are describing a novel architecture that combines **recurrent state management** (similar to RNNs or Transformers with recurrent connections) with **sparse attention** and **rank-one updates** to optimize memory and computation.
+
+The text cuts off at the end of Meeting 2 ("with a p"). Based on the context of "partial rotary embedding" and "quarter of each head," the missing word is almost certainly **position** (e.g., "partial rotary embedding on a quarter of each head's position" or "partial rotary embedding on a quarter of each head per position").
+
+Here is a structured synthesis of the architecture you have described, filling in the logical gaps and organizing the components for clarity:
+
+### Architecture Overview: Hybrid GatedDeltaNet + Sparse Attention
+
+This model alternates between two distinct types of layers to balance long-term dependency modeling (via recurrence) and global context retrieval (via attention).
+
+#### 1. The GatedDelta
+[ids] 27775 383 678 8129 11 424 7701 488 513 21988 264 11183 17120 421 31341 2972 2670 921 1528 6044 332 318 62116 310 423 9455 82 466 77754 440 61911 12850 8 440 2972 94834 6326 332 321 2972 12748 18030 8570 332 310 28476 4779 321 33303 13 271 760 1414 14663 974 506 279 809 314 28107 220 17 3376 4058 264 280 1764 19592 383 279 2193 314 328 36182 59733 37794 1 321 328 30961 314 1754 1901 1288 279 7167 3299 369 4409 7590 2972 3374 332 318 68 1257 2487 328 36182 59733 37794 383 264 8079 314 1754 1901 579 2234 1 466 328 36182 59733 37794 383 264 8079 314 1754 1901 791 2234 1764 271 8160 369 264 31838 37589 314 279 17120 488 599 7246 11 20621 303 279 19214 31092 321 33572 279 6599 364 30246 25 271 13962 36593 33655 25 47955 469 639 19661 6738 478 69355 59930 271 1919 1558 6703 942 1881 1330 12103 4346 314 13224 310 7915 1248 9375 23285 32368 318 19492 72632 8 321 3521 2193 54476 318 19492 6326 553 271 794 220 16 13 561 469 639
+[decoded] "Based on your notes, it appears you are describing a novel architecture that combines **recurrent state management** (similar to RNNs or Transformers with recurrent connections) with **sparse attention** and **rank-one updates** to optimize memory and computation.\n\nThe text cuts off at the end of Meeting 2 (\"with a p\"). Based on the context of \"partial rotary embedding\" and \"quarter of each head,\" the missing word is almost certainly **position** (e.g., \"partial rotary embedding on a quarter of each head's position\" or \"partial rotary embedding on a quarter of each head per position\").\n\nHere is a structured synthesis of the architecture you have described, filling in the logical gaps and organizing the components for clarity:\n\n### Architecture Overview: Hybrid GatedDeltaNet + Sparse Attention\n\nThis model alternates between two distinct types of layers to balance long-term dependency modeling (via recurrence) and global context retrieval (via attention).\n\n#### 1. The Gated"
+[turn 1] 256 prompt tokens in 0.029 s (8734.8 tok/s) · 199 generated in 2.62 s (75.88 tok/s) · position 455

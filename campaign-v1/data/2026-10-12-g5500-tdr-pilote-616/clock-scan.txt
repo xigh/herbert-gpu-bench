@@ -1,0 +1,6 @@
+clocks-matin/v1-g5500-locked-clocks.csv: 1169 rows, max 83 C, by 5 C: {45: 7, 50: 29, 55: 49, 60: 75, 65: 115, 70: 346, 75: 304, 80: 244}
+  watchdog would stop at: None
+clocks-matin/v2-g5500-clocks.csv: 1230 rows, max 93 C, by 5 C: {60: 14, 65: 1, 70: 25, 75: 100, 80: 219, 85: 350, 90: 521}
+  watchdog would stop at: ('2026/10/12 12:00:55.484, 1665 MHz, 7001 MHz, P0, 194.41 W, 90', 'hot')
+v4-g5500-591.86-tdr/clocks.csv: 3223 rows, max 74 C, by 5 C: {35: 34, 40: 31, 45: 23, 50: 72, 55: 106, 60: 157, 65: 2764, 70: 36}
+  watchdog would stop at: ('2026/10/12 21:49:01.840, 1920 MHz, 6801 MHz, P2, 70.03 W, 65', 'frozen')

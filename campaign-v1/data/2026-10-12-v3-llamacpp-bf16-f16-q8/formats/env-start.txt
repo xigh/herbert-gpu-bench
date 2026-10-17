@@ -1,0 +1,6 @@
+Mon Oct 12 12:55:21 UTC 2026
+name, driver_version, clocks.current.sm [MHz], clocks.current.memory [MHz], pstate
+NVIDIA GeForce RTX 4080, 595.99.02, 2805 MHz, 11201 MHz, P0
+08ffba21e 2026-10-12 08:00:26 +0200
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       7.3T  6.7T  199G  98% /opt3

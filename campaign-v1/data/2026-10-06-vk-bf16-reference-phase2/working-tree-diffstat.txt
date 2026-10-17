@@ -1,0 +1,13 @@
+ bench/compare.sh            |  20 +-
+ bench/speed.sh              |  19 +-
+ src/bin/herbert-vk-chat.rs  |  16 +-
+ src/bin/herbert-vk-probe.rs |  15 +-
+ src/spv/mod.rs              | 124 +++++++++
+ src/vk/context.rs           | 116 +++++++-
+ src/vk/engine.rs            | 661 ++++++++++++++++++++++++++++++++++++--------
+ src/vk/kernels.rs           | 469 +++++++++++++++++++++++++++----
+ src/vk/mod.rs               |   3 +
+ src/vk/pipeline.rs          |  16 +-
+ src/vk/probe.rs             | 276 ++++++++++++++----
+ src/vk/types.rs             |  11 +-
+ 12 files changed, 1493 insertions(+), 253 deletions(-)

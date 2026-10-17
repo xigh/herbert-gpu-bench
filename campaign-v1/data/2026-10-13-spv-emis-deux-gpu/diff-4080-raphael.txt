@@ -1,0 +1,16 @@
+55c55
+<      %uint_4 = OpConstant %uint 4
+---
+>      %uint_2 = OpConstant %uint 2
+62c62
+<     %uint_32 = OpConstant %uint 32
+---
+>     %uint_64 = OpConstant %uint 64
+85c85
+<          %36 = OpIMul %uint %31 %uint_4
+---
+>          %36 = OpIMul %uint %31 %uint_2
+167c167
+<         %125 = OpIAdd %uint %124 %uint_32
+---
+>         %125 = OpIAdd %uint %124 %uint_64

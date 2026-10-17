@@ -1,0 +1,30 @@
+
+## g5500-locked/p3: p3 (prefill 759 tokens / decode 255 at depth 759, tok/s, median; spread %)
+
+| model | engine | prefill | decode | N |
+|---|---|---|---|---|
+| 0.8B | herbert vk-nv-default | 20 032.5 (3.2) | 227.67 (0.5) | 5 |
+| 0.8B | herbert vk-nv-warm | 19 797.2 (3.2) | 227.52 (0.5) | 5 |
+| 0.8B | llama.cpp cuda-nv | 9 987.7 (1.6) | 174.65 (1.9) | 5 |
+| 0.8B | llama.cpp vk-nv | 9 014.5 (2.1) | 174.70 (0.4) | 5 |
+| 0.8B | llama.cpp vk-nv-cold | 7 048.6 (2.4) | - (0.0) | 5 |
+| 2B | herbert vk-nv-default | 9 036.4 (2.3) | 101.17 (0.3) | 5 |
+| 2B | herbert vk-nv-warm | 8 968.0 (3.0) | 101.15 (0.3) | 5 |
+| 2B | llama.cpp cuda-nv | 5 988.8 (1.5) | 95.55 (0.6) | 5 |
+| 2B | llama.cpp vk-nv | 5 475.7 (1.8) | 89.85 (0.2) | 5 |
+| 2B | llama.cpp vk-nv-cold | 4 520.7 (1.5) | - (0.0) | 5 |
+
+## g5500-locked/p4: p4 (prefill 2880 tokens / decode 255 at depth 2880, tok/s, median; spread %)
+
+| model | engine | prefill | decode | N |
+|---|---|---|---|---|
+| 0.8B | herbert vk-nv-default | 18 798.6 (1.1) | 214.32 (0.1) | 5 |
+| 0.8B | herbert vk-nv-warm | 18 516.4 (0.8) | 214.21 (0.1) | 5 |
+| 0.8B | llama.cpp cuda-nv | 11 210.3 (0.4) | 171.85 (0.3) | 5 |
+| 0.8B | llama.cpp vk-nv | 9 471.6 (0.3) | 171.41 (0.1) | 5 |
+| 0.8B | llama.cpp vk-nv-cold | 8 887.1 (0.3) | - (0.0) | 5 |
+| 2B | herbert vk-nv-default | 9 013.6 (0.6) | 98.39 (0.0) | 5 |
+| 2B | herbert vk-nv-warm | 8 835.6 (0.3) | 98.35 (0.0) | 5 |
+| 2B | llama.cpp cuda-nv | 6 394.5 (0.2) | 94.89 (0.1) | 5 |
+| 2B | llama.cpp vk-nv | 5 613.4 (0.5) | 89.11 (0.0) | 5 |
+| 2B | llama.cpp vk-nv-cold | 5 370.1 (0.2) | - (0.0) | 5 |

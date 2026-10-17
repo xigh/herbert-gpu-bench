@@ -1,0 +1,9 @@
+Latency with a short prompt, one generated token, 4080 locked (ms). Herbert: prompt tokens / its prefill tok/s, median of 5 warm runs. vLLM: avg_latency of its latency bench (end to end).
+0.8B pp1: herbert - · vLLM 4.65
+0.8B pp16: herbert 4.05 (4.04-4.05) · vLLM 11.23
+0.8B pp64: herbert 4.15 (4.15-4.18) · vLLM 13.22
+0.8B pp128: herbert 4.69 (4.67-4.70) · vLLM 13.53
+4B pp1: herbert - · vLLM 15.96
+4B pp16: herbert 19.26 (19.22-19.68) · vLLM 19.07
+4B pp64: herbert 18.01 (17.88-18.42) · vLLM 21.12
+4B pp128: herbert 20.42 (20.24-20.74) · vLLM 22.18

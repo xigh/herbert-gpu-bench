@@ -1,0 +1,44 @@
+
+== device 0: Intel(R) Graphics (LNL) [Intel INTEGRATED_GPU]
+   Vulkan 1.4.335 · driver 0x6800003 · vendor 0x8086 device 0x64a0
+   driver: Intel open-source Mesa driver Mesa 26.0.3-1ubuntu1
+   subgroup: default 32 · min 16 max 32 · required stages COMPUTE | TASK_EXT | MESH_EXT · ops BASIC | VOTE | ARITHMETIC | BALLOT | SHUFFLE | SHUFFLE_RELATIVE | CLUSTERED | QUAD | ROTATE_KHR | ROTATE_CLUSTERED_KHR
+   limits: shared 49152 B · invocations 1024 · workgroup size [1024, 1024, 1024] · groups [65535, 65535, 65535] · storage range 4095 MiB · offset align 4 · timestamp period 52.083332 ns
+   extensions: VK_KHR_shader_bfloat16 yes · VK_KHR_cooperative_matrix yes · VK_NV_cooperative_matrix2 no · VK_KHR_push_descriptor yes · VK_EXT_subgroup_size_control yes · VK_KHR_shader_float16_int8 yes · VK_KHR_16bit_storage yes · VK_KHR_shader_integer_dot_product yes · VK_KHR_shader_subgroup_extended_types yes · VK_KHR_maintenance5 yes · VK_EXT_memory_budget yes
+   features: shaderInt16 yes · storageBuffer16BitAccess yes · shaderFloat16 yes · shaderInt8 yes · subgroupSizeControl yes · computeFullSubgroups yes · shaderSubgroupExtendedTypes yes
+   bf16: shaderBFloat16Type yes · shaderBFloat16DotProduct yes · shaderBFloat16CooperativeMatrix yes
+   cooperative matrix: 6 configurations (M×N×K  A·B → C/result, scope)
+     8×16×16  f16·f16 → f16/f16  SUBGROUP
+     8×16×16  f16·f16 → f32/f32  SUBGROUP
+     8×16×16  bf16·bf16 → bf16/bf16  SUBGROUP
+     8×16×16  bf16·bf16 → f32/f32  SUBGROUP
+     8×16×32  s8·s8 → s32/s32  SUBGROUP
+     8×16×32  u8·u8 → u32/u32  SUBGROUP
+   heap 0: 22.85 GiB DEVICE_LOCAL — types 0:DEVICE_LOCAL 1:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT 2:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | HOST_CACHED 3:DEVICE_LOCAL | PROTECTED 4:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT 5:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+
+== device 1: llvmpipe (LLVM 21.1.8, 256 bits) [other CPU] — software, refused
+   Vulkan 1.4.335 · driver 0x6800003 · vendor 0x10005 device 0x0000
+   driver: llvmpipe Mesa 26.0.3-1ubuntu1 (LLVM 21.1.8)
+   subgroup: default 8 · min 8 max 8 · required stages FRAGMENT | COMPUTE · ops BASIC | VOTE | ARITHMETIC | BALLOT | SHUFFLE | SHUFFLE_RELATIVE | CLUSTERED | QUAD | ROTATE_KHR | ROTATE_CLUSTERED_KHR
+   limits: shared 32768 B · invocations 1024 · workgroup size [1024, 1024, 1024] · groups [65535, 65535, 65535] · storage range 128 MiB · offset align 16 · timestamp period 1 ns
+   extensions: VK_KHR_shader_bfloat16 no · VK_KHR_cooperative_matrix yes · VK_NV_cooperative_matrix2 no · VK_KHR_push_descriptor yes · VK_EXT_subgroup_size_control yes · VK_KHR_shader_float16_int8 yes · VK_KHR_16bit_storage yes · VK_KHR_shader_integer_dot_product yes · VK_KHR_shader_subgroup_extended_types yes · VK_KHR_maintenance5 yes · VK_EXT_memory_budget yes
+   features: shaderInt16 yes · storageBuffer16BitAccess yes · shaderFloat16 yes · shaderInt8 yes · subgroupSizeControl yes · computeFullSubgroups yes · shaderSubgroupExtendedTypes yes
+   cooperative matrix: 4 configurations (M×N×K  A·B → C/result, scope)
+     8×8×8  f16·f16 → f16/f16  SUBGROUP
+     8×8×8  f16·f16 → f32/f32  SUBGROUP
+     8×8×8  u8·u8 → u32/u32  SUBGROUP
+     8×8×8  s8·s8 → s32/s32  SUBGROUP
+   heap 0: 30.47 GiB DEVICE_LOCAL — types 0:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+
+== measurements on Intel(R) Graphics (LNL) [Intel INTEGRATED_GPU] Vulkan 1.4.335 · subgroup 32 (16..=32) · coopmat true · coop16 true f16 [(8, 16, 16)] · coopmat2 false · driver 0x6800003
+   device memory: type 1 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 2 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+   selftest: 0 / 16384 elements wrong, 0 / 64 workgroup sums wrong
+   f16 conversions: widening 0 / 65536 wrong, rounding 0 / 2097152 wrong
+   read bandwidth: 90.3 GB/s (512 MiB, 1024 groups of 256, best of 5 × 12 passes)
+   matvec 0.8B gate_up          1024×  7168 wave 32 rows 1:    176.5 µs median (174.8–213.8),   83.2 GB/s of weights (36 copies in turn) · error ≤ 1.24e-8 of Σ|w·x|
+   matvec 0.8B down             3584×  1024 wave 32 rows 1:    104.7 µs median (100.8–119.8),   70.1 GB/s of weights (73 copies in turn) · error ≤ 1.34e-8 of Σ|w·x|
+   matvec 0.8B DeltaNet proj    1024×  8224 wave 32 rows 1:    202.9 µs median (202.4–244.1),   83.0 GB/s of weights (31 copies in turn) · error ≤ 1.38e-8 of Σ|w·x|
+   matvec 0.8B lm_head          1024×248320 wave 32 rows 1:   6128.3 µs median (6098.0–7059.9),   83.0 GB/s of weights (1 copies in turn) · error ≤ 1.33e-8 of Σ|w·x|
+   matvec 4B gate_up            2560× 18432 wave 32 rows 1:   1166.3 µs median (1140.6–1459.7),   80.9 GB/s of weights (5 copies in turn) · error ≤ 1.28e-8 of Σ|w·x|
+   matvec 4B down               9216×  2560 wave 32 rows 1:    605.1 µs median (602.5–738.6),   78.0 GB/s of weights (11 copies in turn) · error ≤ 1.35e-8 of Σ|w·x|
+   matvec 4B lm_head            2560×248320 wave 32 rows 1:  17121.9 µs median (15513.1–18858.2),   74.3 GB/s of weights (1 copies in turn) · error ≤ 1.32e-8 of Σ|w·x|

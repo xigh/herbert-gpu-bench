@@ -1,0 +1,106 @@
+=== pp3
+model engine                     128       256       512      1024      2048      4000
+0.8B  herbert-vk (bf16)      26734.6   41898.2   48801.7   56343.4   57081.4   54619.8
+0.8B  llama.cpp CUDA         18503.4   25439.2   30009.7   30349.6   30757.2   30229.5
+0.8B  llama.cpp Vulkan        7176.6   10896.8   12066.2   12014.6   12119.4   11888.7
+0.8B  vLLM (own bench)        9463.3   19053.6   37574.2   53392.6   53543.0   52231.9
+4B    herbert-vk (bf16)       6079.3    8712.8    9274.2   10636.9   10634.9   10384.6
+4B    llama.cpp CUDA          5188.1    7248.7    7823.3    7897.6    7929.5    7750.1
+4B    llama.cpp Vulkan        1805.1    2508.1    2419.9    2419.7    2423.6    2365.2
+4B    vLLM (own bench)        5523.6    8047.7    9800.9   10345.6   10887.5   10757.0
+=== dr2 pp512-4B
+vk-nvidia-base N=5  prefill median  10174.4 tok/s (min 9984.1 max 10326.8)  decode median    75.54 tok/s (min 75.47 max 75.56)  generated [255]
+vk-nvidia-direct-b2048 N=5  prefill median  10231.7 tok/s (min 10164.3 max 10441.3)  decode median    75.50 tok/s (min 75.44 max 75.58)  generated [255]
+vk-nvidia-direct N=5  prefill median  10328.5 tok/s (min 10208.0 max 10439.4)  decode median    75.51 tok/s (min 75.44 max 75.63)  generated [255]
+=== dr2 pp2048-4B
+vk-nvidia-base N=5  prefill median  10563.2 tok/s (min 10518.3 max 10665.6)  decode median    74.21 tok/s (min 74.17 max 74.26)  generated [255]
+vk-nvidia-direct-b2048 N=5  prefill median  10797.6 tok/s (min 10727.4 max 10926.2)  decode median    74.18 tok/s (min 74.10 max 74.25)  generated [255]
+vk-nvidia-direct N=5  prefill median  10679.5 tok/s (min 10654.4 max 10878.2)  decode median    74.20 tok/s (min 74.12 max 74.25)  generated [255]
+=== dr2 pp1024-0.8B
+vk-nvidia-base N=5  prefill median  57120.2 tok/s (min 56097.1 max 57141.4)  decode median   332.05 tok/s (min 331.30 max 334.29)  generated [255]
+vk-nvidia-direct-b2048 N=5  prefill median  57296.6 tok/s (min 56181.9 max 57633.9)  decode median   332.82 tok/s (min 331.14 max 335.63)  generated [255]
+vk-nvidia-direct N=5  prefill median  57399.7 tok/s (min 56378.6 max 57533.0)  decode median   332.45 tok/s (min 329.68 max 334.13)  generated [255]
+=== dr3 pp4000-4B
+vk-nvidia-base N=5  prefill median  10351.5 tok/s (min 10309.3 max 10421.3)  decode median    72.72 tok/s (min 72.65 max 72.83)  generated [255]
+vk-nvidia-direct-b2048 N=5  prefill median  10467.1 tok/s (min 10412.0 max 10486.2)  decode median    72.69 tok/s (min 72.63 max 72.79)  generated [255]
+vk-nvidia-direct N=5  prefill median  10483.4 tok/s (min 10428.8 max 10525.3)  decode median    72.70 tok/s (min 72.67 max 72.76)  generated [255]
+=== dr3 pp4000-0.8B
+vk-nvidia-base N=5  prefill median  54113.6 tok/s (min 53899.1 max 54956.0)  decode median   301.24 tok/s (min 300.92 max 303.95)  generated [255]
+vk-nvidia-direct-b2048 N=5  prefill median  56725.7 tok/s (min 56078.0 max 57564.8)  decode median   302.04 tok/s (min 298.82 max 305.46)  generated [255]
+vk-nvidia-direct N=5  prefill median  55492.5 tok/s (min 54554.0 max 55836.2)  decode median   300.24 tok/s (min 293.90 max 303.42)  generated [255]
+=== dr2 cmp-0.8B
+p1-short: cpu 7 tokens · prompt 24 @ 573.7 tok/s · gen 7 @ 27.61 tok/s
+  nvidia-base: identical (7 tokens) · prompt 24 @ 5662.0 tok/s · gen 7 @ 388.44 tok/s
+  nvidia-direct: identical (7 tokens) · prompt 24 @ 5726.0 tok/s · gen 7 @ 388.65 tok/s
+p2-explain: cpu 145 tokens · prompt 39 @ 875.6 tok/s · gen 145 @ 27.67 tok/s
+  nvidia-base: first divergence at token 15 of 145 · prompt 39 @ 9039.7 tok/s · gen 122 @ 337.17 tok/s
+  nvidia-direct: first divergence at token 15 of 145 · prompt 39 @ 9184.7 tok/s · gen 122 @ 338.17 tok/s
+p3-long: cpu 255 tokens · prompt 759 @ 3248.3 tok/s · gen 255 @ 27.24 tok/s
+  nvidia-base: first divergence at token 172 of 255 · prompt 759 @ 53574.2 tok/s · gen 255 @ 331.13 tok/s
+  nvidia-direct: first divergence at token 172 of 255 · prompt 759 @ 52186.1 tok/s · gen 255 @ 334.25 tok/s
+p4-xlong: cpu 199 tokens · prompt 2882 @ 3134.8 tok/s · gen 199 @ 26.42 tok/s
+  nvidia-base: first divergence at token 8 of 199 · prompt 2882 @ 54922.2 tok/s · gen 181 @ 304.46 tok/s
+  nvidia-direct: first divergence at token 8 of 199 · prompt 2882 @ 55366.8 tok/s · gen 181 @ 313.22 tok/s
+pp1024: cpu 199 tokens · prompt 1024 @ 3307.5 tok/s · gen 199 @ 27.24 tok/s
+  nvidia-base: first divergence at token 73 of 199 · prompt 1024 @ 56993.2 tok/s · gen 199 @ 329.63 tok/s
+  nvidia-direct: first divergence at token 73 of 199 · prompt 1024 @ 53650.9 tok/s · gen 199 @ 329.84 tok/s
+pp128: cpu 199 tokens · prompt 128 @ 2082.5 tok/s · gen 199 @ 27.60 tok/s
+  nvidia-base: first divergence at token 82 of 199 · prompt 128 @ 25917.2 tok/s · gen 199 @ 335.01 tok/s
+  nvidia-direct: first divergence at token 82 of 199 · prompt 128 @ 26480.2 tok/s · gen 199 @ 339.09 tok/s
+pp2048: cpu 199 tokens · prompt 2048 @ 3261.1 tok/s · gen 199 @ 26.79 tok/s
+  nvidia-base: first divergence at token 82 of 199 · prompt 2048 @ 57103.5 tok/s · gen 199 @ 323.70 tok/s
+  nvidia-direct: first divergence at token 82 of 199 · prompt 2048 @ 57237.1 tok/s · gen 199 @ 320.75 tok/s
+pp256: cpu 199 tokens · prompt 256 @ 2934.9 tok/s · gen 199 @ 27.43 tok/s
+  nvidia-base: first divergence at token 38 of 199 · prompt 256 @ 33838.5 tok/s · gen 199 @ 335.64 tok/s
+  nvidia-direct: first divergence at token 38 of 199 · prompt 256 @ 41437.7 tok/s · gen 199 @ 339.15 tok/s
+pp4000: cpu 177 tokens · prompt 4001 @ 3069.1 tok/s · gen 177 @ 26.04 tok/s
+  nvidia-base: no [ids] line
+  nvidia-direct: no [ids] line
+pp512: cpu 199 tokens · prompt 513 @ 2783.6 tok/s · gen 199 @ 27.40 tok/s
+  nvidia-base: first divergence at token 80 of 199 · prompt 513 @ 48191.9 tok/s · gen 199 @ 336.06 tok/s
+  nvidia-direct: first divergence at token 80 of 199 · prompt 513 @ 48597.1 tok/s · gen 199 @ 336.77 tok/s
+=== dr3 cmp-0.8B
+pp2048: cpu 199 tokens · prompt 2048 @ 3261.1 tok/s · gen 199 @ 26.79 tok/s
+  nvidia-b1024: first divergence at token 82 of 199 · prompt 2048 @ 57429.2 tok/s · gen 199 @ 322.19 tok/s
+  nvidia-b2048: first divergence at token 48 of 199 · prompt 2048 @ 59480.2 tok/s · gen 199 @ 322.42 tok/s
+pp4000: cpu 177 tokens · prompt 4001 @ 3069.1 tok/s · gen 177 @ 26.04 tok/s
+  nvidia-b1024: identical (177 tokens) · prompt 4001 @ 54743.6 tok/s · gen 177 @ 299.03 tok/s
+  nvidia-b2048: identical (177 tokens) · prompt 4001 @ 56874.1 tok/s · gen 177 @ 294.06 tok/s
+=== dr2 cmp-4B
+p1-short: cpu 7 tokens · prompt 24 @ 111.4 tok/s · gen 7 @ 5.14 tok/s
+  nvidia-base: identical (7 tokens) · prompt 24 @ 1274.5 tok/s · gen 7 @ 76.68 tok/s
+  nvidia-direct: identical (7 tokens) · prompt 24 @ 1206.4 tok/s · gen 7 @ 76.25 tok/s
+p2-explain: cpu 177 tokens · prompt 39 @ 172.3 tok/s · gen 177 @ 5.14 tok/s
+  nvidia-base: first divergence at token 32 of 177 · prompt 39 @ 2003.0 tok/s · gen 168 @ 76.20 tok/s
+  nvidia-direct: first divergence at token 32 of 177 · prompt 39 @ 1964.3 tok/s · gen 168 @ 76.18 tok/s
+p3-long: cpu 255 tokens · prompt 759 @ 610.6 tok/s · gen 255 @ 5.10 tok/s
+  nvidia-base: first divergence at token 85 of 255 · prompt 759 @ 10486.8 tok/s · gen 255 @ 75.25 tok/s
+  nvidia-direct: first divergence at token 85 of 255 · prompt 759 @ 10681.0 tok/s · gen 255 @ 75.31 tok/s
+p4-xlong: cpu 190 tokens · prompt 2882 @ 583.0 tok/s · gen 190 @ 5.02 tok/s
+  nvidia-base: first divergence at token 105 of 190 · prompt 2882 @ 10412.8 tok/s · gen 186 @ 73.72 tok/s
+  nvidia-direct: first divergence at token 105 of 190 · prompt 2882 @ 10563.9 tok/s · gen 186 @ 73.73 tok/s
+pp1024: cpu 199 tokens · prompt 1024 @ 613.3 tok/s · gen 199 @ 5.10 tok/s
+  nvidia-base: first divergence at token 11 of 199 · prompt 1024 @ 11067.8 tok/s · gen 199 @ 75.18 tok/s
+  nvidia-direct: first divergence at token 11 of 199 · prompt 1024 @ 11293.2 tok/s · gen 199 @ 75.01 tok/s
+pp128: cpu 199 tokens · prompt 128 @ 420.1 tok/s · gen 199 @ 5.13 tok/s
+  nvidia-base: first divergence at token 4 of 199 · prompt 128 @ 6048.6 tok/s · gen 199 @ 75.99 tok/s
+  nvidia-direct: first divergence at token 4 of 199 · prompt 128 @ 6162.2 tok/s · gen 199 @ 75.97 tok/s
+pp2048: cpu 199 tokens · prompt 2048 @ 610.9 tok/s · gen 199 @ 5.06 tok/s
+  nvidia-base: first divergence at token 64 of 199 · prompt 2048 @ 10789.4 tok/s · gen 199 @ 74.31 tok/s
+  nvidia-direct: first divergence at token 64 of 199 · prompt 2048 @ 10996.2 tok/s · gen 199 @ 74.23 tok/s
+pp256: cpu 199 tokens · prompt 256 @ 583.5 tok/s · gen 199 @ 5.13 tok/s
+  nvidia-base: first divergence at token 24 of 199 · prompt 256 @ 8734.8 tok/s · gen 199 @ 75.88 tok/s
+  nvidia-direct: first divergence at token 24 of 199 · prompt 256 @ 8914.7 tok/s · gen 199 @ 75.95 tok/s
+pp4000: cpu 199 tokens · prompt 4001 @ 589.8 tok/s · gen 199 @ 4.97 tok/s
+  nvidia-base: no [ids] line
+  nvidia-direct: no [ids] line
+pp512: cpu 199 tokens · prompt 513 @ 508.6 tok/s · gen 199 @ 5.12 tok/s
+  nvidia-base: first divergence at token 0 of 199 · prompt 513 @ 9663.1 tok/s · gen 199 @ 75.60 tok/s
+  nvidia-direct: first divergence at token 0 of 199 · prompt 513 @ 9790.4 tok/s · gen 199 @ 75.53 tok/s
+=== dr3 cmp-4B
+pp2048: cpu 199 tokens · prompt 2048 @ 610.9 tok/s · gen 199 @ 5.06 tok/s
+  nvidia-b1024: first divergence at token 64 of 199 · prompt 2048 @ 10902.6 tok/s · gen 199 @ 74.31 tok/s
+  nvidia-b2048: first divergence at token 14 of 199 · prompt 2048 @ 10982.2 tok/s · gen 199 @ 74.24 tok/s
+pp4000: cpu 199 tokens · prompt 4001 @ 589.8 tok/s · gen 199 @ 4.97 tok/s
+  nvidia-b1024: first divergence at token 42 of 199 · prompt 4001 @ 10625.9 tok/s · gen 199 @ 72.79 tok/s
+  nvidia-b2048: first divergence at token 42 of 199 · prompt 4001 @ 10626.2 tok/s · gen 199 @ 72.68 tok/s

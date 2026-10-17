@@ -1,0 +1,39 @@
+0.8B herbert client exit 0 · 09:56:36
+herbert Qwen3.5-0.8B p   10: in {20, 21} · TTFT 10.26 ms · prefill 1965 tok/s (21.9 %) · decode 234.81 tok/s (0.3 %) · out {128} · n=15
+herbert Qwen3.5-0.8B p  100: in {109, 110, 111} · TTFT 12.06 ms · prefill 9116 tok/s (2.6 %) · decode 233.83 tok/s (0.1 %) · out {128} · n=15
+herbert Qwen3.5-0.8B p  500: in {510, 511} · TTFT 30.55 ms · prefill 16722 tok/s (6.2 %) · decode 230.89 tok/s (0.2 %) · out {128} · n=15
+herbert Qwen3.5-0.8B p 2048: in {2058, 2059} · TTFT 122.11 ms · prefill 16859 tok/s (2.6 %) · decode 220.73 tok/s (0.4 %) · out {128} · n=15
+herbert Qwen3.5-0.8B p 4096: in {4105, 4106, 4107} · TTFT 246.72 ms · prefill 16642 tok/s (1.6 %) · decode 207.61 tok/s (0.5 %) · out {128} · n=15
+0.8B llama-cuda client exit 0 · 09:57:56
+llama-cuda Qwen3.5-0.8B p   10: in {20, 21} · TTFT 30.28 ms · prefill 661 tok/s (73.5 %) · decode 166.14 tok/s (2.3 %) · out {128} · n=15
+llama-cuda Qwen3.5-0.8B p  100: in {109, 110, 111} · TTFT 48.53 ms · prefill 2267 tok/s (42.1 %) · decode 165.33 tok/s (1.2 %) · out {128} · n=15
+llama-cuda Qwen3.5-0.8B p  500: in {510, 511} · TTFT 80.55 ms · prefill 6332 tok/s (29.4 %) · decode 163.11 tok/s (2.1 %) · out {128} · n=15
+llama-cuda Qwen3.5-0.8B p 2048: in {2058, 2059} · TTFT 244.58 ms · prefill 8414 tok/s (16.3 %) · decode 163.20 tok/s (1.1 %) · out {128} · n=15
+llama-cuda Qwen3.5-0.8B p 4096: in {4105, 4106, 4107} · TTFT 441.84 ms · prefill 9291 tok/s (13.1 %) · decode 161.95 tok/s (0.9 %) · out {128} · n=15
+0.8B llama-vk client exit 0 · 09:59:32
+llama-vk Qwen3.5-0.8B p   10: in {20, 21} · TTFT 25.77 ms · prefill 777 tok/s (35.2 %) · decode 189.50 tok/s (0.9 %) · out {128} · n=15
+llama-vk Qwen3.5-0.8B p  100: in {109, 110, 111} · TTFT 52.83 ms · prefill 2083 tok/s (45.3 %) · decode 189.18 tok/s (0.9 %) · out {128} · n=15
+llama-vk Qwen3.5-0.8B p  500: in {510, 511} · TTFT 92.64 ms · prefill 5508 tok/s (29.2 %) · decode 187.58 tok/s (0.6 %) · out {128} · n=15
+llama-vk Qwen3.5-0.8B p 2048: in {2058, 2059} · TTFT 283.09 ms · prefill 7270 tok/s (90.7 %) · decode 185.48 tok/s (1.0 %) · out {128} · n=15
+llama-vk Qwen3.5-0.8B p 4096: in {4105, 4106, 4107} · TTFT 523.76 ms · prefill 7839 tok/s (67.3 %) · decode 181.32 tok/s (0.7 %) · out {128} · n=15
+2B herbert client exit 0 · 10:01:30
+herbert Qwen3.5-2B p   10: in {20, 21} · TTFT 17.01 ms · prefill 1190 tok/s (15.6 %) · decode 104.87 tok/s (1.0 %) · out {128} · n=15
+herbert Qwen3.5-2B p  100: in {109, 110, 111} · TTFT 22.38 ms · prefill 4914 tok/s (3.2 %) · decode 104.61 tok/s (0.1 %) · out {128} · n=15
+herbert Qwen3.5-2B p  500: in {510, 511} · TTFT 66.15 ms · prefill 7710 tok/s (9.8 %) · decode 103.98 tok/s (0.2 %) · out {128} · n=15
+herbert Qwen3.5-2B p 2048: in {2058, 2059} · TTFT 269.95 ms · prefill 7624 tok/s (8.6 %) · decode 101.87 tok/s (0.2 %) · out {128} · n=15
+herbert Qwen3.5-2B p 4096: in {4105, 4106, 4107} · TTFT 536.52 ms · prefill 7653 tok/s (8.0 %) · decode 99.10 tok/s (0.5 %) · out {128} · n=15
+2B llama-cuda client exit 0 · 10:03:43
+llama-cuda Qwen3.5-2B p   10: in {20, 21} · TTFT 36.02 ms · prefill 560 tok/s (33.1 %) · decode 93.33 tok/s (0.6 %) · out {128} · n=15
+llama-cuda Qwen3.5-2B p  100: in {109, 110, 111} · TTFT 60.07 ms · prefill 1816 tok/s (29.9 %) · decode 93.30 tok/s (0.4 %) · out {128} · n=15
+llama-cuda Qwen3.5-2B p  500: in {510, 511} · TTFT 122.28 ms · prefill 4171 tok/s (21.6 %) · decode 92.89 tok/s (0.6 %) · out {128} · n=15
+llama-cuda Qwen3.5-2B p 2048: in {2058, 2059} · TTFT 402.06 ms · prefill 5121 tok/s (17.7 %) · decode 92.72 tok/s (0.4 %) · out {128} · n=15
+llama-cuda Qwen3.5-2B p 4096: in {4105, 4106, 4107} · TTFT 748.17 ms · prefill 5488 tok/s (12.1 %) · decode 92.10 tok/s (0.3 %) · out {128} · n=15
+2B llama-vk client exit 0 · 10:05:59
+llama-vk Qwen3.5-2B p   10: in {20, 21} · TTFT 38.83 ms · prefill 522 tok/s (28.1 %) · decode 94.71 tok/s (1.6 %) · out {128} · n=15
+llama-vk Qwen3.5-2B p  100: in {109, 110, 111} · TTFT 70.69 ms · prefill 1562 tok/s (30.1 %) · decode 94.36 tok/s (0.5 %) · out {128} · n=15
+llama-vk Qwen3.5-2B p  500: in {510, 511} · TTFT 137.63 ms · prefill 3713 tok/s (23.1 %) · decode 93.93 tok/s (0.5 %) · out {128} · n=15
+llama-vk Qwen3.5-2B p 2048: in {2058, 2059} · TTFT 468.43 ms · prefill 4393 tok/s (20.3 %) · decode 93.29 tok/s (0.3 %) · out {128} · n=15
+llama-vk Qwen3.5-2B p 4096: in {4105, 4106, 4107} · TTFT 871.11 ms · prefill 4712 tok/s (10.4 %) · decode 92.62 tok/s (0.6 %) · out {128} · n=15
+ALLDONE-V2-G5500
+
+[exited with code 0]

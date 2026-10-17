@@ -1,0 +1,48 @@
+V3, 4080 locked, llama-bench 08ffba21e: prefill (tok/s, median of the samples) and decode of 255 tokens at depth 759 / 2880. Herbert bf16 from V1 (#541) for reference.
+
+## 0.8B prefill
+
+| engine | format | 128 | 256 | 512 | 1024 | 2048 | 4000 |
+|---|---|---|---|---|---|---|---|
+| herbert | bf16 | 27321 | 42396 | 49210 | 56617 | 59547 | 56708 |
+| llama.cpp cuda | BF16 | 21683 | 27804 | 33044 | 33819 | 33452 | 32663 |
+| llama.cpp cuda | F16 | 21728 | 31849 | 38950 | 39994 | 39501 | 38390 |
+| llama.cpp cuda | Q8_0 | 18799 | 27974 | 35891 | 36424 | 35820 | 34914 |
+| llama.cpp vk | BF16 | 7081 | 10579 | 11876 | 11856 | 11958 | 11620 |
+| llama.cpp vk | F16 | 18907 | 24108 | 26732 | 26864 | 27500 | 26492 |
+| llama.cpp vk | Q8_0 | 17720 | 23862 | 25960 | 25998 | 26399 | 25484 |
+
+## 0.8B decode (tok/s, 255 tokens at depth 759 / 2880)
+
+| engine | format | 759 | 2880 |
+|---|---|---|---|
+| llama.cpp cuda | BF16 | 315.2 | 311.1 |
+| llama.cpp cuda | F16 | 315.4 | 311.6 |
+| llama.cpp cuda | Q8_0 | 455.0 | 443.9 |
+| llama.cpp vk | BF16 | 306.4 | 300.4 |
+| llama.cpp vk | F16 | 306.4 | 300.3 |
+| llama.cpp vk | Q8_0 | 458.2 | 440.5 |
+
+## 4B prefill
+
+| engine | format | 128 | 256 | 512 | 1024 | 2048 | 4000 |
+|---|---|---|---|---|---|---|---|
+| herbert | bf16 | 6269 | 9031 | 9688 | 10886 | 10909 | 10627 |
+| llama.cpp cuda | BF16 | 5745 | 8007 | 8680 | 8815 | 8800 | 8586 |
+| llama.cpp cuda | F16 | 5687 | 8895 | 10413 | 10584 | 10525 | 10335 |
+| llama.cpp cuda | Q8_0 | 7333 | 10080 | 11302 | 11386 | 11302 | 11051 |
+| llama.cpp vk | BF16 | 1926 | 2628 | 2484 | 2488 | 2495 | 2432 |
+| llama.cpp vk | F16 | 5488 | 8183 | 8965 | 8985 | 9080 | 8831 |
+| llama.cpp vk | Q8_0 | 5557 | 8022 | 8616 | 8584 | 8684 | 8426 |
+
+## 4B decode (tok/s, 255 tokens at depth 759 / 2880)
+
+| engine | format | 759 | 2880 |
+|---|---|---|---|
+| llama.cpp cuda | BF16 | 71.6 | 71.1 |
+| llama.cpp cuda | F16 | 71.6 | 71.1 |
+| llama.cpp cuda | Q8_0 | 120.4 | 118.9 |
+| llama.cpp vk | BF16 | 70.3 | 69.8 |
+| llama.cpp vk | F16 | 70.3 | 69.7 |
+| llama.cpp vk | Q8_0 | 119.0 | 117.8 |
+

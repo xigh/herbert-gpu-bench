@@ -1,0 +1,20 @@
+0.8B  p1-short    identical (7 of 7 tokens)
+0.8B  p2-explain  token 15: gpu 1472 19.125 · cpu choice 3294 19.0 · gap 0.125 = 1 bf16 quantum(s) of 0.125
+0.8B  p3-long     token 172: gpu 19039 22.5 · cpu choice 1528 22.375 · gap 0.125 = 1 bf16 quantum(s) of 0.125
+0.8B  p4-xlong    token 8: gpu 279 29.5 · cpu choice 264 29.25 · gap 0.25 = 2 bf16 quantum(s) of 0.125
+0.8B  pp1024      token 73: gpu 14777 21.75 · cpu choice 62394 21.75 · gap 0 = 0 bf16 quantum(s) of 0.125
+0.8B  pp128       token 82: gpu 4779 18.375 · cpu choice 22927 18.375 · gap 0 = 0 bf16 quantum(s) of 0.125
+0.8B  pp2048      token 48: gpu 25 21.0 · cpu choice 2708 21.0 · gap 0 = 0 bf16 quantum(s) of 0.125
+0.8B  pp256       token 38: gpu 5555 20.0 · cpu choice 3050 19.875 · gap 0.125 = 1 bf16 quantum(s) of 0.125
+0.8B  pp4000      identical (177 of 177 tokens)
+0.8B  pp512       token 80: gpu 7949 21.5 · cpu choice 13873 21.5 · gap 0 = 0 bf16 quantum(s) of 0.125
+4B    p1-short    identical (7 of 7 tokens)
+4B    p2-explain  token 32: gpu 777 22.5 · cpu choice 1691 22.5 · gap 0 = 0 bf16 quantum(s) of 0.125
+4B    p3-long     token 85: gpu 62394 20.625 · cpu choice 39212 20.5 · gap 0.125 = 1 bf16 quantum(s) of 0.125
+4B    p4-xlong    token 105: gpu 2136 19.875 · cpu choice 279 19.75 · gap 0.125 = 1 bf16 quantum(s) of 0.125
+4B    pp1024      token 11: gpu 978 19.375 · cpu choice 264 19.25 · gap 0.125 = 1 bf16 quantum(s) of 0.125
+4B    pp128       token 4: gpu 494 26.5 · cpu choice 11 26.375 · gap 0.125 = 1 bf16 quantum(s) of 0.125
+4B    pp2048      token 64: gpu 11782 25.5 · cpu choice 24332 25.5 · gap 0 = 0 bf16 quantum(s) of 0.125
+4B    pp256       token 24: gpu 423 15.1875 · cpu choice 380 15.125 · gap 0.0625 = 1 bf16 quantum(s) of 0.0625
+4B    pp4000      token 42: gpu 1528 20.75 · cpu choice 7920 20.75 · gap 0 = 0 bf16 quantum(s) of 0.125
+4B    pp512       token 0: gpu 27775 24.625 · cpu choice 2064 24.5 · gap 0.125 = 1 bf16 quantum(s) of 0.125

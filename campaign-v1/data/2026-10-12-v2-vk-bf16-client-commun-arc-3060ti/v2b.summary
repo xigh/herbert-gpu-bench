@@ -1,0 +1,54 @@
+V2 on the Arc and the 3060 Ti: herbert-vk-serve 9738be7 against llama-server 08ffba21e / b11564, same client definition as on beast (Anthropic Messages API, streamed, greedy, 128 tokens, no prefix cache), 5 passages x 3 rounds, medians; TTFT ms / decode tok/s.
+
+## Arc 140V (client Python) · 0.8B
+
+| prompt tokens | herbert | llama-vk |
+|---|---|---|
+| 20–21 | 38.95 / 62.58 | 162.49 / 53.84 |
+| 109–111 | 69.90 / 62.90 | 337.19 / 53.76 |
+| 510–511 | 242.99 / 62.17 | 555.04 / 53.64 |
+| 2058–2059 | 1362.28 / 59.67 | 2026.28 / 52.50 |
+| 4105–4107 | 3675.30 / 56.63 | 4303.92 / 50.71 |
+
+herbert TTFT / llama-vk: 24.0% 20.7% 43.8% 67.2% 85.4% · decode herbert / llama-vk: 116.2% 117.0% 115.9% 113.6% 111.7%
+
+## Arc 140V (client Python) · 4B
+
+| prompt tokens | herbert | llama-vk |
+|---|---|---|
+| 20–21 | 127.92 / 12.17 | 580.89 / 11.38 |
+| 109–111 | 382.55 / 12.16 | 1098.88 / 11.38 |
+| 510–511 | 1501.79 / 12.11 | 2301.33 / 11.33 |
+| 2058–2059 | 7004.95 / 11.85 | 8322.29 / 11.22 |
+| 4105–4107 | 17159.59 / 11.64 | 17598.15 / 11.08 |
+
+herbert TTFT / llama-vk: 22.0% 34.8% 65.3% 84.2% 97.5% · decode herbert / llama-vk: 107.0% 106.8% 106.8% 105.6% 105.1%
+
+## RTX 3060 Ti, Windows (client Rust v2-client) · 0.8B
+
+| prompt tokens | herbert | llama-cuda | llama-vk |
+|---|---|---|---|
+| 20–21 | 10.26 / 234.81 | 30.28 / 166.14 | 25.77 / 189.50 |
+| 109–111 | 12.06 / 233.83 | 48.53 / 165.33 | 52.83 / 189.18 |
+| 510–511 | 30.55 / 230.89 | 80.55 / 163.11 | 92.64 / 187.58 |
+| 2058–2059 | 122.11 / 220.73 | 244.58 / 163.20 | 283.09 / 185.48 |
+| 4105–4107 | 246.72 / 207.61 | 441.84 / 161.95 | 523.76 / 181.32 |
+
+herbert TTFT / llama-cuda: 33.9% 24.8% 37.9% 49.9% 55.8% · decode herbert / llama-cuda: 141.3% 141.4% 141.6% 135.3% 128.2%
+
+herbert TTFT / llama-vk: 39.8% 22.8% 33.0% 43.1% 47.1% · decode herbert / llama-vk: 123.9% 123.6% 123.1% 119.0% 114.5%
+
+## RTX 3060 Ti, Windows (client Rust v2-client) · 2B
+
+| prompt tokens | herbert | llama-cuda | llama-vk |
+|---|---|---|---|
+| 20–21 | 17.01 / 104.87 | 36.02 / 93.33 | 38.83 / 94.71 |
+| 109–111 | 22.38 / 104.61 | 60.07 / 93.30 | 70.69 / 94.36 |
+| 510–511 | 66.15 / 103.98 | 122.28 / 92.89 | 137.63 / 93.93 |
+| 2058–2059 | 269.95 / 101.87 | 402.06 / 92.72 | 468.43 / 93.29 |
+| 4105–4107 | 536.52 / 99.10 | 748.17 / 92.10 | 871.11 / 92.62 |
+
+herbert TTFT / llama-cuda: 47.2% 37.3% 54.1% 67.1% 71.7% · decode herbert / llama-cuda: 112.4% 112.1% 111.9% 109.9% 107.6%
+
+herbert TTFT / llama-vk: 43.8% 31.7% 48.1% 57.6% 61.6% · decode herbert / llama-vk: 110.7% 110.9% 110.7% 109.2% 107.0%
+

@@ -1,0 +1,5 @@
+    Finished `release` profile [optimized] target(s) in 4.20s
+== split4
+[turn 1] 759 prompt tokens in 20.961 s (36.2 tok/s) · 63 generated in 17.36 s (3.63 tok/s) · position 822
+== split4simt2
+[turn 1] 759 prompt tokens in 17.654 s (43.0 tok/s) · 63 generated in 17.37 s (3.63 tok/s) · position 822

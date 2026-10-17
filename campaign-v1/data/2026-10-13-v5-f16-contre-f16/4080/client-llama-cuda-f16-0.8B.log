@@ -1,0 +1,5 @@
+llama-cuda-f16 Qwen3.5-0.8B p   10: in [20, 21] · TTFT 12.10 ms · prefill 1678 tok/s (62.3 %) · decode 300.69 tok/s (0.1 %) · out [128] · n=15
+llama-cuda-f16 Qwen3.5-0.8B p  100: in [109, 110, 111] · TTFT 25.07 ms · prefill 4428 tok/s (77.8 %) · decode 300.61 tok/s (0.1 %) · out [128] · n=15
+llama-cuda-f16 Qwen3.5-0.8B p  500: in [510, 511] · TTFT 31.51 ms · prefill 16186 tok/s (41.2 %) · decode 298.18 tok/s (0.2 %) · out [128] · n=15
+llama-cuda-f16 Qwen3.5-0.8B p 2048: in [2058, 2059] · TTFT 86.08 ms · prefill 23908 tok/s (31.8 %) · decode 297.40 tok/s (0.1 %) · out [128] · n=15
+llama-cuda-f16 Qwen3.5-0.8B p 4096: in [4105, 4106, 4107] · TTFT 149.09 ms · prefill 27540 tok/s (25.7 %) · decode 293.69 tok/s (0.2 %) · out [128] · n=15

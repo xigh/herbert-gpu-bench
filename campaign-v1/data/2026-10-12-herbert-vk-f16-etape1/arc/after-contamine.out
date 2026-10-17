@@ -1,0 +1,5 @@
+start · 14:00:36
+build f16 exit 0
+build bf16 exit 0
+probe intel f16 exit 0 ·    f16 conversions: widening 0 / 65536 wrong, rounding 0 / 2097152 wrong
+probe intel bf16 exit 0 ·    bf16 conversions: widening 0 / 65536 wrong, rounding 0 / 20971tokens 0.round 1 · 14:05:39

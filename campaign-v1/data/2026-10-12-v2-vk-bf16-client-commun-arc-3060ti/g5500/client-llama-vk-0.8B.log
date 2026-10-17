@@ -1,0 +1,5 @@
+llama-vk Qwen3.5-0.8B p   10: in {20, 21} · TTFT 25.77 ms · prefill 777 tok/s (35.2 %) · decode 189.50 tok/s (0.9 %) · out {128} · n=15
+llama-vk Qwen3.5-0.8B p  100: in {109, 110, 111} · TTFT 52.83 ms · prefill 2083 tok/s (45.3 %) · decode 189.18 tok/s (0.9 %) · out {128} · n=15
+llama-vk Qwen3.5-0.8B p  500: in {510, 511} · TTFT 92.64 ms · prefill 5508 tok/s (29.2 %) · decode 187.58 tok/s (0.6 %) · out {128} · n=15
+llama-vk Qwen3.5-0.8B p 2048: in {2058, 2059} · TTFT 283.09 ms · prefill 7270 tok/s (90.7 %) · decode 185.48 tok/s (1.0 %) · out {128} · n=15
+llama-vk Qwen3.5-0.8B p 4096: in {4105, 4106, 4107} · TTFT 523.76 ms · prefill 7839 tok/s (67.3 %) · decode 181.32 tok/s (0.7 %) · out {128} · n=15

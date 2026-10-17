@@ -1,0 +1,10 @@
+    Finished `release` profile [optimized] target(s) in 2.61s
+== sdpa
+[ids] 760 6511 314 9338 369 11751 13
+[decoded] "The capital of France is Paris."
+== sdpa32
+[ids] 760 6511 314 9338 369 11751 13
+[decoded] "The capital of France is Paris."
+== default
+[ids] 760 6511 314 9338 369 11751 13
+[decoded] "The capital of France is Paris."

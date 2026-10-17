@@ -1,0 +1,23 @@
+    Finished `release` profile [optimized] target(s) in 12.85s
+2f3ae48
+same 0.8B p1-short: identical
+same 0.8B p2-explain: identical
+same 0.8B p3-long: identical
+same 0.8B p4-xlong: identical
+same 4B p1-short: identical
+same 4B p2-explain: identical
+same 4B p3-long: identical
+same 4B p4-xlong: identical
+0.8B old: loaded in 0.8 s
+0.8B new: loaded in 0.3 s
+0.8B old: loaded in 0.7 s
+0.8B new: loaded in 0.3 s
+0.8B old: loaded in 0.7 s
+0.8B new: loaded in 0.3 s
+4B old: loaded in 4.0 s
+4B new: loaded in 0.7 s
+4B old: loaded in 4.0 s
+4B new: loaded in 0.7 s
+4B old: loaded in 4.0 s
+4B new: loaded in 0.7 s
+ALLDONE

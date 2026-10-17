@@ -1,0 +1,35 @@
+
+## omnibook-arc/p3: p3 (prefill 759 tokens / decode 255 at depth 759, tok/s, median; spread %)
+
+| model | engine | prefill | decode | N |
+|---|---|---|---|---|
+| 0.8B | herbert vk-arc-default | 1 918.1 (6.2) | 60.90 (1.9) | 5 |
+| 0.8B | herbert vk-arc-warm | 2 043.1 (1.2) | 60.92 (0.7) | 5 |
+| 0.8B | llama.cpp vk-arc | 1 425.5 (7.3) | 54.31 (0.6) | 5 |
+| 0.8B | llama.cpp vk-arc-cold | 1 290.4 (8.8) | - (0.0) | 5 |
+| 4B | herbert vk-arc-default | 326.3 (4.8) | 12.03 (1.8) | 5 |
+| 4B | herbert vk-arc-warm | 333.2 (1.1) | 12.03 (0.5) | 5 |
+| 4B | llama.cpp vk-arc | 283.1 (39.9) | 11.37 (3.8) | 5 |
+| 4B | llama.cpp vk-arc-cold | 279.8 (13.9) | - (0.0) | 5 |
+
+## omnibook-arc/p4: p4 (prefill 2880 tokens / decode 255 at depth 2880, tok/s, median; spread %)
+
+| model | engine | prefill | decode | N |
+|---|---|---|---|---|
+| 0.8B | herbert herbert | 1 355.2 (0.5) | 58.21 (1.5) | 5 |
+| 0.8B | llama.cpp vk | 1 204.5 (1.0) | 52.87 (1.0) | 5 |
+| 4B | herbert herbert | 272.2 (0.1) | 11.74 (0.6) | 5 |
+| 4B | llama.cpp vk | 273.0 (17.2) | 11.19 (0.1) | 5 |
+
+## white2-cezanne/p3: p3 (prefill 759 tokens / decode 255 at depth 759, tok/s, median; spread %)
+
+| model | engine | prefill | decode | N |
+|---|---|---|---|---|
+| 0.8B | herbert vk-cezanne-default | 549.6 (0.1) | 22.04 (0.0) | 5 |
+| 0.8B | herbert vk-cezanne-warm | 550.0 (0.1) | 22.04 (0.0) | 5 |
+| 0.8B | llama.cpp vk-cezanne | 436.3 (0.1) | 19.76 (0.0) | 5 |
+| 0.8B | llama.cpp vk-cezanne-cold | 432.6 (0.1) | - (0.0) | 5 |
+| 4B | herbert vk-cezanne-default | 64.3 (3.6) | 4.02 (0.0) | 5 |
+| 4B | herbert vk-cezanne-warm | 64.4 (3.4) | 4.02 (0.0) | 5 |
+| 4B | llama.cpp vk-cezanne | 69.4 (1.8) | 3.88 (0.0) | 5 |
+| 4B | llama.cpp vk-cezanne-cold | 69.2 (0.2) | - (0.0) | 5 |

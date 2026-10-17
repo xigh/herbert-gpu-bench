@@ -1,0 +1,15 @@
+model engine                     128       256       512      1024      2048      4000
+0.8B  herbert-vk (bf16)      26634.1   41797.9   48721.8   56184.9   56006.4   54146.1
+0.8B  llama.cpp CUDA         18800.0   25449.7   29982.7   30351.4   30714.0   30274.9
+0.8B  llama.cpp Vulkan        7171.1   10880.3   12084.0   12056.8   12131.4   11897.3
+0.8B  vLLM (own bench)        9376.3   19131.9   36887.7   53146.5   53438.3   52486.8
+4B    herbert-vk (bf16)       3807.5    6517.6    9381.9   10784.5   10673.6   10441.0
+4B    llama.cpp CUDA          5188.6    7246.3    7832.6    7899.0    7941.1    7769.6
+4B    llama.cpp Vulkan        1805.7    2512.3    2413.5    2420.2    2424.6    2369.1
+4B    vLLM (own bench)        5515.9    8605.4    9790.0   10360.3   10909.4   10778.3
+pp128: 128 prompt tokens
+pp256: 256 prompt tokens
+pp512: 513 prompt tokens
+pp1024: 1024 prompt tokens
+pp2048: 2048 prompt tokens
+pp4000: 4001 prompt tokens

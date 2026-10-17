@@ -1,0 +1,11 @@
+[vulkan] Intel(R) Graphics (LNL) [Intel INTEGRATED_GPU] Vulkan 1.4.335 · subgroup 32 (16..=32) · coopmat true · coop16 true f16 [(8, 16, 16)] · coopmat2 false · driver 0x6800003
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=256 prefill.split=0 rec.slices=16 rec.cols=16 sdpa.split=16 sdpa.prefill=1 rec.chunk=3 rec.pcols=16 rec.pslices=16 rec.vec=0 rec.stage=0 rec.pair=0 conv.cols=32 proj.pad=0 prefill.pipe=0 sdpa.bq=16 sdpa.bk=32 sdpa.qt=1 sdpa.qreg=0 gemm=1 gemm.wave=16 gemm.mt=8 gemm.nt=16 gemm.kt=16 gemm.tm=2 gemm.tn=2 gemm.sgm=2 gemm.sgn=2 gemm.stage=2 gemm.simt=1 gemm.simtk=16 gemm.simtr=0 gemm.mfirst=0 gemm.shapes=0 gemm.pack=0 gemm.direct=0 weights.local=0 weights.ro=0 fuse.norm=1 fuse.swiglu=1 fuse.dn=0 host.poll=0 copy.logits=0
+[vulkan] device memory: type 1 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 2 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×297, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] f16: 4205749760 values, |max| 3.703125, beyond 65504 0, subnormal 20430379 (0.4858 %), rounded to zero 10056 (0.0002 %)
+[loader] qwen3_5_text — hidden 2560, 32 layers, 16 heads / 4 kv × 256, intermediate 9216, vocab 248320, rotary 64, linear k 16×128 v 32×128, tied head true
+[vulkan] 8.02 GiB on the device, 0.5 MiB on the host, KV for 4096 positions, activations for 256 rows
+[vulkan] 37 pipelines emitted and built
+[vulkan] step of 254 operations recorded
+[engine] loaded in 55.7 s, mounted in 0.07 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070

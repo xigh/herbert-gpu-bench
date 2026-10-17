@@ -1,0 +1,20 @@
+[isa] avx2=yes fma=yes avxvnni=no avx512f=no avx512bf16=no → GEMM lanes ymm-no-vnni
+[loader] qwen3_5_text — hidden 2048, 24 layers, 8 heads / 2 kv heads × 256, intermediate 6144, vocab 248320, rotary 64 dims, rope_theta 10000000, tied head true
+[loader] shard 1/1: 632 tensors, 4.24 GiB mapped, 1.6 s
+[loader] skipped, not used by the engine: model.visual.* ×297, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] 24 layers assembled, RoPE tables built, 2.8 s in all
+[loader] bf16 everywhere: 151 matrices packed R16 (3.50 GiB), 6 gated q_proj permuted, no Q4, no cache — linear_attn.in_proj_qkv.weight×18, linear_attn.in_proj_z.weight×18, linear_attn.out_proj.weight×18, lm_head.weight (tied)×1, mlp.down_proj.weight×24, mlp.gate_proj.weight×24, mlp.up_proj.weight×24, self_attn.k_proj.weight×6, self_attn.o_proj.weight×6, self_attn.q_proj.weight×6, self_attn.v_proj.weight×6
+[pool] 12 workers on cpus [-,-,-,-,-,-,-,-,-,-,-,-] · caller = worker 0: yes · spin 500 µs · coordinator spins: yes
+[engine] 3.50 GiB of weights touched in 0.007 s
+[engine] loaded in 3.0 s, mounted in 0.24 s — 8192 positions reserved, prefill program Some((4389695, 304571, 305330)), decode program Some((4388769, 304571, 305330))
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+
+>>> Explain step by step, in about 150 words, why the sky is blue during the day and red at sunset.
+
+[answer]
+During the day, sunlight travels through the atmosphere in all directions. As it hits the air molecules, it scatters shorter wavelengths (blue and violet) more effectively than longer ones (red). Since our eyes are more sensitive to blue, the sky appears blue.
+
+At sunset, the sun is lower on the horizon, causing sunlight to travel through a much thicker layer of atmosphere. This increased path length scatters almost all blue light away from the viewer. The remaining red and orange wavelengths pass through to reach our eyes, creating the vibrant sunset colors.
+[ids] 15542 279 1834 11 37728 33060 1472 279 16078 303 660 17425 13 1577 424 12611 279 3594 33470 11 424 1100 9872 22602 89661 318 11855 321 76990 8 777 13057 1056 4860 5981 318 1114 553 8439 1004 6213 513 777 15739 310 6105 11 279 12515 7701 6105 13 271 1597 41564 11 279 6797 369 4570 383 279 32946 11 13969 37728 310 5640 1472 264 1691 56797 6000 314 16078 13 1061 6946 1752 2984 1100 9872 4409 660 6105 3000 3023 494 279 24890 13 561 9376 2438 321 18016 89661 1440 1472 310 5372 1004 6213 11 6611 279 31883 41564 7736 13
+[decoded] "During the day, sunlight travels through the atmosphere in all directions. As it hits the air molecules, it scatters shorter wavelengths (blue and violet) more effectively than longer ones (red). Since our eyes are more sensitive to blue, the sky appears blue.\n\nAt sunset, the sun is lower on the horizon, causing sunlight to travel through a much thicker layer of atmosphere. This increased path length scatters almost all blue light away from the viewer. The remaining red and orange wavelengths pass through to reach our eyes, creating the vibrant sunset colors."
+[turn 1] 39 prompt tokens in 0.447 s (87.3 tok/s) · 110 generated in 16.71 s (6.58 tok/s) · 0 tool calls · rewrite 0.000 s · position 149

@@ -1,0 +1,6 @@
+ggml_vulkan: Found 2 Vulkan devices:
+ggml_vulkan: 0 = NVIDIA GeForce RTX 4080 (NVIDIA) | uma: 0 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 0 | matrix cores: NV_coopmat2
+ggml_vulkan: 1 = AMD Ryzen 9 9900X 12-Core Processor (RADV RAPHAEL_MENDOCINO) (radv) | uma: 1 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 32 | shared memory: 65536 | int dot: 0 | matrix cores: none
+Available devices:
+  Vulkan0: NVIDIA GeForce RTX 4080 (16376 MiB, 15846 MiB free)
+  Vulkan1: AMD Ryzen 9 9900X 12-Core Processor (RADV RAPHAEL_MENDOCINO) (97474 MiB, 97434 MiB free)

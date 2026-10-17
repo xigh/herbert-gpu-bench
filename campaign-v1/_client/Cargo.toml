@@ -1,0 +1,9 @@
+[package]
+name = "v2-client"
+version = "0.1.0"
+edition = "2021"
+description = "The V2 HTTP client of _v2_http.py, for a machine without Python (g5500)"
+
+[dependencies]
+ureq = "2"
+serde_json = "1"

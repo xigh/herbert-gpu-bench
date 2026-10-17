@@ -1,0 +1,19 @@
+p3 round 1 · 20:59:16
+p3 round 2 · 21:00:16
+p3 round 3 · 21:01:20
+p3 round 4 · 21:02:29
+p3 round 5 · 21:03:39
+p4 round 1 · 21:05:02
+p4 round 2 · 21:06:27
+p4 round 3 · 21:07:55
+p4 round 4 · 21:09:25
+p4 round 5 · 21:10:55
+tokens 0.8B p1-short · 21:11:02
+tokens 0.8B p2-explain · 21:11:15
+tokens 0.8B p3-long · 21:11:42
+tokens 0.8B p4-xlong · 21:12:15
+tokens 2B p1-short · 21:12:25
+tokens 2B p2-explain · 21:12:53
+tokens 2B p3-long · 21:13:52
+tokens 2B p4-xlong · 21:15:05
+ALLDONE-V1-G5500

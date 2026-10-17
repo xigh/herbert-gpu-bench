@@ -1,0 +1,125 @@
+
+## f16ab/beast/ab-nvidia
+
+| model | format | prefill 759 tok/s | decode tok/s | N |
+|---|---|---|---|---|
+| 0.8B | bf16 | 53 952.9 | 339.87 | 3 |
+| 0.8B | f16 | 52 734.9 | 333.07 | 3 |
+| 4B | bf16 | 10 812.2 | 75.46 | 3 |
+| 4B | f16 | 10 399.5 | 74.05 | 3 |
+
+f16 / bf16 0.8B: prefill 97.7 %, decode 98.0 %
+
+f16 / bf16 4B: prefill 96.2 %, decode 98.1 %
+
+cmp-0.8B — first token that differs from the CPU oracle (gap in the GPU's logits):
+  p1-short    · bf16: identical (7/7) · f16: identical (7/7)
+  p2-explain  · bf16: token 15 (gap 0.125) · f16: token 8 (gap 0.046875)
+  p3-long     · bf16: token 172 (gap 0.125) · f16: token 172 (gap 0.03125)
+  p4-xlong    · bf16: token 8 (gap 0.25) · f16: token 8 (gap 0.171875)
+
+cmp-4B — first token that differs from the CPU oracle (gap in the GPU's logits):
+  p1-short    · bf16: identical (7/7) · f16: identical (7/7)
+  p2-explain  · bf16: token 32 (gap 0) · f16: token 23 (gap 0.015625)
+  p3-long     · bf16: token 85 (gap 0.125) · f16: token 162 (gap 0.015625)
+  p4-xlong    · bf16: token 105 (gap 0.125) · f16: token 105 (gap 0.09375)
+
+## f16ab/beast/ab-amd
+
+| model | format | prefill 759 tok/s | decode tok/s | N |
+|---|---|---|---|---|
+| 0.8B | bf16 | 183.2 | 29.64 | 3 |
+| 0.8B | f16 | 181.4 | 29.54 | 3 |
+| 4B | bf16 | 19.8 | 4.64 | 3 |
+| 4B | f16 | 19.7 | 4.73 | 3 |
+
+f16 / bf16 0.8B: prefill 99.0 %, decode 99.7 %
+
+f16 / bf16 4B: prefill 99.5 %, decode 101.9 %
+
+cmp-0.8B — first token that differs from the CPU oracle (gap in the GPU's logits):
+  p1-short    · bf16: identical (7/7) · f16: identical (7/7)
+  p2-explain  · bf16: token 15 (gap 0.125) · f16: token 8 (gap 0.046875)
+  p3-long     · bf16: identical (255/255) · f16: token 172 (gap 0.03125)
+  p4-xlong    · bf16: token 8 (gap 0.25) · f16: token 8 (gap 0.15625)
+
+cmp-4B — first token that differs from the CPU oracle (gap in the GPU's logits):
+  p1-short    · bf16: identical (7/7) · f16: identical (7/7)
+  p2-explain  · bf16: identical (177/177) · f16: identical (177/177)
+  p3-long     · bf16: identical (255/255) · f16: token 162 (gap 0.015625)
+  p4-xlong    · bf16: token 105 (gap 0.125) · f16: token 105 (gap 0.109375)
+
+## f16ab/arc/ab-intel
+
+| model | format | prefill 759 tok/s | decode tok/s | N |
+|---|---|---|---|---|
+| 0.8B | bf16 | 2 041.9 | 60.92 | 3 |
+| 0.8B | f16 | 1 966.0 | 57.20 | 3 |
+| 4B | bf16 | 332.5 | 12.05 | 3 |
+| 4B | f16 | 327.7 | 11.48 | 3 |
+
+f16 / bf16 0.8B: prefill 96.3 %, decode 93.9 %
+
+f16 / bf16 4B: prefill 98.6 %, decode 95.3 %
+
+cmp-0.8B — first token that differs from the CPU oracle (gap in the GPU's logits):
+  p1-short    · bf16: identical (7/7) · f16: identical (7/7)
+  p2-explain  · bf16: token 8 (gap 0.125) · f16: token 8 (gap 0.0625)
+  p3-long     · bf16: token 58 (gap 0) · f16: token 20 (gap 0.125)
+  p4-xlong    · bf16: token 83 (gap 0) · f16: token 83 (gap 0)
+
+cmp-4B — first token that differs from the CPU oracle (gap in the GPU's logits):
+  p1-short    · bf16: identical (7/7) · f16: identical (7/7)
+  p2-explain  · bf16: identical (177/177) · f16: identical (177/177)
+  p3-long     · bf16: token 151 (gap 0) · f16: token 151 (gap 0.015625)
+  p4-xlong    · bf16: token 105 (gap 0.125) · f16: token 105 (gap 0.078125)
+
+## f16ab/white2/ab-nv
+
+| model | format | prefill 759 tok/s | decode tok/s | N |
+|---|---|---|---|---|
+| 0.8B | bf16 | 51 356.7 | 322.20 | 3 |
+| 0.8B | f16 | 49 880.3 | 313.44 | 3 |
+| 4B | bf16 | 10 414.1 | 74.38 | 3 |
+| 4B | f16 | 10 122.8 | 73.27 | 3 |
+
+f16 / bf16 0.8B: prefill 97.1 %, decode 97.3 %
+
+f16 / bf16 4B: prefill 97.2 %, decode 98.5 %
+
+cmp-0.8B — first token that differs from the CPU oracle (gap in the GPU's logits):
+  p1-short    · bf16: identical (7/7) · f16: identical (7/7)
+  p2-explain  · bf16: token 91 (gap 0) · f16: token 8 (gap 0.046875)
+  p3-long     · bf16: token 20 (gap 0.125) · f16: token 20 (gap 0.140625)
+  p4-xlong    · bf16: token 83 (gap 0) · f16: token 83 (gap 0)
+
+cmp-4B — first token that differs from the CPU oracle (gap in the GPU's logits):
+  p1-short    · bf16: identical (7/7) · f16: identical (7/7)
+  p2-explain  · bf16: token 32 (gap 0) · f16: token 23 (gap 0.015625)
+  p3-long     · bf16: token 85 (gap 0.125) · f16: token 151 (gap 0.015625)
+  p4-xlong    · bf16: token 105 (gap 0.125) · f16: token 105 (gap 0.09375)
+
+## f16ab/white2/ab-amd
+
+| model | format | prefill 759 tok/s | decode tok/s | N |
+|---|---|---|---|---|
+| 0.8B | bf16 | 549.7 | 22.04 | 3 |
+| 0.8B | f16 | 544.3 | 22.00 | 3 |
+| 4B | bf16 | 63.8 | 4.02 | 3 |
+| 4B | f16 | 63.1 | 4.02 | 3 |
+
+f16 / bf16 0.8B: prefill 99.0 %, decode 99.8 %
+
+f16 / bf16 4B: prefill 98.9 %, decode 100.0 %
+
+cmp-0.8B — first token that differs from the CPU oracle (gap in the GPU's logits):
+  p1-short    · bf16: identical (7/7) · f16: identical (7/7)
+  p2-explain  · bf16: token 8 (gap 0.125) · f16: token 8 (gap 0.0625)
+  p3-long     · bf16: token 20 (gap 0.125) · f16: token 20 (gap 0.125)
+  p4-xlong    · bf16: token 83 (gap 0) · f16: token 83 (gap 0)
+
+cmp-4B — first token that differs from the CPU oracle (gap in the GPU's logits):
+  p1-short    · bf16: identical (7/7) · f16: identical (7/7)
+  p2-explain  · bf16: identical (177/177) · f16: identical (177/177)
+  p3-long     · bf16: token 85 (gap 0.125) · f16: token 151 (gap 0.03125)
+  p4-xlong    · bf16: token 105 (gap 0.125) · f16: token 105 (gap 0.09375)

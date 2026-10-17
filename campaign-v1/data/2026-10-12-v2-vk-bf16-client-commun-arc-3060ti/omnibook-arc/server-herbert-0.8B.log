@@ -1,0 +1,91 @@
+[vulkan] Intel(R) Graphics (LNL) [Intel INTEGRATED_GPU] Vulkan 1.4.335 · subgroup 32 (16..=32) · coopmat true · bf16 true [(8, 16, 16)] · coopmat2 false · driver 0x6800003
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=256 prefill.split=0 rec.slices=16 rec.cols=16 sdpa.split=16 sdpa.prefill=1 rec.chunk=3 rec.pcols=16 rec.pslices=16 rec.vec=0 rec.stage=0 rec.pair=0 conv.cols=32 proj.pad=0 prefill.pipe=0 sdpa.bq=16 sdpa.bk=32 sdpa.qt=1 sdpa.qreg=0 gemm=1 gemm.wave=16 gemm.mt=8 gemm.nt=16 gemm.kt=16 gemm.tm=2 gemm.tn=2 gemm.sgm=2 gemm.sgn=2 gemm.stage=2 gemm.simt=1 gemm.simtk=16 gemm.simtr=0 gemm.mfirst=0 gemm.shapes=0 gemm.pack=0 gemm.direct=0 weights.local=0 weights.ro=0 fuse.norm=1 fuse.swiglu=1 fuse.dn=0 host.poll=0 copy.logits=0
+[vulkan] device memory: type 1 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 2 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×153, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 1024, 24 layers, 8 heads / 2 kv × 256, intermediate 3584, vocab 248320, rotary 64, linear k 16×128 v 16×128, tied head true
+[vulkan] 1.48 GiB on the device, 0.5 MiB on the host, KV for 4608 positions, activations for 256 rows
+[vulkan] 37 pipelines emitted and built
+[vulkan] step of 192 operations recorded
+[engine] Intel(R) Graphics (LNL) [Intel INTEGRATED_GPU] Vulkan 1.4.335 · subgroup 32 (16..=32) · coopmat true · bf16 true [(8, 16, 16)] · coopmat2 false · driver 0x6800003 · loaded in 4.8 s, mounted in 0.20 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+[serve] listening on http://127.0.0.1:8101/v1/messages
+[request msg_herbert_vk_000001] 20 prompt tokens in 0.0673 s (297.2 tok/s) · 8 generated in 0.112 s (62.54 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000002] 20 prompt tokens in 0.0295 s (677.8 tok/s) · 128 generated in 2.029 s (62.58 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000003] 21 prompt tokens in 0.0296 s (709.2 tok/s) · 128 generated in 2.034 s (62.44 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000004] 20 prompt tokens in 0.0300 s (666.3 tok/s) · 128 generated in 2.030 s (62.56 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000005] 20 prompt tokens in 0.0293 s (683.2 tok/s) · 128 generated in 2.031 s (62.53 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000006] 20 prompt tokens in 0.0293 s (681.8 tok/s) · 128 generated in 2.030 s (62.56 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000007] 20 prompt tokens in 0.0296 s (675.5 tok/s) · 128 generated in 2.030 s (62.55 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000008] 21 prompt tokens in 0.0295 s (711.4 tok/s) · 128 generated in 2.040 s (62.25 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000009] 20 prompt tokens in 0.0298 s (672.2 tok/s) · 128 generated in 2.040 s (62.24 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000010] 20 prompt tokens in 0.0295 s (676.9 tok/s) · 128 generated in 2.016 s (62.99 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000011] 20 prompt tokens in 0.0297 s (672.6 tok/s) · 128 generated in 2.015 s (63.02 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000012] 20 prompt tokens in 0.0297 s (672.9 tok/s) · 128 generated in 2.015 s (63.02 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000013] 21 prompt tokens in 0.0294 s (713.4 tok/s) · 128 generated in 2.006 s (63.32 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000014] 20 prompt tokens in 0.0299 s (667.9 tok/s) · 128 generated in 2.004 s (63.39 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000015] 20 prompt tokens in 0.0295 s (677.6 tok/s) · 128 generated in 2.013 s (63.09 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000016] 20 prompt tokens in 0.0288 s (694.8 tok/s) · 128 generated in 2.013 s (63.08 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000017] 109 prompt tokens in 0.0602 s (1811.3 tok/s) · 8 generated in 0.111 s (63.28 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000018] 109 prompt tokens in 0.0596 s (1828.8 tok/s) · 128 generated in 2.008 s (63.26 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000019] 111 prompt tokens in 0.0592 s (1876.2 tok/s) · 128 generated in 2.020 s (62.89 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000020] 110 prompt tokens in 0.0703 s (1564.0 tok/s) · 128 generated in 2.030 s (62.57 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000021] 110 prompt tokens in 0.0605 s (1817.2 tok/s) · 128 generated in 2.056 s (61.76 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000022] 109 prompt tokens in 0.0610 s (1787.2 tok/s) · 128 generated in 2.019 s (62.91 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000023] 109 prompt tokens in 0.0607 s (1795.8 tok/s) · 128 generated in 2.023 s (62.77 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000024] 111 prompt tokens in 0.0605 s (1835.2 tok/s) · 128 generated in 2.021 s (62.83 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000025] 110 prompt tokens in 0.0609 s (1806.1 tok/s) · 128 generated in 2.019 s (62.92 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000026] 110 prompt tokens in 0.0593 s (1855.0 tok/s) · 128 generated in 2.016 s (63.01 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000027] 109 prompt tokens in 0.0606 s (1799.8 tok/s) · 128 generated in 2.015 s (63.04 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000028] 109 prompt tokens in 0.0592 s (1841.4 tok/s) · 128 generated in 2.020 s (62.88 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000029] 111 prompt tokens in 0.0603 s (1840.8 tok/s) · 128 generated in 2.014 s (63.07 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000030] 110 prompt tokens in 0.0601 s (1831.7 tok/s) · 128 generated in 2.022 s (62.81 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000031] 110 prompt tokens in 0.0600 s (1832.6 tok/s) · 128 generated in 2.019 s (62.90 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000032] 109 prompt tokens in 0.0600 s (1816.4 tok/s) · 128 generated in 2.018 s (62.95 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000033] 510 prompt tokens in 0.2318 s (2200.5 tok/s) · 8 generated in 0.112 s (62.73 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000034] 510 prompt tokens in 0.2296 s (2221.6 tok/s) · 128 generated in 2.038 s (62.32 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000035] 511 prompt tokens in 0.2296 s (2225.3 tok/s) · 128 generated in 2.040 s (62.25 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000036] 510 prompt tokens in 0.2301 s (2216.7 tok/s) · 128 generated in 2.041 s (62.21 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000037] 510 prompt tokens in 0.2308 s (2209.8 tok/s) · 128 generated in 2.053 s (61.85 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000038] 510 prompt tokens in 0.2317 s (2201.6 tok/s) · 128 generated in 2.051 s (61.93 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000039] 510 prompt tokens in 0.2311 s (2206.4 tok/s) · 128 generated in 2.046 s (62.07 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000040] 511 prompt tokens in 0.2326 s (2196.6 tok/s) · 128 generated in 2.059 s (61.69 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000041] 510 prompt tokens in 0.2309 s (2208.3 tok/s) · 128 generated in 2.060 s (61.67 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000042] 510 prompt tokens in 0.2303 s (2215.0 tok/s) · 128 generated in 2.047 s (62.04 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000043] 510 prompt tokens in 0.2296 s (2221.4 tok/s) · 128 generated in 2.036 s (62.37 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000044] 510 prompt tokens in 0.2305 s (2212.3 tok/s) · 128 generated in 2.033 s (62.48 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000045] 511 prompt tokens in 0.2303 s (2218.9 tok/s) · 128 generated in 2.028 s (62.63 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000046] 510 prompt tokens in 0.2321 s (2197.3 tok/s) · 128 generated in 2.043 s (62.16 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000047] 510 prompt tokens in 0.2312 s (2206.0 tok/s) · 128 generated in 2.039 s (62.30 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000048] 510 prompt tokens in 0.2319 s (2199.3 tok/s) · 128 generated in 2.048 s (62.02 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000049] 2058 prompt tokens in 1.3439 s (1531.4 tok/s) · 8 generated in 0.117 s (59.83 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000050] 2058 prompt tokens in 1.3427 s (1532.8 tok/s) · 128 generated in 2.110 s (60.19 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000051] 2059 prompt tokens in 1.3363 s (1540.8 tok/s) · 128 generated in 2.126 s (59.74 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000052] 2058 prompt tokens in 1.3387 s (1537.3 tok/s) · 128 generated in 2.133 s (59.54 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000053] 2058 prompt tokens in 1.3468 s (1528.1 tok/s) · 128 generated in 2.127 s (59.72 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000054] 2058 prompt tokens in 1.3425 s (1533.0 tok/s) · 128 generated in 2.129 s (59.66 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000055] 2058 prompt tokens in 1.3373 s (1538.9 tok/s) · 128 generated in 2.139 s (59.37 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000056] 2059 prompt tokens in 1.3422 s (1534.1 tok/s) · 128 generated in 2.137 s (59.44 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000057] 2058 prompt tokens in 1.3436 s (1531.7 tok/s) · 128 generated in 2.131 s (59.60 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000058] 2058 prompt tokens in 1.3435 s (1531.8 tok/s) · 128 generated in 2.120 s (59.92 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000059] 2058 prompt tokens in 1.3437 s (1531.6 tok/s) · 128 generated in 2.114 s (60.08 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000060] 2058 prompt tokens in 1.3389 s (1537.0 tok/s) · 128 generated in 2.123 s (59.83 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000061] 2059 prompt tokens in 1.3454 s (1530.4 tok/s) · 128 generated in 2.133 s (59.55 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000062] 2058 prompt tokens in 1.3443 s (1530.9 tok/s) · 128 generated in 2.139 s (59.37 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000063] 2058 prompt tokens in 1.3466 s (1528.3 tok/s) · 128 generated in 2.134 s (59.52 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000064] 2058 prompt tokens in 1.3500 s (1524.5 tok/s) · 128 generated in 2.122 s (59.84 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000065] 4106 prompt tokens in 3.6599 s (1121.9 tok/s) · 8 generated in 0.123 s (57.00 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000066] 4106 prompt tokens in 3.6434 s (1127.0 tok/s) · 128 generated in 2.228 s (57.00 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000067] 4107 prompt tokens in 3.6424 s (1127.6 tok/s) · 128 generated in 2.234 s (56.85 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000068] 4105 prompt tokens in 3.6557 s (1122.9 tok/s) · 128 generated in 2.234 s (56.85 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000069] 4106 prompt tokens in 3.6531 s (1124.0 tok/s) · 128 generated in 2.256 s (56.29 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000070] 4106 prompt tokens in 3.6483 s (1125.4 tok/s) · 128 generated in 2.226 s (57.05 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000071] 4106 prompt tokens in 3.6445 s (1126.6 tok/s) · 128 generated in 2.247 s (56.53 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000072] 4107 prompt tokens in 3.6603 s (1122.0 tok/s) · 128 generated in 2.285 s (55.59 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000073] 4105 prompt tokens in 3.6657 s (1119.8 tok/s) · 128 generated in 2.243 s (56.62 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000074] 4106 prompt tokens in 3.6631 s (1120.9 tok/s) · 128 generated in 2.249 s (56.46 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000075] 4106 prompt tokens in 3.6513 s (1124.5 tok/s) · 128 generated in 2.252 s (56.40 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000076] 4106 prompt tokens in 3.6438 s (1126.8 tok/s) · 128 generated in 2.227 s (57.03 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000077] 4107 prompt tokens in 3.6401 s (1128.3 tok/s) · 128 generated in 2.222 s (57.15 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000078] 4105 prompt tokens in 3.6323 s (1130.1 tok/s) · 128 generated in 2.218 s (57.26 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000079] 4106 prompt tokens in 3.6433 s (1127.0 tok/s) · 128 generated in 2.256 s (56.29 tok/s after the first) · max_tokens
+[request msg_herbert_vk_000080] 4106 prompt tokens in 3.6505 s (1124.8 tok/s) · 128 generated in 2.258 s (56.25 tok/s after the first) · max_tokens

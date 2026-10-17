@@ -1,0 +1,10 @@
+0.8B cuda pp exit 0 · 06:31:09
+0.8B cuda tg exit 0 · 06:31:31
+0.8B vk pp exit 0 · 06:31:50
+0.8B vk tg exit 0 · 06:32:12
+_v6-sweep-f16.sh: line 16: 108438 Aborted                 (core dumped) $B -m $g -dev $D -ngl 99 -p 759,2880 -n 0 -b 2048,4096 -ub 256,512,1024,2048 -fa 0,1 -r 5 -o json > $O/$be-$m-pp.json 2> $O/$be-$m-pp.err
+4B cuda pp exit 134 · 06:32:36
+4B cuda tg exit 0 · 06:33:51
+4B vk pp exit 0 · 06:34:35
+4B vk tg exit 0 · 06:35:51
+ALLDONE-V6

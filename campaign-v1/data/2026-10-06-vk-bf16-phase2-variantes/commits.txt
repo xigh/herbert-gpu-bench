@@ -1,0 +1,9 @@
+8d8f199 2026-10-06 12:41:30 +0200 vk: prefill.split — a prefill block in several submissions; bench: vs llama.cpp and vLLM
+4301fb7 2026-10-06 12:09:26 +0200 vk: SIMT GEMM v2, fused norm/SwiGLU matvecs, NV2 tensor-addressing GEMM, device-only weights
+c8e2caf 2026-10-06 11:18:11 +0200 vk: scores buffers Coherent — split-K attention was wrong on RDNA2
+32caa18 2026-10-06 11:10:45 +0200 bench: variants (--tune sets) interleaved in compare.sh and speed.sh
+9d9b2ea 2026-10-06 11:10:45 +0200 vk: phase 2 — per-vendor tuning, profile, batched prefill, cooperative matrices
+f6ce76f 2026-10-06 09:58:10 +0200 engine: Qwen3.5 decode on Vulkan, one recorded command buffer per token
+334215f 2026-10-06 09:58:10 +0200 probe: device report, emitter selftest, read bandwidth, bf16 matvec
+2793157 2026-10-06 09:58:10 +0200 vk: device, memory arena, pipelines
+de72ffb 2026-10-06 09:58:10 +0200 spv: SPIR-V emitter over rspirv, core definitions from herbert-jit-bf16

@@ -1,0 +1,24 @@
+[vulkan] Intel(R) Graphics (LNL) [Intel INTEGRATED_GPU] Vulkan 1.4.335 · subgroup 32 (16..=32) · coopmat true · coop16 true bf16 [(8, 16, 16)] · coopmat2 false · driver 0x6800003
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=256 prefill.split=0 rec.slices=16 rec.cols=16 sdpa.split=16 sdpa.prefill=1 rec.chunk=3 rec.pcols=16 rec.pslices=16 rec.vec=0 rec.stage=0 rec.pair=0 conv.cols=32 proj.pad=0 prefill.pipe=0 sdpa.bq=16 sdpa.bk=32 sdpa.qt=1 sdpa.qreg=0 gemm=1 gemm.wave=16 gemm.mt=8 gemm.nt=16 gemm.kt=16 gemm.tm=2 gemm.tn=2 gemm.sgm=2 gemm.sgn=2 gemm.stage=2 gemm.simt=1 gemm.simtk=16 gemm.simtr=0 gemm.mfirst=0 gemm.shapes=0 gemm.pack=0 gemm.direct=0 weights.local=0 weights.ro=0 fuse.norm=1 fuse.swiglu=1 fuse.dn=0 host.poll=0 copy.logits=0
+[vulkan] device memory: type 1 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 2 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×297, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 2560, 32 layers, 16 heads / 4 kv × 256, intermediate 9216, vocab 248320, rotary 64, linear k 16×128 v 32×128, tied head true
+[vulkan] 8.02 GiB on the device, 0.5 MiB on the host, KV for 4096 positions, activations for 256 rows
+[vulkan] 37 pipelines emitted and built
+[vulkan] step of 254 operations recorded
+[engine] loaded in 35.9 s, mounted in 0.60 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+
+>>> What is the capital of France? Answer in one sentence.
+[top 0] 760:27.5 57590:20 47358:17.125 561:16.75 2665:15.375
+The[top 1] 6511:30.625 1428:17.125 5145:17.125 17828:17 3177:16.375
+ capital[top 2] 314:31.875 3177:21.875 321:18.125 9338:15.75 318:15.5625
+ of[top 3] 9338:33.25 279:21.625 47358:19.125 8323:19 108644:17.5
+ France[top 4] 369:29.5 11751:17.375 11:17.25 318:16.5 557:16
+ is[top 5] 11751:28.75 57590:18.5 279:17.625 109705:17.5 2972:17.25
+ Paris[top 6] 13:28.5 11:19.25 248046:18.5 318:16.5 26:14.6875
+.[top 7] 248046:28.25 271:17.75 318:16.625 198:16 10838:13.125
+
+[ids] 760 6511 314 9338 369 11751 13
+[decoded] "The capital of France is Paris."
+[turn 1] 24 prompt tokens in 0.310 s (77.5 tok/s) · 7 generated in 1.28 s (5.47 tok/s) · position 31

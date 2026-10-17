@@ -1,0 +1,25 @@
+Mon Oct 12 07:18:34 UTC 2026
+ 09:18:34 up 9 min,  2 users,  load average: 4.07, 3.82, 1.79
+2f3ae48
+08ffba21e 2026-10-12 08:00:26 +0200
+11564
+ggml_vulkan: Found 2 Vulkan devices:
+ggml_vulkan: 0 = AMD Radeon Graphics (RADV RENOIR) (radv) | uma: 1 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 64 | shared memory: 65536 | int dot: 0 | matrix cores: none
+ggml_vulkan: 1 = NVIDIA GeForce RTX 4080 (NVIDIA) | uma: 0 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 0 | matrix cores: KHR_coopmat
+Available devices:
+  Vulkan0: AMD Radeon Graphics (RADV RENOIR) (66431 MiB, 66103 MiB free)
+  Vulkan1: NVIDIA GeForce RTX 4080 (16376 MiB, 15918 MiB free)
+	apiVersion         = 1.4.318
+	deviceName         = AMD Radeon Graphics (RADV RENOIR)
+	driverName         = radv
+	driverInfo         = Mesa 25.2.8-0ubuntu0.24.04.2
+	apiVersion         = 1.4.329
+	deviceName         = NVIDIA GeForce RTX 4080
+	driverName         = NVIDIA
+	driverInfo         = 595.91.07
+	apiVersion         = 1.4.318
+	deviceName         = llvmpipe (LLVM 20.1.2, 256 bits)
+	driverName         = llvmpipe
+	driverInfo         = Mesa 25.2.8-0ubuntu0.24.04.2 (LLVM 20.1.2)
+7.0.0-38-generic
+llama.cpp device for 'RENOIR': Vulkan0

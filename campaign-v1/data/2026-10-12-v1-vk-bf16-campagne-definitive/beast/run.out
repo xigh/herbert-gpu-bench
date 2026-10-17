@@ -1,0 +1,63 @@
+T · 07:17:10
+T 0.8B p1-short exit 0
+T 0.8B p2-explain exit 0
+T 0.8B p3-long exit 0
+T 0.8B p4-xlong exit 0
+T 0.8B pp1024 exit 0
+T 0.8B pp128 exit 0
+T 0.8B pp2048 exit 0
+T 0.8B pp256 exit 0
+T 0.8B pp4000 exit 0
+T 0.8B pp512 exit 0
+T 4B p1-short exit 0
+T 4B p2-explain exit 0
+T 4B p3-long exit 0
+T 4B p4-xlong exit 0
+T 4B pp1024 exit 0
+T 4B pp128 exit 0
+T 4B pp2048 exit 0
+T 4B pp256 exit 0
+T 4B pp4000 exit 0
+T 4B pp512 exit 0
+P · 07:18:42
+P herbert round 1
+P herbert round 2
+P herbert round 3
+P herbert round 4
+P herbert round 5
+P llama 0.8B
+P llama 4B
+P vllm 0.8B pp1 exit 0
+P vllm 0.8B pp16 exit 0
+P vllm 0.8B pp64 exit 0
+P vllm 0.8B pp128 exit 0
+P vllm 0.8B pp256 exit 0
+P vllm 0.8B pp512 exit 0
+P vllm 0.8B pp1024 exit 0
+P vllm 0.8B pp2048 exit 0
+P vllm 0.8B pp4000 exit 0
+P vllm 4B pp1 exit 0
+P vllm 4B pp16 exit 0
+P vllm 4B pp64 exit 0
+P vllm 4B pp128 exit 0
+P vllm 4B pp256 exit 0
+P vllm 4B pp512 exit 0
+P vllm 4B pp1024 exit 0
+P vllm 4B pp2048 exit 0
+P vllm 4B pp4000 exit 0
+D3 · 07:36:45
+D4 · 07:45:06
+D4 round 1
+D4 round 2
+D4 round 3
+D4 round 4
+D4 round 5
+D4 vllm 0.8B out255 exit 0
+D4 vllm 0.8B out1 exit 0
+D4 vllm 4B out255 exit 0
+D4 vllm 4B out1 exit 0
+Q · 07:52:58
+Q 0.8B
+Q 4B
+R · 07:55:26
+ALLDONE-V1-BEAST

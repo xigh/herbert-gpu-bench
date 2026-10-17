@@ -1,0 +1,12 @@
+start · 14:26:59
+build f16 exit 0
+build bf16 exit 0
+probe nvidia f16 exit 0 ·    coopmat2: workgroupScope yes · flexibleDimensions yes · reductions yes · conversions yes · perElementOperations yes · tensorAddressing yes · blockLoads yes
+   f16 conversions: widening 0 / 65536 wrong, rounding 0 / 2097152 wrong
+probe nvidia bf16 exit 0 ·    coopmat2: workgroupScope yes · flexibleDimensions yes · reductions yes · conversions yes · perElementOperations yes · tensorAddressing yes · blockLoads yes
+   bf16 conversions: widening 0 / 65536 wrong, rounding 0 / 2097152 wrong
+probe amd f16 exit 0 ·    coopmat2: workgroupScope yes · flexibleDimensions yes · reductions yes · conversions yes · perElementOperations yes · tensorAddressing yes · blockLoads yes
+   f16 conversions: widening 0 / 65536 wrong, rounding 0 / 2097152 wrong
+probe amd bf16 exit 0 ·    coopmat2: workgroupScope yes · flexibleDimensions yes · reductions yes · conversions yes · perElementOperations yes · tensorAddressing yes · blockLoads yes
+   bf16 conversions: widening 0 / 65536 wrong, rounding 0 / 2097152 wrong
+ALLDONE-AFTER

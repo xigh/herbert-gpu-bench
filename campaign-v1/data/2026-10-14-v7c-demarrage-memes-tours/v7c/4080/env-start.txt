@@ -1,0 +1,7 @@
+Wed Oct 14 12:46:29 UTC 2026
+7.0.0-38-generic
+2ac926d
+08ffba21e 2026-10-12 08:00:26 +0200
+llama.cpp Vulkan device Vulkan1
+name, driver_version, clocks.current.sm [MHz], clocks.current.memory [MHz], pstate
+NVIDIA GeForce RTX 4080, 595.99.02, 2805 MHz, 10801 MHz, P2

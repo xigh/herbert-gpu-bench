@@ -1,0 +1,40 @@
+Mon Oct 12 22:50:31 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 616.92                 KMD Version: 616.92        CUDA UMD Version: 13.4     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3060 Ti   WDDM  |   00000000:01:00.0  On |                  N/A |
+| 30%   38C    P8             21W /  200W |    5375MiB /   8192MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            1248    C+G   ...8bbwe\PhoneExperienceHost.exe      N/A      |
+|    0   N/A  N/A            1664    C+G   C:\Windows\System32\dwm.exe           N/A      |
+|    0   N/A  N/A            2260      C   ...task\runtime\llama-server.exe      N/A      |
+|    0   N/A  N/A            3116    C+G   ...2txyewy\CrossDeviceResume.exe      N/A      |
+|    0   N/A  N/A            6172    C+G   ...indows\System32\ShellHost.exe      N/A      |
+|    0   N/A  N/A            7092    C+G   C:\Windows\explorer.exe               N/A      |
+|    0   N/A  N/A            8520    C+G   ..._cw5n1h2txyewy\SearchHost.exe      N/A      |
+|    0   N/A  N/A            8544    C+G   ...y\StartMenuExperienceHost.exe      N/A      |
+|    0   N/A  N/A            9740    C+G   ...xyewy\ShellExperienceHost.exe      N/A      |
+|    0   N/A  N/A           11128    C+G   ....0.4258.62\msedgewebview2.exe      N/A      |
+|    0   N/A  N/A           12440    C+G   ...)\GOG Galaxy\GalaxyClient.exe      N/A      |
+|    0   N/A  N/A           13320    C+G   ...xy Notifications Renderer.exe      N/A      |
++-----------------------------------------------------------------------------------------+
+OS Version:                    10.0.26300 N/A Build 26300
+System Boot Time:              10/12/2026, 10:48:09 PM
+
+Folder: \
+HostName:      G5500
+TaskName:      \llama-task
+Next Run Time: N/A
+Status:        Running
+Logon Mode:    Interactive/Background

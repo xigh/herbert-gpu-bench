@@ -1,0 +1,38 @@
+[vulkan] NVIDIA GeForce RTX 4080 [NVIDIA DISCRETE_GPU] Vulkan 1.4.329 · subgroup 32 (32..=32) · coopmat true · bf16 true [(16, 16, 16)] · coopmat2 true · driver 0x94d6c1c0
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=1024 prefill.split=0 rec.slices=8 rec.cols=32 sdpa.split=8 sdpa.prefill=2 rec.chunk=4 rec.pcols=16 rec.pslices=16 rec.vec=1 rec.stage=0 rec.pair=0 conv.cols=32 proj.pad=64 prefill.pipe=3 sdpa.bq=16 sdpa.bk=32 sdpa.qt=1 sdpa.qreg=1 gemm=2 gemm.wave=32 gemm.mt=64 gemm.nt=64 gemm.kt=64 gemm.tm=1 gemm.tn=1 gemm.sgm=8 gemm.sgn=1 gemm.stage=0 gemm.simt=1 gemm.simtk=16 gemm.simtr=0 gemm.mfirst=1 gemm.shapes=2 gemm.pack=0 gemm.direct=0 weights.local=0 fuse.norm=1 fuse.swiglu=1 fuse.dn=0 host.poll=0 copy.logits=0
+[vulkan] device memory: type 4 heap 0 (16.0 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 3 heap 1 (139.8 GiB) HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×153, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 1024, 24 layers, 8 heads / 2 kv × 256, intermediate 3584, vocab 248320, rotary 64, linear k 16×128 v 16×128, tied head true
+[vulkan] 1.54 GiB on the device, 0.5 MiB on the host, KV for 4096 positions, activations for 1024 rows
+[vulkan] 38 pipelines emitted and built
+[vulkan] step of 192 operations recorded
+[engine] loaded in 0.7 s, mounted in 0.02 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+
+>>> Here are my notes on a hybrid language model, repeated as I took them during several meetings.
+
+Meeting 1: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 2: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 3: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 4: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 5: The GatedDeltaNet layer keeps a recur
+Based on the repeated notes you provided, it appears there is a slight inconsistency in the text between **Meeting 1** and **Meeting 5**.
+
+In **Meeting 1**, the text explicitly states: *"The query then reads the **updated state**."*
+However, in **Meeting 5**, the text continues: *"The GatedDeltaNet layer keeps a recur..."* (which is cut off, but the context implies the same action).
+
+Given that the core mechanism described in the first meeting is identical to the second, third, fourth, and fifth meetings, the most logical conclusion is that **Meeting 5** is a continuation of the same process described in Meeting 1.
+
+Here is the corrected and clarified version of your notes, correcting the typo in Meeting 5 and clarifying the specific mechanism described in Meeting 1:
+
+### Corrected Notes: The GatedDeltaNet Layer
+
+**Core Mechanism:**
+The GatedDeltaNet layer maintains a
+[ids] 27775 383 279 11173 8129 488 3766 11 424 7701 1017 369 264 7856 92824 303 279 1414 1881 2972 62394 220 16 332 321 2972 62394 220 20 159034 271 623 2972 62394 220 16 93868 279 1414 20335 5134 25 88064 760 3134 1179 15339 279 2972 11431 1528 332 1149 9 198 10883 11 303 2972 62394 220 20 93868 279 1414 9257 25 88064 760 469 639 19661 6738 6000 13205 264 61400 20564 9 318 7949 369 3799 974 11 694 279 2193 23197 279 1788 1852 553 271 21365 421 279 6007 16456 7246 303 279 1118 6236 369 18922 310 279 2018 11 4688 11 11400 11 321 17175 15782 11 279 1379 19214 16198 369 421 2972 62394 220 20 332 369 264 39811 314 279 1788 1817 7246 303 28107 220 16 13 271 8160 369 279 34773 321 62584 2243 314 678 8129 11 78571 279 82170 303 28107 220 20 321 18905 7520 279 3050 16456 7246 303 28107 220 16 25 271 13962 38643 290 17529 25 561 469 639 19661 6738 22028 271 332 5218 26898 2074 64700 198 760 469 639 19661 6738 6000 30941
+[decoded] "Based on the repeated notes you provided, it appears there is a slight inconsistency in the text between **Meeting 1** and **Meeting 5**.\n\nIn **Meeting 1**, the text explicitly states: *\"The query then reads the **updated state**.\"*\nHowever, in **Meeting 5**, the text continues: *\"The GatedDeltaNet layer keeps a recur...\"* (which is cut off, but the context implies the same action).\n\nGiven that the core mechanism described in the first meeting is identical to the second, third, fourth, and fifth meetings, the most logical conclusion is that **Meeting 5** is a continuation of the same process described in Meeting 1.\n\nHere is the corrected and clarified version of your notes, correcting the typo in Meeting 5 and clarifying the specific mechanism described in Meeting 1:\n\n### Corrected Notes: The GatedDeltaNet Layer\n\n**Core Mechanism:**\nThe GatedDeltaNet layer maintains"
+[turn 1] 513 prompt tokens in 0.011 s (48191.9 tok/s) · 199 generated in 0.59 s (336.06 tok/s) · position 712

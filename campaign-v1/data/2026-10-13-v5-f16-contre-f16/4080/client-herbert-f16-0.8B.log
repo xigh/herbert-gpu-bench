@@ -1,0 +1,5 @@
+herbert-f16 Qwen3.5-0.8B p   10: in [20, 21] · TTFT 6.34 ms · prefill 3164 tok/s (8.0 %) · decode 352.11 tok/s (4.4 %) · out [128] · n=15
+herbert-f16 Qwen3.5-0.8B p  100: in [109, 110, 111] · TTFT 7.26 ms · prefill 15159 tok/s (30.9 %) · decode 353.95 tok/s (8.4 %) · out [128] · n=15
+herbert-f16 Qwen3.5-0.8B p  500: in [510, 511] · TTFT 13.36 ms · prefill 38253 tok/s (11.1 %) · decode 348.46 tok/s (6.6 %) · out [128] · n=15
+herbert-f16 Qwen3.5-0.8B p 2048: in [2058, 2059] · TTFT 45.42 ms · prefill 45313 tok/s (7.6 %) · decode 332.31 tok/s (1.1 %) · out [128] · n=15
+herbert-f16 Qwen3.5-0.8B p 4096: in [4105, 4106, 4107] · TTFT 88.74 ms · prefill 46281 tok/s (3.3 %) · decode 307.22 tok/s (3.6 %) · out [128] · n=15

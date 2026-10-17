@@ -1,0 +1,7 @@
+Mon Oct 12 09:38:42 AM UTC 2026
+7.0.0-31-generic
+9738be7
+08ffba21e 2026-10-12 08:00:26 +0200
+Available devices:
+  Vulkan0: Intel(R) Graphics (LNL) (23399 MiB, 17115 MiB free)
+llama device Vulkan0

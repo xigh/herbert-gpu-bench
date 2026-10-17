@@ -1,0 +1,4 @@
+Mon, Oct 12, 2026  9:55:40 AM
+9738be7 
+name, driver_version, clocks.current.sm [MHz], clocks.current.memory [MHz], pstate
+NVIDIA GeForce RTX 3060 Ti, 591.86, 1920 MHz, 6801 MHz, P2

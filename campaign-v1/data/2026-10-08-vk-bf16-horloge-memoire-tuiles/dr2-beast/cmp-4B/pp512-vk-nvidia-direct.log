@@ -1,0 +1,34 @@
+[vulkan] NVIDIA GeForce RTX 4080 [NVIDIA DISCRETE_GPU] Vulkan 1.4.329 · subgroup 32 (32..=32) · coopmat true · bf16 true [(16, 16, 16)] · coopmat2 true · driver 0x94d6c1c0
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=1024 prefill.split=0 rec.slices=8 rec.cols=32 sdpa.split=8 sdpa.prefill=2 rec.chunk=4 rec.pcols=16 rec.pslices=16 rec.vec=1 rec.stage=0 rec.pair=0 conv.cols=32 proj.pad=64 prefill.pipe=3 sdpa.bq=16 sdpa.bk=32 sdpa.qt=1 sdpa.qreg=1 gemm=2 gemm.wave=32 gemm.mt=64 gemm.nt=64 gemm.kt=64 gemm.tm=1 gemm.tn=1 gemm.sgm=8 gemm.sgn=1 gemm.stage=0 gemm.simt=1 gemm.simtk=16 gemm.simtr=0 gemm.mfirst=1 gemm.shapes=2 gemm.pack=0 gemm.direct=1 weights.local=0 fuse.norm=1 fuse.swiglu=1 fuse.dn=0 host.poll=0 copy.logits=0
+[vulkan] device memory: type 4 heap 0 (16.0 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 3 heap 1 (139.8 GiB) HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×297, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 2560, 32 layers, 16 heads / 4 kv × 256, intermediate 9216, vocab 248320, rotary 64, linear k 16×128 v 32×128, tied head true
+[vulkan] 8.15 GiB on the device, 0.5 MiB on the host, KV for 4096 positions, activations for 1024 rows
+[vulkan] 38 pipelines emitted and built
+[vulkan] step of 254 operations recorded
+[engine] loaded in 4.0 s, mounted in 0.02 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+
+>>> Here are my notes on a hybrid language model, repeated as I took them during several meetings.
+
+Meeting 1: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 2: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 3: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 4: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 5: The GatedDeltaNet layer keeps a recur
+Based on the notes you provided, it appears you are describing a novel architecture for a hybrid language model that combines **recurrent state management** with **standard attention mechanisms**. The repetition of Meetings 1–4 suggests you are refining the core definition of the **GatedDeltaNet** layer before moving to further details in Meeting 5.
+
+Here is a structured synthesis of the architecture described so far, clarifying the mechanics and the alternating block structure:
+
+### 1. Core Component: GatedDeltaNet Layer
+This layer replaces the traditional Key-Value (KV) cache with a **recurrent state** specific to each value head. It operates as follows at every position $t$:
+
+*   **State Decay**: The recurrent state $S_t$ decays by a learned factor $\alpha$ (where $0 < \alpha < 1$).
+    *   *Mathematical intuition*: $S_t \leftarrow \alpha \cdot S_{t-1
+[ids] 27775 383 279 8129 488 3766 11 424 7701 488 513 21988 264 11183 17120 364 264 24197 3992 1558 421 31341 2972 2670 921 1528 6044 332 440 2972 19654 6326 23038 159034 561 51623 314 82627 220 16 4006 19 12846 488 513 70696 279 6007 7044 314 279 2972 38 639 19661 6738 332 6000 1518 6992 310 4473 3447 303 28107 220 20 13 271 8160 369 264 31838 37589 314 279 17120 7246 748 2944 11 18905 7520 279 28079 321 279 69905 2424 5759 25 271 13962 220 16 13 9237 5403 25 469 639 19661 6738 22028 198 1919 6000 39356 279 8343 5141 12 1094 318 79852 8 6297 440 264 2972 2670 921 1528 332 3050 310 1754 869 1901 13 1049 25224 430 10695 506 1396 2234 393 83 60439 271 9 256 2972 1349 93932 92217 561 61911 1528 393 50 516 3 1566 912 539 264 9218 7911 56014 6918 3 318 2777 393 15 361 1088 6918 361 220 16 3 553 198 262 348 256 348 8549 11890 278 54361 77340 393 50 516 1088 2282 5855 1088 6918 1088 49142 326 14717 83 12
+[decoded] "Based on the notes you provided, it appears you are describing a novel architecture for a hybrid language model that combines **recurrent state management** with **standard attention mechanisms**. The repetition of Meetings 1–4 suggests you are refining the core definition of the **GatedDeltaNet** layer before moving to further details in Meeting 5.\n\nHere is a structured synthesis of the architecture described so far, clarifying the mechanics and the alternating block structure:\n\n### 1. Core Component: GatedDeltaNet Layer\nThis layer replaces the traditional Key-Value (KV) cache with a **recurrent state** specific to each value head. It operates as follows at every position $t$:\n\n*   **State Decay**: The recurrent state $S_t$ decays by a learned factor $\\alpha$ (where $0 < \\alpha < 1$).\n    *   *Mathematical intuition*: $S_t \\leftarrow \\alpha \\cdot S_{t-"
+[turn 1] 513 prompt tokens in 0.052 s (9790.4 tok/s) · 199 generated in 2.63 s (75.53 tok/s) · position 712

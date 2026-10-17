@@ -1,0 +1,5 @@
+herbert Qwen3.5-4B p   10: in [20, 21] · TTFT 127.92 ms · prefill 157 tok/s (9.0 %) · decode 12.17 tok/s (0.6 %) · out [128] · n=15
+herbert Qwen3.5-4B p  100: in [109, 110, 111] · TTFT 382.55 ms · prefill 288 tok/s (7.2 %) · decode 12.16 tok/s (0.2 %) · out [128] · n=15
+herbert Qwen3.5-4B p  500: in [510, 511] · TTFT 1501.79 ms · prefill 340 tok/s (0.5 %) · decode 12.11 tok/s (0.2 %) · out [128] · n=15
+herbert Qwen3.5-4B p 2048: in [2058, 2059] · TTFT 7004.95 ms · prefill 294 tok/s (0.4 %) · decode 11.85 tok/s (0.5 %) · out [128] · n=15
+herbert Qwen3.5-4B p 4096: in [4105, 4106, 4107] · TTFT 17159.59 ms · prefill 239 tok/s (0.5 %) · decode 11.64 tok/s (0.3 %) · out [128] · n=15

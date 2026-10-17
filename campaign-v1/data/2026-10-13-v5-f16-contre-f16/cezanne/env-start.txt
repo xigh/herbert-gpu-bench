@@ -1,0 +1,17 @@
+Tue Oct 13 05:22:51 UTC 2026
+7.0.0-38-generic
+cc51363
+08ffba21e 2026-10-12 08:00:26 +0200
+ggml_vulkan: Found 1 Vulkan devices:
+ggml_vulkan: 0 = AMD Radeon Graphics (RADV RENOIR) (radv) | uma: 1 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 64 | shared memory: 65536 | int dot: 0 | matrix cores: none
+Available devices:
+  Vulkan0: AMD Radeon Graphics (RADV RENOIR) (66431 MiB, 66170 MiB free)
+llama.cpp Vulkan device: Vulkan0
+Failed to initialize NVML: Driver/library version mismatch
+NVML library version: 595.99
+14a8509c8fef0156d0ddbd40b6ef321dd92749184367501f35d0b28ad5eb3c92  /home/zexigh/herbert-vk-f16-cc51363/target-bf16/release/herbert-vk-chat
+7b427eba09b6617d1fbf9d0b0879c1acacfeab3c58b556bbf84bd3836578eaf4  /home/zexigh/herbert-vk-f16-cc51363/target/release/herbert-vk-chat
+56946636054d83897029b0cd86cb1b0eb9cb888a9b732210a6447b649582fdf7  /home/zexigh/herbert-vk-f16-cc51363/target-bf16/release/herbert-vk-serve
+e0208b94fe327bd74ea09b77607c2fa90cd837380f12260489601320772778a9  /home/zexigh/herbert-vk-f16-cc51363/target/release/herbert-vk-serve
+b90615eef3120806e69b9fe5eaa23527ed1510b8d8dfcd7eb0ed3f06a305ae39  /home/zexigh/gguf/Qwen3.5-0.8B-F16.gguf
+21dbc382f411fd30ce027ceaa406c458f0b21dc605a53280050b03da09acc429  /home/zexigh/gguf/Qwen3.5-4B-F16.gguf

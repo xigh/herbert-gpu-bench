@@ -1,0 +1,5 @@
+vllm Qwen3.5-0.8B p   10: in [20, 21] · TTFT 18.92 ms · prefill 1073 tok/s (15.7 %) · decode 353.88 tok/s (0.3 %) · out [128] · n=15
+vllm Qwen3.5-0.8B p  100: in [109, 110, 111] · TTFT 19.04 ms · prefill 5743 tok/s (6.5 %) · decode 354.94 tok/s (0.1 %) · out [128] · n=15
+vllm Qwen3.5-0.8B p  500: in [510, 511] · TTFT 20.25 ms · prefill 25190 tok/s (14.2 %) · decode 354.73 tok/s (0.4 %) · out [128] · n=15
+vllm Qwen3.5-0.8B p 2048: in [2058, 2059] · TTFT 46.17 ms · prefill 44599 tok/s (9.2 %) · decode 349.35 tok/s (0.7 %) · out [128] · n=15
+vllm Qwen3.5-0.8B p 4096: in [4105, 4106, 4107] · TTFT 87.16 ms · prefill 47111 tok/s (4.1 %) · decode 337.36 tok/s (0.8 %) · out [128] · n=15

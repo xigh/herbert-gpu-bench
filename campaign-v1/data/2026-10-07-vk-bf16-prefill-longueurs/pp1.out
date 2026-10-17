@@ -1,0 +1,20 @@
+herbert round 1 ·  10:41:43 up 13:05,  2 users,  load average: 0.61, 0.42, 0.34
+herbert round 2 ·  10:42:19 up 13:05,  2 users,  load average: 0.64, 0.46, 0.36
+herbert round 3 ·  10:42:56 up 13:06,  2 users,  load average: 0.80, 0.52, 0.39
+herbert round 4 ·  10:43:31 up 13:07,  2 users,  load average: 0.89, 0.58, 0.41
+herbert round 5 ·  10:44:08 up 13:07,  2 users,  load average: 0.94, 0.63, 0.43
+llama 0.8B done ·  10:44:53 up 13:08,  2 users,  load average: 0.84, 0.65, 0.45
+llama 4B done ·  10:45:24 up 13:08,  2 users,  load average: 0.70, 0.64, 0.46
+vllm 0.8B pp128 exit 0
+vllm 0.8B pp256 exit 0
+vllm 0.8B pp512 exit 0
+vllm 0.8B pp1024 exit 0
+vllm 0.8B pp2048 exit 0
+vllm 0.8B pp4000 exit 0
+vllm 4B pp128 exit 0
+vllm 4B pp256 exit 0
+vllm 4B pp512 exit 0
+vllm 4B pp1024 exit 0
+vllm 4B pp2048 exit 0
+vllm 4B pp4000 exit 0
+ALLDONE-PP1

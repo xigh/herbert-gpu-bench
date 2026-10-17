@@ -1,0 +1,8 @@
+== gemm_coop_1024x7168_bf16_t16x16x16_2x2_2x2_sg16.spv
+error: line 7: Invalid capability operand: 5116
+== gemm_coop_1024x7168_bf16_t16x16x16_2x2_2x2_sg32.spv
+error: line 7: Invalid capability operand: 5116
+== gemm_coop_1024x8224_f32_t8x16x16_2x2_2x2_sg16.spv
+error: line 7: Invalid capability operand: 5116
+== gemm_coop_1024x8224_f32_t8x16x16_2x2_2x2_sg32.spv
+error: line 7: Invalid capability operand: 5116

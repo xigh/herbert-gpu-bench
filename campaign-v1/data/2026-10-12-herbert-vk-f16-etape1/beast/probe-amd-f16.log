@@ -1,0 +1,107 @@
+
+== device 0: AMD Ryzen 9 9900X 12-Core Processor (RADV RAPHAEL_MENDOCINO) [AMD INTEGRATED_GPU]
+   Vulkan 1.4.318 · driver 0x6402008 · vendor 0x1002 device 0x13c0
+   driver: radv Mesa 25.2.8-0ubuntu0.24.04.2
+   subgroup: default 64 · min 32 max 64 · required stages COMPUTE | TASK_EXT | MESH_EXT · ops BASIC | VOTE | ARITHMETIC | BALLOT | SHUFFLE | SHUFFLE_RELATIVE | CLUSTERED | QUAD | ROTATE_KHR | ROTATE_CLUSTERED_KHR
+   limits: shared 65536 B · invocations 1024 · workgroup size [1024, 1024, 1024] · groups [4294967295, 65535, 65535] · storage range 4095 MiB · offset align 4 · timestamp period 10 ns
+   extensions: VK_KHR_shader_bfloat16 no · VK_KHR_cooperative_matrix no · VK_NV_cooperative_matrix2 no · VK_KHR_push_descriptor yes · VK_EXT_subgroup_size_control yes · VK_KHR_shader_float16_int8 yes · VK_KHR_16bit_storage yes · VK_KHR_shader_integer_dot_product yes · VK_KHR_shader_subgroup_extended_types yes · VK_KHR_maintenance5 yes · VK_EXT_memory_budget yes
+   features: shaderInt16 yes · storageBuffer16BitAccess yes · shaderFloat16 yes · shaderInt8 yes · subgroupSizeControl yes · computeFullSubgroups yes · shaderSubgroupExtendedTypes yes
+   heap 0: 31.73 GiB  — types 2:HOST_VISIBLE | HOST_COHERENT 5:HOST_VISIBLE | HOST_COHERENT | HOST_CACHED 6:HOST_VISIBLE | HOST_COHERENT | HOST_CACHED 8:HOST_VISIBLE | HOST_COHERENT | DEVICE_COHERENT_AMD | DEVICE_UNCACHED_AMD 10:HOST_VISIBLE | HOST_COHERENT | HOST_CACHED | DEVICE_COHERENT_AMD | DEVICE_UNCACHED_AMD
+   heap 1: 63.46 GiB DEVICE_LOCAL — types 0:DEVICE_LOCAL 1:DEVICE_LOCAL 3:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT 4:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT 7:DEVICE_LOCAL | DEVICE_COHERENT_AMD | DEVICE_UNCACHED_AMD 9:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | DEVICE_COHERENT_AMD | DEVICE_UNCACHED_AMD
+
+== device 1: NVIDIA GeForce RTX 4080 [NVIDIA DISCRETE_GPU]
+   Vulkan 1.4.329 · driver 0x94d8c080 · vendor 0x10de device 0x2704
+   driver: NVIDIA 595.99.02
+   subgroup: default 32 · min 32 max 32 · required stages VERTEX | TESSELLATION_CONTROL | TESSELLATION_EVALUATION | GEOMETRY | FRAGMENT | COMPUTE | RAYGEN_KHR | ANY_HIT_KHR | CLOSEST_HIT_KHR | MISS_KHR | INTERSECTION_KHR | CALLABLE_KHR | TASK_EXT | MESH_EXT · ops BASIC | VOTE | ARITHMETIC | BALLOT | SHUFFLE | SHUFFLE_RELATIVE | CLUSTERED | QUAD | PARTITIONED_NV | ROTATE_KHR | ROTATE_CLUSTERED_KHR
+   limits: shared 49152 B · invocations 1024 · workgroup size [1024, 1024, 64] · groups [2147483647, 65535, 65535] · storage range 4095 MiB · offset align 16 · timestamp period 1 ns
+   extensions: VK_KHR_shader_bfloat16 yes · VK_KHR_cooperative_matrix yes · VK_NV_cooperative_matrix2 yes · VK_KHR_push_descriptor yes · VK_EXT_subgroup_size_control yes · VK_KHR_shader_float16_int8 yes · VK_KHR_16bit_storage yes · VK_KHR_shader_integer_dot_product yes · VK_KHR_shader_subgroup_extended_types yes · VK_KHR_maintenance5 yes · VK_EXT_memory_budget yes
+   features: shaderInt16 yes · storageBuffer16BitAccess yes · shaderFloat16 yes · shaderInt8 yes · subgroupSizeControl yes · computeFullSubgroups yes · shaderSubgroupExtendedTypes yes
+   bf16: shaderBFloat16Type yes · shaderBFloat16DotProduct no · shaderBFloat16CooperativeMatrix yes
+   cooperative matrix: 15 configurations (M×N×K  A·B → C/result, scope)
+     16×16×16  f16·f16 → f16/f16  SUBGROUP
+     16×8×16  f16·f16 → f16/f16  SUBGROUP
+     16×8×8  f16·f16 → f16/f16  SUBGROUP
+     16×16×16  f16·f16 → f32/f32  SUBGROUP
+     16×8×16  f16·f16 → f32/f32  SUBGROUP
+     16×8×8  f16·f16 → f32/f32  SUBGROUP
+     16×16×32  u8·u8 → u32/u32  SUBGROUP
+     16×16×32  s8·s8 → s32/s32  SUBGROUP
+     16×8×32  u8·u8 → u32/u32  SUBGROUP
+     16×8×32  s8·s8 → s32/s32  SUBGROUP
+     16×16×16  bf16·bf16 → f32/f32  SUBGROUP
+     16×16×32  e5m2·e5m2 → f16/f16  SUBGROUP
+     16×16×32  e5m2·e5m2 → f32/f32  SUBGROUP
+     16×16×32  e4m3·e4m3 → f16/f16  SUBGROUP
+     16×16×32  e4m3·e4m3 → f32/f32  SUBGROUP
+   coopmat2: workgroupScope yes · flexibleDimensions yes · reductions yes · conversions yes · perElementOperations yes · tensorAddressing yes · blockLoads yes
+   coopmat2: workgroup-scope max workgroup 256 · flexible max dimension 1024 · reserved shared memory 8192 B
+   coopmat2 flexible dimensions: 45 configurations (M/N/K granularity  A·B → C/result, scope, invocations)
+     16/16/16  f16·f16 → f16/f16  SUBGROUP 0
+     16/16/16  f16·f16 → f32/f32  SUBGROUP 0
+     16/16/32  u8·u8 → u32/u32  SUBGROUP 0
+     16/16/32  s8·s8 → s32/s32  SUBGROUP 0
+     16/16/16  bf16·bf16 → f32/f32  SUBGROUP 0
+     16/16/16  f16·f16 → f16/f16  WORKGROUP 32
+     16/16/16  f16·f16 → f32/f32  WORKGROUP 32
+     16/16/32  u8·u8 → u32/u32  WORKGROUP 32
+     16/16/32  s8·s8 → s32/s32  WORKGROUP 32
+     16/16/16  bf16·bf16 → f32/f32  WORKGROUP 32
+     16/16/16  f16·f16 → f16/f16  WORKGROUP 64
+     16/16/16  f16·f16 → f32/f32  WORKGROUP 64
+     16/16/32  u8·u8 → u32/u32  WORKGROUP 64
+     16/16/32  s8·s8 → s32/s32  WORKGROUP 64
+     16/16/16  bf16·bf16 → f32/f32  WORKGROUP 64
+     32/16/16  f16·f16 → f16/f16  WORKGROUP 128
+     32/16/16  f16·f16 → f32/f32  WORKGROUP 128
+     32/16/32  u8·u8 → u32/u32  WORKGROUP 128
+     32/16/32  s8·s8 → s32/s32  WORKGROUP 128
+     32/16/16  bf16·bf16 → f32/f32  WORKGROUP 128
+     32/32/16  f16·f16 → f16/f16  WORKGROUP 256
+     32/32/16  f16·f16 → f32/f32  WORKGROUP 256
+     32/32/32  u8·u8 → u32/u32  WORKGROUP 256
+     32/32/32  s8·s8 → s32/s32  WORKGROUP 256
+     32/32/16  bf16·bf16 → f32/f32  WORKGROUP 256
+     16/16/32  e5m2·e5m2 → f16/f16  SUBGROUP 0
+     16/16/32  e5m2·e5m2 → f32/f32  SUBGROUP 0
+     16/16/32  e4m3·e4m3 → f16/f16  SUBGROUP 0
+     16/16/32  e4m3·e4m3 → f32/f32  SUBGROUP 0
+     16/16/32  e5m2·e5m2 → f16/f16  WORKGROUP 32
+     16/16/32  e5m2·e5m2 → f32/f32  WORKGROUP 32
+     16/16/32  e4m3·e4m3 → f16/f16  WORKGROUP 32
+     16/16/32  e4m3·e4m3 → f32/f32  WORKGROUP 32
+     16/16/32  e5m2·e5m2 → f16/f16  WORKGROUP 64
+     16/16/32  e5m2·e5m2 → f32/f32  WORKGROUP 64
+     16/16/32  e4m3·e4m3 → f16/f16  WORKGROUP 64
+     16/16/32  e4m3·e4m3 → f32/f32  WORKGROUP 64
+     32/16/32  e5m2·e5m2 → f16/f16  WORKGROUP 128
+     32/16/32  e5m2·e5m2 → f32/f32  WORKGROUP 128
+     32/16/32  e4m3·e4m3 → f16/f16  WORKGROUP 128
+     32/16/32  e4m3·e4m3 → f32/f32  WORKGROUP 128
+     32/32/32  e5m2·e5m2 → f16/f16  WORKGROUP 256
+     32/32/32  e5m2·e5m2 → f32/f32  WORKGROUP 256
+     32/32/32  e4m3·e4m3 → f16/f16  WORKGROUP 256
+     32/32/32  e4m3·e4m3 → f32/f32  WORKGROUP 256
+   heap 0: 15.99 GiB DEVICE_LOCAL — types 1:DEVICE_LOCAL 4:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT
+   heap 1: 139.79 GiB  — types 0: 2:HOST_VISIBLE | HOST_COHERENT 3:HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+
+== device 2: llvmpipe (LLVM 20.1.2, 256 bits) [other CPU] — software, refused
+   Vulkan 1.4.318 · driver 0x6402008 · vendor 0x10005 device 0x0000
+   driver: llvmpipe Mesa 25.2.8-0ubuntu0.24.04.2 (LLVM 20.1.2)
+   subgroup: default 8 · min 8 max 8 · required stages FRAGMENT | COMPUTE · ops BASIC | VOTE | ARITHMETIC | BALLOT | SHUFFLE | SHUFFLE_RELATIVE | CLUSTERED | QUAD | ROTATE_KHR | ROTATE_CLUSTERED_KHR
+   limits: shared 32768 B · invocations 1024 · workgroup size [1024, 1024, 1024] · groups [65535, 65535, 65535] · storage range 128 MiB · offset align 16 · timestamp period 1 ns
+   extensions: VK_KHR_shader_bfloat16 no · VK_KHR_cooperative_matrix no · VK_NV_cooperative_matrix2 no · VK_KHR_push_descriptor yes · VK_EXT_subgroup_size_control yes · VK_KHR_shader_float16_int8 yes · VK_KHR_16bit_storage yes · VK_KHR_shader_integer_dot_product yes · VK_KHR_shader_subgroup_extended_types yes · VK_KHR_maintenance5 yes · VK_EXT_memory_budget yes
+   features: shaderInt16 yes · storageBuffer16BitAccess yes · shaderFloat16 yes · shaderInt8 yes · subgroupSizeControl yes · computeFullSubgroups yes · shaderSubgroupExtendedTypes yes
+   heap 0: 186.38 GiB DEVICE_LOCAL — types 0:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+
+== measurements on AMD Ryzen 9 9900X 12-Core Processor (RADV RAPHAEL_MENDOCINO) [AMD INTEGRATED_GPU] Vulkan 1.4.318 · subgroup 64 (32..=64) · coopmat false · coop16 false f16 [] · coopmat2 false · driver 0x6402008
+   device memory: type 3 heap 1 (63.5 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 5 heap 0 (31.7 GiB) HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+   selftest: 0 / 16384 elements wrong, 0 / 64 workgroup sums wrong
+   f16 conversions: widening 0 / 65536 wrong, rounding 0 / 2097152 wrong
+   read bandwidth: 50.4 GB/s (512 MiB, 1024 groups of 256, best of 5 × 12 passes)
+   matvec 0.8B gate_up          1024×  7168 wave 64 rows 1:    294.8 µs median (294.5–299.2),   49.8 GB/s of weights (36 copies in turn) · error ≤ 1.61e-8 of Σ|w·x|
+   matvec 0.8B down             3584×  1024 wave 64 rows 1:    159.4 µs median (159.3–162.2),   46.1 GB/s of weights (73 copies in turn) · error ≤ 9.28e-9 of Σ|w·x|
+   matvec 0.8B DeltaNet proj    1024×  8224 wave 64 rows 1:    350.9 µs median (350.4–360.9),   48.0 GB/s of weights (31 copies in turn) · error ≤ 1.41e-8 of Σ|w·x|
+   matvec 0.8B lm_head          1024×248320 wave 64 rows 1:  10796.1 µs median (10778.0–10842.0),   47.1 GB/s of weights (1 copies in turn) · error ≤ 1.28e-8 of Σ|w·x|
+   matvec 4B gate_up            2560× 18432 wave 64 rows 1:   2266.8 µs median (2256.6–2296.3),   41.6 GB/s of weights (5 copies in turn) · error ≤ 9.86e-9 of Σ|w·x|
+   matvec 4B down               9216×  2560 wave 64 rows 1:   1174.8 µs median (1171.3–1188.5),   40.2 GB/s of weights (11 copies in turn) · error ≤ 8.78e-9 of Σ|w·x|
+   matvec 4B lm_head            2560×248320 wave 64 rows 1:  29848.9 µs median (29824.3–29918.6),   42.6 GB/s of weights (1 copies in turn) · error ≤ 1.05e-8 of Σ|w·x|

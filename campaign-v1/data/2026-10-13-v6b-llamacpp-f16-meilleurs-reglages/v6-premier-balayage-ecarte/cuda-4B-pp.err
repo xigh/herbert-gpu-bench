@@ -1,0 +1,9 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 15945 MiB):
+  Device 0: NVIDIA GeForce RTX 4080, compute capability 8.9, VMM: yes, VRAM: 15945 MiB
+CUDA error: out of memory
+  current device: 0, in function ggml_cuda_graph_evaluate_and_capture at /opt3/llama.cpp-08ffba21e/ggml/src/ggml-cuda/ggml-cuda.cu:4603
+  cudaGraphInstantiate(&graph->instance, graph->graph, __null, __null, 0)
+/opt3/llama.cpp-08ffba21e/ggml/src/ggml-cuda/ggml-cuda.cu:109: CUDA error
+warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+warning: 58	../sysdeps/nptl/libc_start_call_main.h: No such file or directory
+warning: 360	../csu/libc-start.c: No such file or directory

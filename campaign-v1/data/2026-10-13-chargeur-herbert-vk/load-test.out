@@ -1,0 +1,89 @@
+same 0.8B p1-short f16: identical
+same 0.8B p1-short bf16: identical
+same 0.8B p2-explain f16: identical
+same 0.8B p2-explain bf16: identical
+same 0.8B p3-long f16: identical
+same 0.8B p3-long bf16: identical
+same 0.8B p4-xlong f16: identical
+same 0.8B p4-xlong bf16: identical
+same 4B p1-short f16: identical
+same 4B p1-short bf16: identical
+same 4B p2-explain f16: identical
+same 4B p2-explain bf16: identical
+same 4B p3-long f16: identical
+same 4B p3-long bf16: identical
+same 4B p4-xlong f16: identical
+same 4B p4-xlong bf16: identical
+== 0.8B
+new f16, first start (builds the cache):
+[loader] f16: 752392448 values, |max| 5.3125, beyond 65504 0, subnormal 3044570 (0.4047 %), rounded to zero 15948 (0.0021 %) — converted on 24 threads in 0.58 s, cache written: /home/zexigh/.cache/herbert/Qwen3.5-0.8B/vk-f16_v1.herbcache (1.40 GiB)
+loaded in 0.9 s
+new f16, cached 1:
+[loader] f16: 752392448 values, |max| 5.3125, beyond 65504 0, subnormal 3044570 (0.4047 %), rounded to zero 15948 (0.0021 %) — from the cache /home/zexigh/.cache/herbert/Qwen3.5-0.8B/vk-f16_v1.herbcache in 0.00 s
+loaded in 0.3 s
+new f16, cached 2:
+[loader] f16: 752392448 values, |max| 5.3125, beyond 65504 0, subnormal 3044570 (0.4047 %), rounded to zero 15948 (0.0021 %) — from the cache /home/zexigh/.cache/herbert/Qwen3.5-0.8B/vk-f16_v1.herbcache in 0.00 s
+loaded in 0.3 s
+new f16, cached 3:
+[loader] f16: 752392448 values, |max| 5.3125, beyond 65504 0, subnormal 3044570 (0.4047 %), rounded to zero 15948 (0.0021 %) — from the cache /home/zexigh/.cache/herbert/Qwen3.5-0.8B/vk-f16_v1.herbcache in 0.00 s
+loaded in 0.3 s
+new f16, HERBERT_CACHE=0 1:
+[loader] f16: 752392448 values, |max| 5.3125, beyond 65504 0, subnormal 3044570 (0.4047 %), rounded to zero 15948 (0.0021 %) — converted on 24 threads in 0.16 s, no cache
+loaded in 0.4 s
+new f16, HERBERT_CACHE=0 2:
+[loader] f16: 752392448 values, |max| 5.3125, beyond 65504 0, subnormal 3044570 (0.4047 %), rounded to zero 15948 (0.0021 %) — converted on 24 threads in 0.16 s, no cache
+loaded in 0.4 s
+old f16 1:
+[loader] f16: 752392448 values, |max| 5.3125, beyond 65504 0, subnormal 3044570 (0.4047 %), rounded to zero 15948 (0.0021 %)
+loaded in 3.2 s
+old f16 2:
+[loader] f16: 752392448 values, |max| 5.3125, beyond 65504 0, subnormal 3044570 (0.4047 %), rounded to zero 15948 (0.0021 %)
+loaded in 3.3 s
+new bf16 1:
+loaded in 0.3 s
+new bf16 2:
+loaded in 0.2 s
+new bf16 3:
+loaded in 0.2 s
+old bf16 1:
+loaded in 0.7 s
+old bf16 2:
+loaded in 0.7 s
+-rw-rw-r-- 1 zexigh zexigh 1504809685 Oct 13 13:17 /home/zexigh/.cache/herbert/Qwen3.5-0.8B/vk-f16_v1.herbcache
+== 4B
+new f16, first start (builds the cache):
+[loader] f16: 4205749760 values, |max| 3.703125, beyond 65504 0, subnormal 20430379 (0.4858 %), rounded to zero 10056 (0.0002 %) — converted on 24 threads in 3.09 s, cache written: /home/zexigh/.cache/herbert/Qwen3.5-4B/vk-f16_v1.herbcache (7.83 GiB)
+loaded in 3.8 s
+new f16, cached 1:
+[loader] f16: 4205749760 values, |max| 3.703125, beyond 65504 0, subnormal 20430379 (0.4858 %), rounded to zero 10056 (0.0002 %) — from the cache /home/zexigh/.cache/herbert/Qwen3.5-4B/vk-f16_v1.herbcache in 0.00 s
+loaded in 0.7 s
+new f16, cached 2:
+[loader] f16: 4205749760 values, |max| 3.703125, beyond 65504 0, subnormal 20430379 (0.4858 %), rounded to zero 10056 (0.0002 %) — from the cache /home/zexigh/.cache/herbert/Qwen3.5-4B/vk-f16_v1.herbcache in 0.00 s
+loaded in 0.7 s
+new f16, cached 3:
+[loader] f16: 4205749760 values, |max| 3.703125, beyond 65504 0, subnormal 20430379 (0.4858 %), rounded to zero 10056 (0.0002 %) — from the cache /home/zexigh/.cache/herbert/Qwen3.5-4B/vk-f16_v1.herbcache in 0.00 s
+loaded in 0.7 s
+new f16, HERBERT_CACHE=0 1:
+[loader] f16: 4205749760 values, |max| 3.703125, beyond 65504 0, subnormal 20430379 (0.4858 %), rounded to zero 10056 (0.0002 %) — converted on 24 threads in 0.84 s, no cache
+loaded in 1.6 s
+new f16, HERBERT_CACHE=0 2:
+[loader] f16: 4205749760 values, |max| 3.703125, beyond 65504 0, subnormal 20430379 (0.4858 %), rounded to zero 10056 (0.0002 %) — converted on 24 threads in 0.85 s, no cache
+loaded in 1.6 s
+old f16 1:
+[loader] f16: 4205749760 values, |max| 3.703125, beyond 65504 0, subnormal 20430379 (0.4858 %), rounded to zero 10056 (0.0002 %)
+loaded in 18.3 s
+old f16 2:
+[loader] f16: 4205749760 values, |max| 3.703125, beyond 65504 0, subnormal 20430379 (0.4858 %), rounded to zero 10056 (0.0002 %)
+loaded in 18.3 s
+new bf16 1:
+loaded in 0.7 s
+new bf16 2:
+loaded in 0.7 s
+new bf16 3:
+loaded in 0.7 s
+old bf16 1:
+loaded in 3.9 s
+old bf16 2:
+loaded in 3.9 s
+-rw-rw-r-- 1 zexigh zexigh 8411531745 Oct 13 13:18 /home/zexigh/.cache/herbert/Qwen3.5-4B/vk-f16_v1.herbcache
+ALLDONE-LOAD

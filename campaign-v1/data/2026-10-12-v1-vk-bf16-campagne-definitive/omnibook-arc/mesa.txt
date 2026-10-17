@@ -1,0 +1,2 @@
+mesa-vulkan-drivers:amd64 26.0.3-1ubuntu1
+7.0.0-31-generic

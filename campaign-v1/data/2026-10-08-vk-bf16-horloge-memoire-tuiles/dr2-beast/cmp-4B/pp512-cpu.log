@@ -1,0 +1,41 @@
+[isa] avx2=yes fma=yes avxvnni=yes avx512f=yes avx512bf16=yes → GEMM lanes zmm
+[loader] qwen3_5_text — hidden 2560, 32 layers, 16 heads / 4 kv heads × 256, intermediate 9216, vocab 248320, rotary 64 dims, rope_theta 10000000, tied head true
+[loader] shard 1/2: 87 tensors, 4.96 GiB mapped, 1.2 s
+[loader] shard 2/2: 651 tensors, 3.72 GiB mapped, 0.9 s
+[loader] skipped, not used by the engine: model.visual.* ×297, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] 32 layers assembled, RoPE tables built, 2.8 s in all
+[loader] bf16 everywhere: 201 matrices packed R16 (7.82 GiB), 8 gated q_proj permuted, no Q4, no cache — linear_attn.in_proj_qkv.weight×24, linear_attn.in_proj_z.weight×24, linear_attn.out_proj.weight×24, lm_head.weight (tied)×1, mlp.down_proj.weight×32, mlp.gate_proj.weight×32, mlp.up_proj.weight×32, self_attn.k_proj.weight×8, self_attn.o_proj.weight×8, self_attn.q_proj.weight×8, self_attn.v_proj.weight×8
+[pool] 2 CCDs, 12 cores, worker order [0, 6, 1, 7, 2, 8, 3, 9, 4, 10, 5, 11]…
+[pool] 12 workers on cpus [0,6,1,7,2,8,3,9,4,10,5,11] · caller = worker 0: yes · spin 500 µs · coordinator spins: yes
+[engine] 7.83 GiB of weights touched in 0.008 s
+[engine] loaded in 3.1 s, mounted in 0.49 s — 8192 positions reserved, prefill program Some((3941112, 404459, 405442)), decode program Some((3940632, 404459, 405442))
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+
+>>> Here are my notes on a hybrid language model, repeated as I took them during several meetings.
+
+Meeting 1: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 2: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 3: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 4: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 5: The GatedDeltaNet layer keeps a recur
+
+[answer]
+It looks like your notes from Meeting 5 were cut off mid-sentence ("keeps a recur...").
+
+Based on the consistent pattern from Meetings 1 through 4, here is the complete description of the **GatedDeltaNet layer** as it appears in your hybrid architecture:
+
+> The **GatedDeltaNet layer** keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state.
+
+### Architecture Summary
+Your hybrid model alternates between two distinct types of layers:
+
+1.  **GatedDeltaNet Layers (Recurrent/Stateful)**
+    *   **Mechanism:** Maintains a hidden state per value head (no KV cache).
+    *   **Update Rule:**
+[ids] 2064 5686 1040 678 8129 494 28107 220 20 998 3799 974 4937 1284 17834 3376 432 6902 264 61400 1076 1764 271 27775 383 279 12594 5215 494 82627 220 16 1472 220 19 11 1532 369 279 4434 3874 314 279 2972 38 639 19661 6738 6000 332 430 424 7701 303 678 24197 17120 25 271 29 561 2972 38 639 19661 6738 6000 332 13205 264 61911 1528 791 869 1901 4370 314 264 1328 18509 6297 13 2332 1396 2234 279 1528 1566 912 539 264 9218 7911 11 279 1328 68279 1092 279 1528 54004 364 424 11 321 279 6463 1881 279 869 321 421 19039 11 29689 539 264 9218 4238 11 369 5158 1142 430 264 6857 18030 2560 13 561 3134 1179 15339 279 5860 1528 13 271 13962 36593 20858 198 7525 24197 1558 6703 942 1881 1330 12103 4346 314 13224 25 271 16 13 220 2972 38 639 19661 6738 80931 318 674 3127 14 1349 1218 31230 198 262 348 256 2972 55157 65526 64700 41468 1674 264 7920 1528 791 869 1901 318 2083 81726 6297 553 198 262 348 256 2972 4149 17561
+[decoded] "It looks like your notes from Meeting 5 were cut off mid-sentence (\"keeps a recur...\").\n\nBased on the consistent pattern from Meetings 1 through 4, here is the complete description of the **GatedDeltaNet layer** as it appears in your hybrid architecture:\n\n> The **GatedDeltaNet layer** keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state.\n\n### Architecture Summary\nYour hybrid model alternates between two distinct types of layers:\n\n1.  **GatedDeltaNet Layers (Recurrent/Stateful)**\n    *   **Mechanism:** Maintains a hidden state per value head (no KV cache).\n    *   **Update Rule"
+[turn 1] 513 prompt tokens in 1.009 s (508.6 tok/s) · 199 generated in 38.87 s (5.12 tok/s) · 0 tool calls · rewrite 0.000 s · position 712

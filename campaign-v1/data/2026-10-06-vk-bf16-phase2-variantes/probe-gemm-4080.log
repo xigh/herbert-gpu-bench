@@ -1,0 +1,182 @@
+ 11:09:22 up 6 days,  1:36,  2 users,  load average: 0.54, 1.00, 1.43
+
+== device 0: AMD Radeon Graphics (RADV RENOIR) [AMD INTEGRATED_GPU]
+   Vulkan 1.4.318 · driver 0x6402008 · vendor 0x1002 device 0x1638
+   driver: radv Mesa 25.2.8-0ubuntu0.24.04.2
+   subgroup: default 64 · min 64 max 64 · required stages  · ops BASIC | VOTE | ARITHMETIC | BALLOT | SHUFFLE | SHUFFLE_RELATIVE | CLUSTERED | QUAD | ROTATE_KHR | ROTATE_CLUSTERED_KHR
+   limits: shared 65536 B · invocations 1024 · workgroup size [1024, 1024, 1024] · groups [4294967295, 65535, 65535] · storage range 4095 MiB · offset align 4 · timestamp period 10 ns
+   extensions: VK_KHR_shader_bfloat16 no · VK_KHR_cooperative_matrix no · VK_NV_cooperative_matrix2 no · VK_KHR_push_descriptor yes · VK_EXT_subgroup_size_control yes · VK_KHR_shader_float16_int8 yes · VK_KHR_16bit_storage yes · VK_KHR_shader_integer_dot_product yes · VK_KHR_shader_subgroup_extended_types yes · VK_KHR_maintenance5 yes · VK_EXT_memory_budget yes
+   features: shaderInt16 yes · storageBuffer16BitAccess yes · shaderFloat16 yes · shaderInt8 yes · subgroupSizeControl yes · computeFullSubgroups yes · shaderSubgroupExtendedTypes yes
+   heap 0: 21.62 GiB  — types 2:HOST_VISIBLE | HOST_COHERENT 5:HOST_VISIBLE | HOST_COHERENT | HOST_CACHED 6:HOST_VISIBLE | HOST_COHERENT | HOST_CACHED 8:HOST_VISIBLE | HOST_COHERENT | DEVICE_COHERENT_AMD | DEVICE_UNCACHED_AMD 10:HOST_VISIBLE | HOST_COHERENT | HOST_CACHED | DEVICE_COHERENT_AMD | DEVICE_UNCACHED_AMD
+   heap 1: 43.25 GiB DEVICE_LOCAL — types 0:DEVICE_LOCAL 1:DEVICE_LOCAL 3:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT 4:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT 7:DEVICE_LOCAL | DEVICE_COHERENT_AMD | DEVICE_UNCACHED_AMD 9:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | DEVICE_COHERENT_AMD | DEVICE_UNCACHED_AMD
+
+== device 1: NVIDIA GeForce RTX 4080 [NVIDIA DISCRETE_GPU]
+   Vulkan 1.4.329 · driver 0x94d50000 · vendor 0x10de device 0x2704
+   driver: NVIDIA 595.84
+   subgroup: default 32 · min 32 max 32 · required stages VERTEX | TESSELLATION_CONTROL | TESSELLATION_EVALUATION | GEOMETRY | FRAGMENT | COMPUTE | RAYGEN_KHR | ANY_HIT_KHR | CLOSEST_HIT_KHR | MISS_KHR | INTERSECTION_KHR | CALLABLE_KHR | TASK_EXT | MESH_EXT · ops BASIC | VOTE | ARITHMETIC | BALLOT | SHUFFLE | SHUFFLE_RELATIVE | CLUSTERED | QUAD | PARTITIONED_NV | ROTATE_KHR | ROTATE_CLUSTERED_KHR
+   limits: shared 49152 B · invocations 1024 · workgroup size [1024, 1024, 64] · groups [2147483647, 65535, 65535] · storage range 4095 MiB · offset align 16 · timestamp period 1 ns
+   extensions: VK_KHR_shader_bfloat16 yes · VK_KHR_cooperative_matrix yes · VK_NV_cooperative_matrix2 yes · VK_KHR_push_descriptor yes · VK_EXT_subgroup_size_control yes · VK_KHR_shader_float16_int8 yes · VK_KHR_16bit_storage yes · VK_KHR_shader_integer_dot_product yes · VK_KHR_shader_subgroup_extended_types yes · VK_KHR_maintenance5 yes · VK_EXT_memory_budget yes
+   features: shaderInt16 yes · storageBuffer16BitAccess yes · shaderFloat16 yes · shaderInt8 yes · subgroupSizeControl yes · computeFullSubgroups yes · shaderSubgroupExtendedTypes yes
+   bf16: shaderBFloat16Type yes · shaderBFloat16DotProduct no · shaderBFloat16CooperativeMatrix yes
+   cooperative matrix: 15 configurations (M×N×K  A·B → C/result, scope)
+     16×16×16  f16·f16 → f16/f16  SUBGROUP
+     16×8×16  f16·f16 → f16/f16  SUBGROUP
+     16×8×8  f16·f16 → f16/f16  SUBGROUP
+     16×16×16  f16·f16 → f32/f32  SUBGROUP
+     16×8×16  f16·f16 → f32/f32  SUBGROUP
+     16×8×8  f16·f16 → f32/f32  SUBGROUP
+     16×16×32  u8·u8 → u32/u32  SUBGROUP
+     16×16×32  s8·s8 → s32/s32  SUBGROUP
+     16×8×32  u8·u8 → u32/u32  SUBGROUP
+     16×8×32  s8·s8 → s32/s32  SUBGROUP
+     16×16×16  bf16·bf16 → f32/f32  SUBGROUP
+     16×16×32  e5m2·e5m2 → f16/f16  SUBGROUP
+     16×16×32  e5m2·e5m2 → f32/f32  SUBGROUP
+     16×16×32  e4m3·e4m3 → f16/f16  SUBGROUP
+     16×16×32  e4m3·e4m3 → f32/f32  SUBGROUP
+   coopmat2: workgroupScope yes · flexibleDimensions yes · reductions yes · conversions yes · perElementOperations yes · tensorAddressing yes · blockLoads yes
+   coopmat2: workgroup-scope max workgroup 256 · flexible max dimension 1024 · reserved shared memory 8192 B
+   coopmat2 flexible dimensions: 45 configurations (M/N/K granularity  A·B → C/result, scope, invocations)
+     16/16/16  f16·f16 → f16/f16  SUBGROUP 0
+     16/16/16  f16·f16 → f32/f32  SUBGROUP 0
+     16/16/32  u8·u8 → u32/u32  SUBGROUP 0
+     16/16/32  s8·s8 → s32/s32  SUBGROUP 0
+     16/16/16  bf16·bf16 → f32/f32  SUBGROUP 0
+     16/16/16  f16·f16 → f16/f16  WORKGROUP 32
+     16/16/16  f16·f16 → f32/f32  WORKGROUP 32
+     16/16/32  u8·u8 → u32/u32  WORKGROUP 32
+     16/16/32  s8·s8 → s32/s32  WORKGROUP 32
+     16/16/16  bf16·bf16 → f32/f32  WORKGROUP 32
+     16/16/16  f16·f16 → f16/f16  WORKGROUP 64
+     16/16/16  f16·f16 → f32/f32  WORKGROUP 64
+     16/16/32  u8·u8 → u32/u32  WORKGROUP 64
+     16/16/32  s8·s8 → s32/s32  WORKGROUP 64
+     16/16/16  bf16·bf16 → f32/f32  WORKGROUP 64
+     32/16/16  f16·f16 → f16/f16  WORKGROUP 128
+     32/16/16  f16·f16 → f32/f32  WORKGROUP 128
+     32/16/32  u8·u8 → u32/u32  WORKGROUP 128
+     32/16/32  s8·s8 → s32/s32  WORKGROUP 128
+     32/16/16  bf16·bf16 → f32/f32  WORKGROUP 128
+     32/32/16  f16·f16 → f16/f16  WORKGROUP 256
+     32/32/16  f16·f16 → f32/f32  WORKGROUP 256
+     32/32/32  u8·u8 → u32/u32  WORKGROUP 256
+     32/32/32  s8·s8 → s32/s32  WORKGROUP 256
+     32/32/16  bf16·bf16 → f32/f32  WORKGROUP 256
+     16/16/32  e5m2·e5m2 → f16/f16  SUBGROUP 0
+     16/16/32  e5m2·e5m2 → f32/f32  SUBGROUP 0
+     16/16/32  e4m3·e4m3 → f16/f16  SUBGROUP 0
+     16/16/32  e4m3·e4m3 → f32/f32  SUBGROUP 0
+     16/16/32  e5m2·e5m2 → f16/f16  WORKGROUP 32
+     16/16/32  e5m2·e5m2 → f32/f32  WORKGROUP 32
+     16/16/32  e4m3·e4m3 → f16/f16  WORKGROUP 32
+     16/16/32  e4m3·e4m3 → f32/f32  WORKGROUP 32
+     16/16/32  e5m2·e5m2 → f16/f16  WORKGROUP 64
+     16/16/32  e5m2·e5m2 → f32/f32  WORKGROUP 64
+     16/16/32  e4m3·e4m3 → f16/f16  WORKGROUP 64
+     16/16/32  e4m3·e4m3 → f32/f32  WORKGROUP 64
+     32/16/32  e5m2·e5m2 → f16/f16  WORKGROUP 128
+     32/16/32  e5m2·e5m2 → f32/f32  WORKGROUP 128
+     32/16/32  e4m3·e4m3 → f16/f16  WORKGROUP 128
+     32/16/32  e4m3·e4m3 → f32/f32  WORKGROUP 128
+     32/32/32  e5m2·e5m2 → f16/f16  WORKGROUP 256
+     32/32/32  e5m2·e5m2 → f32/f32  WORKGROUP 256
+     32/32/32  e4m3·e4m3 → f16/f16  WORKGROUP 256
+     32/32/32  e4m3·e4m3 → f32/f32  WORKGROUP 256
+   heap 0: 15.99 GiB DEVICE_LOCAL — types 1:DEVICE_LOCAL 4:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT
+   heap 1: 91.31 GiB  — types 0: 2:HOST_VISIBLE | HOST_COHERENT 3:HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+
+== device 2: llvmpipe (LLVM 20.1.2, 256 bits) [other CPU] — software, refused
+   Vulkan 1.4.318 · driver 0x6402008 · vendor 0x10005 device 0x0000
+   driver: llvmpipe Mesa 25.2.8-0ubuntu0.24.04.2 (LLVM 20.1.2)
+   subgroup: default 8 · min 8 max 8 · required stages FRAGMENT | COMPUTE · ops BASIC | VOTE | ARITHMETIC | BALLOT | SHUFFLE | SHUFFLE_RELATIVE | CLUSTERED | QUAD | ROTATE_KHR | ROTATE_CLUSTERED_KHR
+   limits: shared 32768 B · invocations 1024 · workgroup size [1024, 1024, 1024] · groups [65535, 65535, 65535] · storage range 128 MiB · offset align 16 · timestamp period 1 ns
+   extensions: VK_KHR_shader_bfloat16 no · VK_KHR_cooperative_matrix no · VK_NV_cooperative_matrix2 no · VK_KHR_push_descriptor yes · VK_EXT_subgroup_size_control yes · VK_KHR_shader_float16_int8 yes · VK_KHR_16bit_storage yes · VK_KHR_shader_integer_dot_product yes · VK_KHR_shader_subgroup_extended_types yes · VK_KHR_maintenance5 yes · VK_EXT_memory_budget yes
+   features: shaderInt16 yes · storageBuffer16BitAccess yes · shaderFloat16 yes · shaderInt8 yes · subgroupSizeControl yes · computeFullSubgroups yes · shaderSubgroupExtendedTypes yes
+   heap 0: 121.75 GiB DEVICE_LOCAL — types 0:DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+
+== measurements on NVIDIA GeForce RTX 4080 [NVIDIA DISCRETE_GPU] Vulkan 1.4.329 · subgroup 32 (32..=32) · coopmat true · bf16 true [(16, 16, 16)] · coopmat2 true · driver 0x94d50000
+   device memory: type 4 heap 0 (16.0 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 3 heap 1 (91.3 GiB) HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+   selftest: 0 / 16384 elements wrong, 0 / 64 workgroup sums wrong
+   read bandwidth: 694.2 GB/s (512 MiB, 1024 groups of 256, best of 5 × 12 passes)
+   matvec 0.8B gate_up          1024×  7168 wave 32 rows 1:     22.5 µs median (22.5–23.0),  651.7 GB/s of weights (36 copies in turn) · error ≤ 8.71e-9 of Σ|w·x|
+   matvec 0.8B gate_up          1024×  7168 wave 32 rows 2:     22.6 µs median (22.6–22.6),  648.4 GB/s of weights (36 copies in turn) · error ≤ 8.71e-9 of Σ|w·x|
+   matvec 0.8B gate_up          1024×  7168 wave 32 rows 4:     22.9 µs median (22.9–22.9),  642.1 GB/s of weights (36 copies in turn) · error ≤ 8.71e-9 of Σ|w·x|
+   matvec 0.8B down             3584×  1024 wave 32 rows 1:     12.1 µs median (12.1–12.5),  607.4 GB/s of weights (73 copies in turn) · error ≤ 6.98e-9 of Σ|w·x|
+   matvec 0.8B down             3584×  1024 wave 32 rows 2:     12.2 µs median (12.2–12.3),  599.8 GB/s of weights (73 copies in turn) · error ≤ 6.98e-9 of Σ|w·x|
+   matvec 0.8B down             3584×  1024 wave 32 rows 4:     12.5 µs median (12.4–12.5),  588.8 GB/s of weights (73 copies in turn) · error ≤ 6.98e-9 of Σ|w·x|
+   matvec 0.8B DeltaNet proj    1024×  8224 wave 32 rows 1:     25.6 µs median (25.6–26.1),  657.7 GB/s of weights (31 copies in turn) · error ≤ 1.11e-8 of Σ|w·x|
+   matvec 0.8B DeltaNet proj    1024×  8224 wave 32 rows 2:     25.8 µs median (25.8–25.8),  653.9 GB/s of weights (31 copies in turn) · error ≤ 1.11e-8 of Σ|w·x|
+   matvec 0.8B DeltaNet proj    1024×  8224 wave 32 rows 4:     26.0 µs median (26.0–26.0),  648.3 GB/s of weights (31 copies in turn) · error ≤ 1.11e-8 of Σ|w·x|
+   matvec 0.8B lm_head          1024×248320 wave 32 rows 1:    738.6 µs median (737.9–739.2),  688.5 GB/s of weights (1 copies in turn) · error ≤ 9.51e-9 of Σ|w·x|
+   matvec 0.8B lm_head          1024×248320 wave 32 rows 2:    739.9 µs median (739.5–740.1),  687.3 GB/s of weights (1 copies in turn) · error ≤ 9.51e-9 of Σ|w·x|
+   matvec 0.8B lm_head          1024×248320 wave 32 rows 4:    740.0 µs median (739.7–740.4),  687.3 GB/s of weights (1 copies in turn) · error ≤ 9.51e-9 of Σ|w·x|
+   matvec 4B gate_up            2560× 18432 wave 32 rows 1:    137.9 µs median (135.7–138.0),  684.1 GB/s of weights (5 copies in turn) · error ≤ 6.81e-9 of Σ|w·x|
+   matvec 4B gate_up            2560× 18432 wave 32 rows 2:    137.6 µs median (137.6–137.6),  685.9 GB/s of weights (5 copies in turn) · error ≤ 6.81e-9 of Σ|w·x|
+   matvec 4B gate_up            2560× 18432 wave 32 rows 4:    137.9 µs median (137.8–137.9),  684.4 GB/s of weights (5 copies in turn) · error ≤ 6.81e-9 of Σ|w·x|
+   matvec 4B down               9216×  2560 wave 32 rows 1:     69.5 µs median (69.1–69.6),  678.6 GB/s of weights (11 copies in turn) · error ≤ 5.89e-9 of Σ|w·x|
+   matvec 4B down               9216×  2560 wave 32 rows 2:     69.6 µs median (69.6–69.6),  678.0 GB/s of weights (11 copies in turn) · error ≤ 5.89e-9 of Σ|w·x|
+   matvec 4B down               9216×  2560 wave 32 rows 4:     69.7 µs median (69.7–69.7),  677.1 GB/s of weights (11 copies in turn) · error ≤ 5.89e-9 of Σ|w·x|
+   matvec 4B lm_head            2560×248320 wave 32 rows 1:   4092.8 µs median (1831.8–4095.0),  310.6 GB/s of weights (1 copies in turn) · error ≤ 7.08e-9 of Σ|w·x|
+   matvec 4B lm_head            2560×248320 wave 32 rows 2:   4096.8 µs median (1834.4–4098.2),  310.3 GB/s of weights (1 copies in turn) · error ≤ 7.08e-9 of Σ|w·x|
+   matvec 4B lm_head            2560×248320 wave 32 rows 4:   4098.8 µs median (1834.9–4100.5),  310.2 GB/s of weights (1 copies in turn) · error ≤ 7.08e-9 of Σ|w·x|
+   gemm 0.8B gate_up       m 128  1024× 7168 coop 16x16x16 4x4 sg 2x2 st2 w32  : 86016 B of workgroup memory > 49152, skipped
+   gemm 0.8B gate_up       m 128  1024× 7168 coop2 wg 128x128x16 st2           : 86016 B of workgroup memory > 49152, skipped
+   gemm 0.8B gate_up       m 128  1024× 7168 simt                              :    1811.9 µs median (1767.0–1848.0),   1.04 TFLOP/s · error ≤ 4.21e-8 of Σ|x·w|
+   gemm 0.8B gate_up       m 128  1024× 7168 coop 16x16x16 2x2 sg 2x2 st0 w32  :     272.1 µs median (265.4–272.2),   6.90 TFLOP/s · error ≤ 1.75e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 128  1024× 7168 coop 16x16x16 4x2 sg 1x2 st0 w32  :     215.6 µs median (210.4–215.8),   8.71 TFLOP/s · error ≤ 1.75e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 128  1024× 7168 coop 16x16x16 2x2 sg 2x2 st2 w32  :     141.7 µs median (138.3–142.0),  13.26 TFLOP/s · error ≤ 1.75e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 128  1024× 7168 coop 16x16x16 4x2 sg 1x2 st2 w32  :     239.6 µs median (234.2–239.8),   7.84 TFLOP/s · error ≤ 1.75e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 128  1024× 7168 coop 16x16x16 2x2 sg 2x2 st4 w32  :     237.1 µs median (231.4–238.9),   7.92 TFLOP/s · error ≤ 1.75e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 128  1024× 7168 coop2 wg 64x64x16 st0             :     133.6 µs median (130.3–134.1),  14.07 TFLOP/s · error ≤ 1.75e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 128  1024× 7168 coop2 wg 64x64x16 st2             :     138.9 µs median (136.1–139.7),  13.53 TFLOP/s · error ≤ 1.75e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 128  1024× 7168 coop2 wg 128x64x16 st2            :     176.5 µs median (172.1–177.4),  10.64 TFLOP/s · error ≤ 1.75e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 128  1024× 7168 coop2 wg 64x128x16 st2            :     175.6 µs median (171.7–178.4),  10.70 TFLOP/s · error ≤ 1.75e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 256  1024× 7168 coop 16x16x16 4x4 sg 2x2 st2 w32  : 86016 B of workgroup memory > 49152, skipped
+   gemm 0.8B gate_up       m 256  1024× 7168 coop2 wg 128x128x16 st2           : 86016 B of workgroup memory > 49152, skipped
+   gemm 0.8B gate_up       m 256  1024× 7168 simt                              :    4178.3 µs median (844.4–9999.9),   0.90 TFLOP/s · error ≤ 4.85e-8 of Σ|x·w|
+   gemm 0.8B gate_up       m 256  1024× 7168 coop 16x16x16 2x2 sg 2x2 st0 w32  :     144.5 µs median (143.9–1479.3),  26.01 TFLOP/s · error ≤ 1.81e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 256  1024× 7168 coop 16x16x16 4x2 sg 1x2 st0 w32  :      95.5 µs median (95.5–1064.6),  39.35 TFLOP/s · error ≤ 1.81e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 256  1024× 7168 coop 16x16x16 2x2 sg 2x2 st2 w32  :      78.5 µs median (77.9–690.8),  47.87 TFLOP/s · error ≤ 1.81e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 256  1024× 7168 coop 16x16x16 4x2 sg 1x2 st2 w32  :     130.2 µs median (130.1–800.7),  28.86 TFLOP/s · error ≤ 1.81e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 256  1024× 7168 coop 16x16x16 2x2 sg 2x2 st4 w32  :     106.5 µs median (106.3–625.6),  35.28 TFLOP/s · error ≤ 1.81e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 256  1024× 7168 coop2 wg 64x64x16 st0             :      77.8 µs median (77.6–506.1),  48.32 TFLOP/s · error ≤ 1.81e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 256  1024× 7168 coop2 wg 64x64x16 st2             :      67.3 µs median (67.2–463.6),  55.86 TFLOP/s · error ≤ 1.81e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 256  1024× 7168 coop2 wg 128x64x16 st2            :      86.0 µs median (85.8–585.5),  43.71 TFLOP/s · error ≤ 1.81e-7 of Σ|x·w|
+   gemm 0.8B gate_up       m 256  1024× 7168 coop2 wg 64x128x16 st2            :      83.5 µs median (83.3–583.3),  44.99 TFLOP/s · error ≤ 1.81e-7 of Σ|x·w|
+   gemm 0.8B down          m 256  3584× 1024 coop 16x16x16 4x4 sg 2x2 st2 w32  : 86016 B of workgroup memory > 49152, skipped
+   gemm 0.8B down          m 256  3584× 1024 coop2 wg 128x128x16 st2           : 86016 B of workgroup memory > 49152, skipped
+   gemm 0.8B down          m 256  3584× 1024 simt                              :     579.6 µs median (578.8–580.2),   3.24 TFLOP/s · error ≤ 5.51e-8 of Σ|x·w|
+   gemm 0.8B down          m 256  3584× 1024 coop 16x16x16 2x2 sg 2x2 st0 w32  :      83.6 µs median (83.5–83.7),  22.47 TFLOP/s · error ≤ 4.59e-7 of Σ|x·w|
+   gemm 0.8B down          m 256  3584× 1024 coop 16x16x16 4x2 sg 1x2 st0 w32  :      83.5 µs median (83.4–83.6),  22.50 TFLOP/s · error ≤ 4.59e-7 of Σ|x·w|
+   gemm 0.8B down          m 256  3584× 1024 coop 16x16x16 2x2 sg 2x2 st2 w32  :     117.3 µs median (117.3–117.4),  16.01 TFLOP/s · error ≤ 4.59e-7 of Σ|x·w|
+   gemm 0.8B down          m 256  3584× 1024 coop 16x16x16 4x2 sg 1x2 st2 w32  :     217.0 µs median (217.0–217.0),   8.66 TFLOP/s · error ≤ 4.59e-7 of Σ|x·w|
+   gemm 0.8B down          m 256  3584× 1024 coop 16x16x16 2x2 sg 2x2 st4 w32  :     111.7 µs median (111.6–111.7),  16.82 TFLOP/s · error ≤ 4.59e-7 of Σ|x·w|
+   gemm 0.8B down          m 256  3584× 1024 coop2 wg 64x64x16 st0             :      85.3 µs median (85.2–85.4),  22.02 TFLOP/s · error ≤ 4.59e-7 of Σ|x·w|
+   gemm 0.8B down          m 256  3584× 1024 coop2 wg 64x64x16 st2             :      84.3 µs median (84.3–84.3),  22.28 TFLOP/s · error ≤ 4.59e-7 of Σ|x·w|
+   gemm 0.8B down          m 256  3584× 1024 coop2 wg 128x64x16 st2            :     135.7 µs median (135.7–135.9),  13.84 TFLOP/s · error ≤ 4.59e-7 of Σ|x·w|
+   gemm 0.8B down          m 256  3584× 1024 coop2 wg 64x128x16 st2            :     129.8 µs median (129.8–129.8),  14.48 TFLOP/s · error ≤ 4.59e-7 of Σ|x·w|
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 coop 16x16x16 4x4 sg 2x2 st2 w32  : 86016 B of workgroup memory > 49152, skipped
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 simt                              :    3555.8 µs median (984.8–5447.0),   1.21 TFLOP/s · error ≤ 4.48e-8 of Σ|x·w|
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 coop 16x16x16 2x2 sg 2x2 st0 w32  :     524.4 µs median (170.2–803.5),   8.22 TFLOP/s · error ≤ 1.67e-7 of Σ|x·w|
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 coop 16x16x16 4x2 sg 1x2 st0 w32  :     420.4 µs median (120.5–645.5),  10.26 TFLOP/s · error ≤ 1.67e-7 of Σ|x·w|
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 coop 16x16x16 2x2 sg 2x2 st2 w32  :     335.0 µs median (109.3–500.8),  12.87 TFLOP/s · error ≤ 1.67e-7 of Σ|x·w|
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 coop 16x16x16 4x2 sg 1x2 st2 w32  :     574.4 µs median (183.6–852.6),   7.51 TFLOP/s · error ≤ 1.67e-7 of Σ|x·w|
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 coop 16x16x16 2x2 sg 2x2 st4 w32  :     399.5 µs median (130.0–591.4),  10.79 TFLOP/s · error ≤ 1.67e-7 of Σ|x·w|
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 coop2 wg 64x64x16 st0             :     365.8 µs median (118.8–557.8),  11.79 TFLOP/s · error ≤ 1.67e-7 of Σ|x·w|
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 coop2 wg 64x64x16 st2             :     341.0 µs median (97.2–522.0),  12.64 TFLOP/s · error ≤ 1.67e-7 of Σ|x·w|
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 coop2 wg 128x64x16 st2            :     355.9 µs median (109.8–534.0),  12.12 TFLOP/s · error ≤ 1.67e-7 of Σ|x·w|
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 coop2 wg 64x128x16 st2            :     341.0 µs median (97.2–521.6),  12.64 TFLOP/s · error ≤ 1.67e-7 of Σ|x·w|
+   gemm 0.8B DeltaNet proj m 256  1024× 8224 coop2 wg 128x128x16 st2           :     356.6 µs median (110.1–531.4),  12.09 TFLOP/s · error ≤ 1.67e-7 of Σ|x·w|
+   gemm 4B gate_up         m 256  2560×18432 coop 16x16x16 4x4 sg 2x2 st2 w32  : 86016 B of workgroup memory > 49152, skipped
+   gemm 4B gate_up         m 256  2560×18432 coop2 wg 128x128x16 st2           : 86016 B of workgroup memory > 49152, skipped
+   gemm 4B gate_up         m 256  2560×18432 simt                              :    5213.1 µs median (5210.4–20909.1),   4.63 TFLOP/s · error ≤ 3.45e-8 of Σ|x·w|
+   gemm 4B gate_up         m 256  2560×18432 coop 16x16x16 2x2 sg 2x2 st0 w32  :    2197.8 µs median (2196.6–2218.5),  10.99 TFLOP/s · error ≤ 3.10e-7 of Σ|x·w|
+   gemm 4B gate_up         m 256  2560×18432 coop 16x16x16 4x2 sg 1x2 st0 w32  :    2225.3 µs median (2223.2–2235.4),  10.86 TFLOP/s · error ≤ 3.10e-7 of Σ|x·w|
+   gemm 4B gate_up         m 256  2560×18432 coop 16x16x16 2x2 sg 2x2 st2 w32  :    1458.8 µs median (1457.9–1478.4),  16.56 TFLOP/s · error ≤ 3.10e-7 of Σ|x·w|
+   gemm 4B gate_up         m 256  2560×18432 coop 16x16x16 4x2 sg 1x2 st2 w32  :    1817.4 µs median (1815.9–1858.2),  13.29 TFLOP/s · error ≤ 3.10e-7 of Σ|x·w|
+   gemm 4B gate_up         m 256  2560×18432 coop 16x16x16 2x2 sg 2x2 st4 w32  :     941.7 µs median (941.3–978.0),  25.65 TFLOP/s · error ≤ 3.10e-7 of Σ|x·w|
+   gemm 4B gate_up         m 256  2560×18432 coop2 wg 64x64x16 st0             :    1860.6 µs median (1857.1–1871.6),  12.98 TFLOP/s · error ≤ 3.10e-7 of Σ|x·w|
+   gemm 4B gate_up         m 256  2560×18432 coop2 wg 64x64x16 st2             :    1265.4 µs median (1264.0–1275.3),  19.09 TFLOP/s · error ≤ 3.10e-7 of Σ|x·w|
+   gemm 4B gate_up         m 256  2560×18432 coop2 wg 128x64x16 st2            :     704.6 µs median (703.3–717.3),  34.29 TFLOP/s · error ≤ 3.10e-7 of Σ|x·w|
+   gemm 4B gate_up         m 256  2560×18432 coop2 wg 64x128x16 st2            :    1177.9 µs median (1177.7–1181.3),  20.51 TFLOP/s · error ≤ 3.10e-7 of Σ|x·w|
+exit 0

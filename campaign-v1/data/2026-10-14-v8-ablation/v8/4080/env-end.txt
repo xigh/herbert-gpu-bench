@@ -1,0 +1,3 @@
+Wed Oct 14 13:39:47 UTC 2026
+clocks.current.sm [MHz], clocks.current.memory [MHz], pstate
+2805 MHz, 10801 MHz, P2

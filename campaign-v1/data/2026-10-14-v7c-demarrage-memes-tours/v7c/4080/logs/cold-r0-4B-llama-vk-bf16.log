@@ -1,0 +1,31 @@
+0.00.087.392 I srv  llama_server: initializing ...
+0.00.087.405 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.087.659 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.089.427 I srv    load_model: loading model '/opt3/bench-qwen35/Qwen3.5-4B-BF16.gguf'
+0.00.577.763 W model has unused tensor blk.32.attn_norm.weight (size = 10240 bytes) -- ignoring
+0.00.577.768 W model has unused tensor blk.32.post_attention_norm.weight (size = 10240 bytes) -- ignoring
+0.00.577.772 W model has unused tensor blk.32.attn_q.weight (size = 41943040 bytes) -- ignoring
+0.00.577.773 W model has unused tensor blk.32.attn_k.weight (size = 5242880 bytes) -- ignoring
+0.00.577.775 W model has unused tensor blk.32.attn_v.weight (size = 5242880 bytes) -- ignoring
+0.00.577.779 W model has unused tensor blk.32.attn_output.weight (size = 20971520 bytes) -- ignoring
+0.00.577.780 W model has unused tensor blk.32.attn_q_norm.weight (size = 1024 bytes) -- ignoring
+0.00.577.782 W model has unused tensor blk.32.attn_k_norm.weight (size = 1024 bytes) -- ignoring
+0.00.577.783 W model has unused tensor blk.32.ffn_gate.weight (size = 47185920 bytes) -- ignoring
+0.00.577.784 W model has unused tensor blk.32.ffn_down.weight (size = 47185920 bytes) -- ignoring
+0.00.577.785 W model has unused tensor blk.32.ffn_up.weight (size = 47185920 bytes) -- ignoring
+0.00.577.787 W model has unused tensor blk.32.nextn.eh_proj.weight (size = 26214400 bytes) -- ignoring
+0.00.577.790 W model has unused tensor blk.32.nextn.enorm.weight (size = 10240 bytes) -- ignoring
+0.00.577.792 W model has unused tensor blk.32.nextn.hnorm.weight (size = 10240 bytes) -- ignoring
+0.00.577.797 W model has unused tensor blk.32.nextn.shared_head_norm.weight (size = 10240 bytes) -- ignoring
+0.01.322.078 I cmn          init: llama threadpool init, n_threads = 12
+0.03.021.996 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4608, kv_unified = 'false'
+0.03.024.511 I srv  llama_server: model loaded
+0.03.024.516 I srv  llama_server: listening on http://127.0.0.1:8104
+0.03.025.461 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.03.025.530 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.04.923.492 I slot print_timing: id  0 | task 0 | prompt eval time =    1897.92 ms /    17 tokens (  111.64 ms per token,     8.96 tokens per second)
+0.04.923.496 I slot print_timing: id  0 | task 0 |        eval time =       0.00 ms /     1 tokens (    0.00 ms per token,     0.00 tokens per second)
+0.04.923.496 I slot print_timing: id  0 | task 0 |       total time =    1897.92 ms /    18 tokens
+0.04.923.499 I slot print_timing: id  0 | task 0 |    graphs reused =          1
+0.04.923.524 I slot      release: id  0 | task 0 | stop processing: n_tokens = 17, truncated = 0
+0.04.924.238 I srv    operator(): operator(): cleaning up before exit...

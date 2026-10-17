@@ -1,0 +1,33 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261012094723
+Username: G5500\zexig
+RunAs User: G5500\zexig
+Configuration Name: 
+Machine: G5500 (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\zexig\Desktop\verrouiller-horloges-gpu.ps1
+Process ID: 12376
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Locking graphics at 2100 MHz and memory at 7001 MHz
+GPU clocks set to "(gpuClkMin 2100, gpuClkMax 2100)" for GPU 00000000:01:00.0
+All done.
+Memory clocks set to "(memClkMin 7001, memClkMax 7001)" for GPU 00000000:01:00.0
+All done.
+
+State now (idle clocks may read low until a kernel runs):
+name, driver_version, clocks.current.sm [MHz], clocks.current.memory [MHz], pstate
+NVIDIA GeForce RTX 3060 Ti, 591.86, 1665 MHz, 6801 MHz, P2
+
+Done.
+**********************
+Windows PowerShell transcript end
+End time: 20261012094724
+**********************

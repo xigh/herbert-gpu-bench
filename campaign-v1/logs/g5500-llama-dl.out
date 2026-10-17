@@ -1,0 +1,24 @@
+1A1B260A2240A12CAC7A94590FA88D06AE25D349DB9D556E9C2503F7D22E29A2 llama-b11564-bin-win-vulkan-x64 32084362
+F09BA10D4B16E04190EF81CEDF71F9F262BF1B162855B621261263042D481F69 llama-b11564-bin-win-cuda-12.4-x64 265207128
+8C79A9B226DE4B3CACFD1F83D24F962D0773BE79F1E7B75C6AF4DED7E32AE1D6 cudart-llama-bin-win-cuda-12.4-x64 391443627
+load_backend: loaded RPC backend from C:\Users\zexig\bench-engines\llama-b11564\vulkan\ggml-rpc.dll
+ggml_vulkan: Found 1 Vulkan devices:
+ggml_vulkan: 0 = NVIDIA GeForce RTX 3060 Ti (NVIDIA) | uma: 0 | fp16: 1 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: NV_coopmat2
+load_backend: loaded Vulkan backend from C:\Users\zexig\bench-engines\llama-b11564\vulkan\ggml-vulkan.dll
+load_backend: loaded CPU backend from C:\Users\zexig\bench-engines\llama-b11564\vulkan\ggml-cpu-haswell.dll
+load_backend: loaded RPC backend from C:\Users\zexig\bench-engines\llama-b11564\vulkan\ggml-rpc.dll
+load_backend: loaded Vulkan backend from C:\Users\zexig\bench-engines\llama-b11564\vulkan\ggml-vulkan.dll
+load_backend: loaded CPU backend from C:\Users\zexig\bench-engines\llama-b11564\vulkan\ggml-cpu-haswell.dll
+Available devices:
+  Vulkan0: NVIDIA GeForce RTX 3060 Ti (8238 MiB, 7469 MiB free)
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 8191 MiB):
+  Device 0: NVIDIA GeForce RTX 3060 Ti, compute capability 8.6, VMM: yes, VRAM: 8191 MiB
+load_backend: loaded CUDA backend from C:\Users\zexig\bench-engines\llama-b11564\cuda\ggml-cuda.dll
+load_backend: loaded RPC backend from C:\Users\zexig\bench-engines\llama-b11564\cuda\ggml-rpc.dll
+load_backend: loaded CPU backend from C:\Users\zexig\bench-engines\llama-b11564\cuda\ggml-cpu-haswell.dll
+load_backend: loaded CUDA backend from C:\Users\zexig\bench-engines\llama-b11564\cuda\ggml-cuda.dll
+load_backend: loaded RPC backend from C:\Users\zexig\bench-engines\llama-b11564\cuda\ggml-rpc.dll
+load_backend: loaded CPU backend from C:\Users\zexig\bench-engines\llama-b11564\cuda\ggml-cpu-haswell.dll
+Available devices:
+  CUDA0: NVIDIA GeForce RTX 3060 Ti (8191 MiB, 7126 MiB free)
+DL-DONE

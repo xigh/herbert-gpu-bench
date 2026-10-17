@@ -1,0 +1,16 @@
+[vulkan] Intel(R) Graphics (LNL) [Intel INTEGRATED_GPU] Vulkan 1.4.335 · subgroup 32 (16..=32) · coopmat true · bf16 true [(8, 16, 16)] · coopmat2 false · driver 0x6800003
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=1 rec.slices=8 rec.cols=32 sdpa.split=8 gemm=0 gemm.wave=32 gemm.mt=8 gemm.nt=16 gemm.kt=16 gemm.tm=2 gemm.tn=2 gemm.sgm=2 gemm.sgn=2 copy.logits=1
+[vulkan] device memory: type 1 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 2 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×153, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 1024, 24 layers, 8 heads / 2 kv × 256, intermediate 3584, vocab 248320, rotary 64, linear k 16×128 v 16×128, tied head true
+[vulkan] 1.47 GiB on the device, 0.5 MiB on the host, KV for 4096 positions, activations for 1 rows
+[vulkan] 18 pipelines emitted and built
+[vulkan] step of 265 operations recorded
+[engine] loaded in 1.0 s, mounted in 0.04 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+
+>>> What is the capital of France? Answer in one sentence.
+The capital of France is Paris.
+[ids] 760 6511 314 9338 369 11751 13
+[decoded] "The capital of France is Paris."
+[turn 1] 24 prompt tokens in 0.395 s (60.7 tok/s) · 7 generated in 0.11 s (61.33 tok/s) · position 31

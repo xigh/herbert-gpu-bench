@@ -1,0 +1,3 @@
+02afa14 bench/_h16-ab.sh: variants without spaces
+e71fb42 Step 3: gemm_simt_h16, the SIMT GEMM in packed f16 (gemm.h16 = flush period in tiles), shaderFloat16 enabled when present; bench/_h16-ab.sh
+4a9768d bench/_f16_summary.py: f16 against bf16, speed and first divergence from the CPU oracle

@@ -1,0 +1,42 @@
+V7, 4080: from the launch of the server to its first token (s, medians of 5; ready = health answered, then 1 token).
+
+## cold, 0.8B
+
+| engine | ready (s) | first token (s) | errors |
+|---|---|---|---|
+| herbert-bf16 | 2.11 | 2.12 | 0 |
+| llama-vk-bf16 | 2.10 | 3.10 | 0 |
+| llama-cuda-bf16 | 0.70 | 0.76 | 0 |
+
+## cold, 4B
+
+| engine | ready (s) | first token (s) | errors |
+|---|---|---|---|
+| herbert-bf16 | 2.53 | 2.56 | 0 |
+| llama-vk-bf16 | 3.07 | 4.97 | 0 |
+| llama-cuda-bf16 | 1.17 | 1.21 | 0 |
+
+## warm, 0.8B
+
+| engine | ready (s) | first token (s) | errors |
+|---|---|---|---|
+| herbert-bf16 | 0.60 | 0.61 | 0 |
+| llama-vk-bf16 | 0.75 | 0.77 | 0 |
+| llama-cuda-bf16 | 0.71 | 0.76 | 0 |
+
+## warm, 4B
+
+| engine | ready (s) | first token (s) | errors |
+|---|---|---|---|
+| herbert-bf16 | 1.02 | 1.04 | 0 |
+| llama-vk-bf16 | 1.39 | 1.48 | 0 |
+| llama-cuda-bf16 | 1.17 | 1.21 | 0 |
+
+## Herbert's split (ms, medians): SPIR-V emitted / built by the driver / pipelines total; weights loaded (s)
+
+| mode | model | build | emitted | driver | total | loaded (s) |
+|---|---|---|---|---|---|---|
+| cold | 0.8B | herbert-bf16 | 2.8 | 1542.6 | 1545.4 | 0.30 |
+| cold | 4B | herbert-bf16 | 2.8 | 1544.9 | 1547.7 | 0.70 |
+| warm | 0.8B | herbert-bf16 | 2.2 | 3.7 | 5.9 | 0.30 |
+| warm | 4B | herbert-bf16 | 2.3 | 3.7 | 6.0 | 0.70 |

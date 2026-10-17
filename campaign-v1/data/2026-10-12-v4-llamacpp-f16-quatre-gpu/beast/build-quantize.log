@@ -1,0 +1,10 @@
+[  2%] Built target llama-common-base
+[  2%] Built target cpp-httplib
+[  6%] Built target ggml-base
+[ 12%] Built target ggml-cpu
+[ 64%] Built target ggml-cuda
+[ 64%] Built target ggml
+[ 79%] Built target llama
+[ 97%] Built target llama-common
+[ 97%] Built target llama-quantize-impl
+[100%] Built target llama-quantize

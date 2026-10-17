@@ -1,0 +1,23 @@
+pp16: 4 words, 16 tokens
+pp64: 42 words, 64 tokens
+r1-0.8B-herbert-pp16.log [turn 1] 16 prompt tokens in 0.004 s (3951.6 tok/s) · 1 generated in 0.00 s (183150.18 tok/s) · position 16
+r1-0.8B-herbert-pp64.log [turn 1] 64 prompt tokens in 0.004 s (15416.2 tok/s) · 1 generated in 0.00 s (141562.85 tok/s) · position 64
+r1-4B-herbert-pp16.log [turn 1] 16 prompt tokens in 0.019 s (830.7 tok/s) · 1 generated in 0.00 s (231053.60 tok/s) · position 16
+r1-4B-herbert-pp64.log [turn 1] 64 prompt tokens in 0.018 s (3474.5 tok/s) · 1 generated in 0.00 s (31152.65 tok/s) · position 64
+r2-0.8B-herbert-pp16.log [turn 1] 16 prompt tokens in 0.004 s (3962.6 tok/s) · 1 generated in 0.00 s (286861.73 tok/s) · position 16
+r2-0.8B-herbert-pp64.log [turn 1] 64 prompt tokens in 0.004 s (15407.4 tok/s) · 1 generated in 0.00 s (215100.02 tok/s) · position 64
+r2-4B-herbert-pp16.log [turn 1] 16 prompt tokens in 0.019 s (832.3 tok/s) · 1 generated in 0.00 s (204918.03 tok/s) · position 16
+r2-4B-herbert-pp64.log [turn 1] 64 prompt tokens in 0.018 s (3557.0 tok/s) · 1 generated in 0.00 s (32291.40 tok/s) · position 64
+r3-0.8B-herbert-pp16.log [turn 1] 16 prompt tokens in 0.004 s (3958.9 tok/s) · 1 generated in 0.00 s (191975.43 tok/s) · position 16
+r3-0.8B-herbert-pp64.log [turn 1] 64 prompt tokens in 0.004 s (15416.3 tok/s) · 1 generated in 0.00 s (222321.03 tok/s) · position 64
+r3-4B-herbert-pp16.log [turn 1] 16 prompt tokens in 0.020 s (813.2 tok/s) · 1 generated in 0.00 s (32093.46 tok/s) · position 16
+r3-4B-herbert-pp64.log [turn 1] 64 prompt tokens in 0.018 s (3547.9 tok/s) · 1 generated in 0.00 s (29706.21 tok/s) · position 64
+r4-0.8B-herbert-pp16.log [turn 1] 16 prompt tokens in 0.004 s (3951.8 tok/s) · 1 generated in 0.00 s (136556.06 tok/s) · position 16
+r4-0.8B-herbert-pp64.log [turn 1] 64 prompt tokens in 0.004 s (15415.2 tok/s) · 1 generated in 0.00 s (244618.40 tok/s) · position 64
+r4-4B-herbert-pp16.log [turn 1] 16 prompt tokens in 0.020 s (814.8 tok/s) · 1 generated in 0.00 s (19433.70 tok/s) · position 16
+r4-4B-herbert-pp64.log [turn 1] 64 prompt tokens in 0.018 s (3578.8 tok/s) · 1 generated in 0.00 s (143000.14 tok/s) · position 64
+r5-0.8B-herbert-pp16.log [turn 1] 16 prompt tokens in 0.004 s (3951.5 tok/s) · 1 generated in 0.00 s (139411.68 tok/s) · position 16
+r5-0.8B-herbert-pp64.log [turn 1] 64 prompt tokens in 0.004 s (15306.0 tok/s) · 1 generated in 0.00 s (141382.72 tok/s) · position 64
+r5-4B-herbert-pp16.log [turn 1] 16 prompt tokens in 0.019 s (830.8 tok/s) · 1 generated in 0.00 s (202061.02 tok/s) · position 16
+r5-4B-herbert-pp64.log [turn 1] 64 prompt tokens in 0.018 s (3553.0 tok/s) · 1 generated in 0.00 s (30920.50 tok/s) · position 64
+ALLDONE-FLOOR

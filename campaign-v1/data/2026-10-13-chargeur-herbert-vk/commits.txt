@@ -1,0 +1,2 @@
+2ac926d loader: shards mapped in place, f16 weight cache, conversion and upload on every core
+8440202 loader: shards mapped in place, multi-part weights written at their place, upload on every core

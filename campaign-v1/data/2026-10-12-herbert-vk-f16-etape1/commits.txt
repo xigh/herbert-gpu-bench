@@ -1,0 +1,6 @@
+d1b60c7 bench/_after.sh: rustup's cargo outside a login shell
+3c8692b bench/_after.sh: build, probe and f16/bf16 A/B once the machine is free; _f16-ab.sh takes MODELS, ORACLE, EXE
+eacd08a Probe: the 16-bit conversions checked against the host (every 16-bit value widened, 2^21 f32 rounded); bench/_f16-ab.sh
+7708553 f16 feature: the engine's 16-bit format becomes IEEE f16 (weights converted at load, activations, KV cache, logits, cooperative matrices); bf16 kept bit for bit without it
+9738be7 herbert-vk-serve (feature serve): the Anthropic Messages API over HTTP, ported from herbert-rs's server, for a bench that times every engine with the same client
+2f3ae48 bf16 build by default (the measured one); drop two internal names from comments

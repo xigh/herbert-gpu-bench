@@ -1,0 +1,5 @@
+   Compiling herbert-vk-bf16 v0.1.0 (/home/zexigh/herbert-vk-bf16)
+    Finished `release` profile [optimized] target(s) in 3.67s
+exit 0
+    Finished `release` profile [optimized] target(s) in 0.04s
+oracle exit 0

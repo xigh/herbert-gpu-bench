@@ -1,0 +1,245 @@
+[vulkan] NVIDIA GeForce RTX 4080 [NVIDIA DISCRETE_GPU] Vulkan 1.4.329 · subgroup 32 (32..=32) · coopmat true · bf16 true [(16, 16, 16)] · coopmat2 true · driver 0x94d8c080
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=2048 prefill.split=0 rec.slices=8 rec.cols=32 sdpa.split=8 sdpa.prefill=2 rec.chunk=4 rec.pcols=16 rec.pslices=16 rec.vec=1 rec.stage=0 rec.pair=0 conv.cols=32 proj.pad=64 prefill.pipe=3 sdpa.bq=16 sdpa.bk=32 sdpa.qt=1 sdpa.qreg=1 gemm=2 gemm.wave=32 gemm.mt=64 gemm.nt=64 gemm.kt=64 gemm.tm=1 gemm.tn=1 gemm.sgm=8 gemm.sgn=1 gemm.stage=0 gemm.simt=1 gemm.simtk=16 gemm.simtr=0 gemm.mfirst=1 gemm.shapes=2 gemm.pack=0 gemm.direct=1 weights.local=0 weights.ro=0 fuse.norm=1 fuse.swiglu=1 fuse.dn=0 host.poll=0 copy.logits=0
+[vulkan] device memory: type 4 heap 0 (16.0 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 3 heap 1 (139.8 GiB) HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×153, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 1024, 24 layers, 8 heads / 2 kv × 256, intermediate 3584, vocab 248320, rotary 64, linear k 16×128 v 16×128, tied head true
+[vulkan] 1.62 GiB on the device, 0.5 MiB on the host, KV for 4096 positions, activations for 2048 rows
+[vulkan] 38 pipelines emitted and built
+[vulkan] step of 192 operations recorded
+[engine] loaded in 0.7 s, mounted in 0.01 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+
+>>> Here are my notes on a hybrid language model, repeated as I took them during several meetings.
+
+Meeting 1: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 2: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 3: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 4: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 5: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 6: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 7: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 8: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 9: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that predictio
+[top 0] 27775:24.875 2064:24.25 40:20.5 760:20.375 12684:20.25
+Based[top 1] 383:26.625 24660:20.875 16421:18.875 20417:18.5 1132:17.375
+ on[top 2] 279:23.5 678:22.5 660:17 264:16.75 2972:15.8125
+ the[top 3] 11173:20.25 56127:19 1414:18.5 51623:18.5 8129:18.125
+ repeated[top 4] 8129:20 1414:18.75 10379:16.75 6236:16.625 2144:16.5
+ notes[top 5] 488:21.875 494:21.5 3766:20.5 3808:20 11:19.625
+ you[top 6] 3766:23.125 2908:20.375 3162:19.375 5904:19.125 599:18.625
+ provided[top 7] 11:26.375 318:24.25 3808:23.375 364:22.875 494:22.25
+,[top 8] 424:22.375 1532:21.625 1017:21.125 279:20.875 353:20.625
+ it[top 9] 7701:26.75 369:23.125 4816:23 5686:21.375 8772:19.25
+ appears[top 10] 1017:22.375 488:21.625 421:21.25 279:20.25 678:19.75
+ there[top 11] 369:25.875 513:25.5 557:24.125 1189:23.875 682:23.75
+ is[top 12] 264:25.125 1010:22.5 4222:21.5 4927:21.5 1132:20.875
+ a[top 13] 4927:22.625 7856:22.375 2972:20.75 2708:20.25 12594:20
+ significant[top 14] 92824:21.875 75332:21 64285:19.25 1412:19.125 2972:19.125
+ inconsistency[top 15] 303:22.75 466:22.375 1881:22.375 321:20 3808:19.75
+ in[top 16] 279:23.625 678:22.625 1204:21.25 2972:20.375 1092:18.875
+ the[top 17] 1414:20.125 2144:19.375 3447:19 3766:19 2972:18.875
+ text[top 18] 1881:20.25 13:19.625 3808:19.625 488:19.375 421:18.625
+ between[top 19] 2972:22.75 279:20.25 678:20 82627:18.625 28107:18.5
+ **[top 20] 62394:23.875 39212:21 15355:19.125 7575:18.875 19186:18.875
+Meeting[top 21] 220:24.375 332:17.75 653:17.125 1543:15.6875 3648:15.625
+ [top 22] 16:29 17:26.25 19:26.25 18:25.25 22:24.375
+1[top 23] 332:23.375 321:21.625 4006:21.375 93868:21.25 11:21
+**[top 24] 321:25.5 318:24 1472:23.625 310:19.875 57419:19.375
+ and[top 25] 2972:24.125 279:23.625 16905:20.875 660:20.25 2843:20.25
+ **[top 26] 62394:23.75 39212:21.125 7575:19.125 2324:19 29003:19
+Meeting[top 27] 220:24.75 332:15.8125 1543:15.3125 380:15.25 653:15.1875
+ [top 28] 17:27.125 24:26.875 19:25.125 18:24.875 22:24.75
+2[top 29] 332:22.875 93868:22.75 159034:22.625 14:20.75 11:20.625
+**[top 30] 318:24.5 8559:20.875 57419:20 421:19.625 321:19.5
+ ([top 31] 429:23.25 49516:22.875 299:22.5 269:22.25 7949:20.5
+and[top 32] 4222:19.375 16905:19.25 660:18.75 26533:18.75 279:18.25
+ likely[top 33] 16905:19 660:18.75 28107:18.625 82627:18.625 279:18.5
+ subsequent[top 34] 15782:22.75 82627:18.5 5981:18.25 10379:18.125 8129:18
+ meetings[top 35] 681:21.25 553:21 220:20 11:19.5 8:19.375
+),[top 36] 430:22.75 864:21.25 466:21.125 1332:21.125 11352:21.125
+ as[top 37] 1575:22 279:21.25 781:20.375 660:18.375 678:18.375
+ well[top 38] 430:28.5 264:16.875 299:16.125 1881:15.125 1056:15
+ as[top 39] 264:22.625 1010:21.25 4499:19.75 449:19.625 279:19.25
+ a[top 40] 7167:19.375 8652:19.375 4499:19.25 82170:19.25 35358:19.125
+ missing[top 41] 1500:19.25 4202:19.25 11316:18.625 14870:18 1534:17.875
+ line[top 42] 303:24.5 506:23 494:20.25 318:19.375 466:19.375
+ in[top 43] 2972:23 279:21.125 678:21 28107:20.5 6236:17.375
+ **[top 44] 62394:27.125 39212:20.125 1984:20 8839:19.75 9333:18.375
+Meeting[top 45] 220:27.375 380:15.9375 653:15.5 159034:15.1875 1543:14.8125
+ [top 46] 24:29.75 19:24.375 16:24 17:23 23:22.875
+9[top 47] 159034:26.5 332:23.875 93868:20 579:18.75 92217:18.625
+**.[top 48] 271:24.375 561:20.5 21708:19.5 1049:19 1942:18.625
+
+
+[top 49] 8160:24.875 760:22 13962:21.875 10883:21.75 9764:21.625
+Here[top 50] 369:25.125 513:22.5 7701:22 4816:19.875 4833:19
+ is[top 51] 264:27.25 279:26.25 449:22.5 678:19.375 821:19.375
+ a[top 52] 34773:21.75 29006:21.625 31838:21 57287:20.25 26824:20.125
+ corrected[top 53] 321:23.25 2243:20.75 11782:20.375 11:20.25 6157:19.625
+ and[top 54] 57287:21.625 16155:21.125 62584:20.75 31838:20.625 26824:20.5
+ consolidated[top 55] 2243:23.25 11782:21.25 6157:20.25 1593:19.875 29006:18.5
+ version[top 56] 314:27.875 3018:22.25 421:19.75 364:18.75 440:17.875
+ of[top 57] 678:25.25 279:23.75 1092:18.625 1782:17.75 660:17.5
+ your[top 58] 8129:23 795:18.5 1414:18.25 1558:17.125 22980:17
+ notes[top 59] 11:23.625 3018:22.375 13:21.125 364:20.5 421:20.5
+,[top 60] 16155:21.5 34082:19.125 26153:18.875 17068:18.75 31838:18.375
+ organized[top 61] 539:25.5 70561:22.25 364:21.75 310:21.375 9077:21.375
+ by[top 62] 6236:20 279:19.125 19214:18.25 2972:17.875 678:17.5
+ meeting[top 63] 321:21.5 364:21.5 1324:20.875 11:20.75 310:20.625
+ and[top 64] 37306:19.5 34773:19.375 26153:18.75 4125:18.125 25524:17.875
+ highlighting[top 65] 279:26.25 1332:22.25 3050:21.875 1328:21.75 1092:21.125
+ the[top 66] 1328:22.125 3050:21.875 8751:21.5 87162:20.375 4222:20.125
+ key[top 67] 10597:20.625 11461:20.5 4203:19.25 3447:19.125 23016:19.125
+ technical[top 68] 3447:22.875 11461:21.75 4203:20.875 3387:20.75 6463:19.75
+ details[top 69] 25:21.5 13:21 488:21 421:20 8559:20
+:[top 70] 271:27 198:18.75 16112:17.5 561:16.75 28107:16.625
+
+
+[top 71] 13962:27.875 4277:24.25 332:21.75 11862:21 9:20.625
+###[top 72] 2972:20.125 76186:20 28107:18 38643:17.875 10838:17.5
+ **[top 73] 14777:21.75 62394:21.75 81639:21.375 31995:21.125 14965:19.875
+Cons[top 74] 5027:27.625 13233:21.5 290:17.625 45522:17.625 27998:17.25
+olid[top 75] 639:33.75 362:26.5 290:24.25 1060:23 344:21.5
+ated[top 76] 17529:19.375 25816:18.125 594:17.625 28107:17.625 6817:17.25
+ Notes[top 77] 25:21.25 383:20.5 332:19.875 364:18.625 594:18.625
+:[top 78] 47955:20.75 469:20.625 561:18.125 9812:15.625 462:15.375
+ Hybrid[top 79] 11106:21.375 469:18.625 4744:17.375 436:16.25 5413:15.4375
+ Language[top 80] 4744:24.375 26012:22.125 73640:18.5 11106:17.375 436:16.75
+ Model[top 81] 36593:19.875 332:18 318:17.625 27662:16.875 26898:16.25
+ Architecture[top 82] 332:23.875 318:20.5 17775:16.875 33655:16.875 594:16.75
+**[top 83] 271:29.125 198:26.125 318:16.25 248046:15.875 12492:15.8125
+
+
+[top 84] 332:24.125 794:24.125 9:22.25 91:20.875 760:20.875
+**[top 85] 5218:22.5 16:20.875 87819:20.625 8915:20.125 16499:20.125
+Core[top 86] 36593:20.375 26898:19.875 33214:19.75 6765:18 27662:18
+ Architecture[top 87] 64700:20 33655:19.75 332:18.75 7419:18.625 33214:18
+:**[top 88] 198:25.25 357:18.5 561:18.25 47955:17.25 271:16.875
+
+[top 89] 9:24.875 16:22.5 760:22.375 12:20.75 1919:19.875
+*[top 90] 256:30.125 2972:19.25 257:16.875 5690:16.75 260:15.5625
+  [top 91] 2972:27.5 173976:19.125 22028:17.375 561:17.125 176217:17
+ **[top 92] 8915:21.375 1652:20.875 22238:20.875 1349:20.375 38:19.875
+Layer[top 93] 3856:21.125 27662:20.625 64700:18.25 6765:17.875 11873:17.75
+ Type[top 94] 64700:25.625 92217:21 318:18.875 791:17.875 25:17.125
+:**[top 95] 469:19.625 2972:18.5 561:18.375 1510:16.875 37539:16.75
+ G[top 96] 639:25.75 8733:18.375 1060:17 2737:16.375 5499:16.125
+ated[top 97] 24167:20.25 19661:20 2972:17 56014:16.5 9141:16.25
+ Delta[top 98] 6738:22.625 9095:20.875 318:17.875 7884:17.25 22028:16.625
+Net[top 99] 318:19.75 13:19.5 6000:18.75 198:17.625 13224:17.5
+ ([top 100] 4623:20.125 38:19.875 265:19.625 692:19.5 1856:19
+uses[top 101] 264:20.5 61911:19.5 3931:17.625 2972:17.5 1528:16.5
+ a[top 102] 61911:21.75 2972:18.25 3931:17.875 348:17.5 1528:16.875
+ recurrent[top 103] 1528:22 4779:16.875 8240:15.75 348:15.625 791:15.5625
+ state[top 104] 791:23 11:19.375 348:19 4370:18.5 364:18.25
+ per[top 105] 869:23.5 348:20.75 2972:19.875 1510:19.375 4997:18.125
+ value[top 106] 1901:24.5 25546:19.375 52488:17.875 11:16.75 59009:16.5
+ head[top 107] 4370:24.125 11:23.625 553:23.375 4598:22.125 8:20.875
+ instead[top 108] 314:30.625 553:17.125 264:16.625 1328:16.25 1056:15.5625
+ of[top 109] 264:22.375 1328:18.875 5129:18.125 449:17.125 81726:17.125
+ a[top 110] 1328:20.875 5129:19.75 81726:18.5 2400:17.75 8343:17.75
+ key[top 111] 18509:26.625 55616:20.75 4006:18.875 869:18 43647:17.875
+-value[top 112] 6297:23.625 6505:16.25 18054:16.25 45850:16 5979:15.75
+ cache[top 113] 553:24.25 5759:18.5 6297:17.875 11:17.75 364:17.75
+).[top 114] 198:28.375 271:21.5 1061:20.375 348:17.625 561:17
+
+[top 115] 9:30.375 262:25.625 332:20.625 6391:16.25 220:16.125
+*[top 116] 256:29.25 2972:19.75 262:17.625 257:16.375 5690:16.125
+  [top 117] 2972:30.375 348:19.25 173976:18.25 332:17.875 171446:17.875
+ **[top 118] 4741:21.875 1349:21.5 4149:21.375 55157:21.375 35705:20.125
+Dec[top 119] 347:24.25 3574:21 16760:19.875 2181:19.375 282:19.125
+ay[top 120] 26898:22 64700:21.25 36480:19.375 594:18.75 8340:18.625
+ Mechan[top 121] 2074:32.75 291:25.625 13271:22.625 4384:22.125 1954:21.875
+ism[top 122] 64700:28.25 318:20.375 506:19.125 92217:18.75 791:18
+:**[top 123] 2332:22.5 561:21.5 3130:19.625 8618:19.375 357:19.25
+ At[top 124] 1396:27.75 1754:25.25 348:20.875 2972:20.875 279:20.625
+ every[top 125] 2234:24.125 2923:19.5 854:17.875 72039:17.875 3817:17
+ position[top 126] 11:25.875 303:22.125 2261:19.75 2785:19.75 393:19.25
+,[top 127] 279:25.625 264:22.75 1528:19.25 449:18.5 61911:18.25
+ the[top 128] 61911:22.5 1528:21.125 2972:18.375 1558:18.25 5138:17.125
+ recurrent[top 129] 1528:25.125 29712:19 2972:18 4779:17 1566:16.75
+ state[top 130] 1566:24.125 369:21.125 2972:20.375 35456:18.75 393:18.125
+ dec[top 131] 912:32.75 16760:21.5 347:19.5 66111:18.875 3342:17.25
+ays[top 132] 539:26 1608:20.5 71630:19.5 4417:18.625 318:18.5
+ by[top 133] 264:31.5 449:23.375 279:21.875 2972:20.75 1141:19.25
+ a[top 134] 9218:25.75 2972:25.375 348:23 3827:21.125 3050:20.25
+ learned[top 135] 7911:23.5 29712:20.625 16764:18.75 4238:17.875 26079:17.625
+ factor[top 136] 13:24.375 1518:21.25 1651:21.125 318:20.75 310:20.5
+.[top 137] 198:27.875 271:22.875 561:21.875 1061:20.5 318:17.125
+
+[top 138] 9:30.625 262:26.375 332:18.875 220:18.375 1031:17.875
+*[top 139] 256:31 262:19.5 257:17.625 2972:17.25 5690:17.125
+  [top 140] 2972:30.625 173976:20 348:19.625 176217:18.375 217634:17.125
+ **[top 141] 21850:21.375 1536:20.625 4149:20.625 85238:19.625 4935:19.125
+Rank[top 142] 87269:27.5 12:25 18030:22.75 22882:20 44559:19.875
+-One[top 143] 5376:23.625 26608:21.5 68895:17.875 59780:17.75 8984:17.625
+ Update[top 144] 64700:24.625 318:20.375 17561:20 34906:18.875 71690:18.875
+:**[top 145] 561:24.375 198:22.375 2332:20.875 3095:19.75 1690:19.625
+ The[top 146] 1328:22.75 3134:20.625 6463:19.125 869:18.125 1510:17.625
+ key[top 147] 68279:24.125 54004:19 318:18.5 46361:18.375 55288:18.25
+ retrieves[top 148] 279:25.375 1092:22.875 1141:22.875 19292:20.375 264:20.125
+ the[top 149] 1528:22.125 19039:22.125 18569:21.75 869:21.5 1428:18.5
+ state[top 150] 19039:23.625 579:22.375 421:19.875 2195:19.875 18569:19.875
+ prediction[top 151] 364:23.25 11:22.75 13:22.125 506:21.75 26:20.875
+ for[top 152] 1141:23.625 421:23.375 279:22.875 424:21.875 4924:20.625
+ its[top 153] 2234:22.25 869:20.875 1879:20 11811:20 1765:19.125
+ position[top 154] 13:25.75 11:24.125 26:23.875 321:21.625 1651:20.5
+.[top 155] 561:25.625 357:20.5 1049:19.125 198:18.25 1368:18
+ The[top 156] 6463:23.375 869:19.375 24806:19 31088:18.75 1412:17.875
+ difference[top 157] 1881:25.75 318:22.375 369:20 1651:19.75 27718:19.375
+ between[top 158] 279:27.625 411:22.875 1510:22 2972:21.125 348:19.875
+ the[top 159] 869:22.375 2972:20.875 1428:20.375 348:19.875 1528:19.875
+ value[top 160] 321:22.875 19039:20 1901:19.375 506:18.25 1528:17.625
+ and[top 161] 411:26 421:25.75 279:25.625 19039:24.25 1141:20.75
+ this[top 162] 19039:26.75 18569:22.625 1528:18.875 348:17.5 6805:17.25
+ prediction[top 163] 11:25.875 369:25.75 318:25 1651:21.625 73879:20.25
+,[top 164] 29689:27.75 53070:23.75 2972:22.125 348:21.625 28450:21.375
+ scaled[top 165] 539:29.75 4417:18.5 310:17.125 1441:17.125 13094:17.125
+ by[top 166] 264:30.25 279:22 449:22 1510:21.25 9218:20.5
+ a[top 167] 9218:26.375 3827:21.5 6618:21.25 2972:21 4238:20.75
+ learned[top 168] 4238:26.125 2972:19.625 7911:19.375 328:18.75 348:18.25
+ rate[top 169] 11:25 1651:21.5 318:19.5 27718:19.25 56014:17.875
+,[top 170] 369:26.875 8772:21.375 26023:21.25 13653:20.75 10551:20.25
+ is[top 171] 5158:24 5860:20.875 2468:20 3568:19 8977:18.75
+ written[top 172] 1142:29.5 430:25 1083:21 2972:20.625 680:20.5
+ back[top 173] 430:27 13:24.125 310:21.125 318:20.5 1083:19.25
+ as[top 174] 264:29 449:21.5 2972:21.5 6857:20.875 279:20.5
+ a[top 175] 6857:24.625 2972:23.375 348:18.75 18715:18.5 3074:18.25
+ rank[top 176] 18030:31.75 35704:22.375 87269:21.875 12:21.375 799:20.625
+-one[top 177] 2560:24.875 318:17.875 19556:17.875 4471:17.625 5979:17.125
+ update[top 178] 13:24.75 310:21.25 318:20.625 1651:19.625 4471:18.875
+.[top 179] 198:26.25 561:23.875 271:20.75 1061:20.375 2972:18.625
+
+[top 180] 9:31 262:26.125 332:18.625 220:17.5 285:17
+*[top 181] 256:30.75 2972:17.375 5690:17 257:16.25 262:16.125
+  [top 182] 2972:29.875 348:18.625 173976:17.625 176217:16 256:15.875
+ **[top 183] 2766:23.25 66983:20.875 4149:20.125 4935:20.125 27950:19.5
+Query[top 184] 27212:19.25 64700:19 17239:18.5 29913:17.875 594:17.75
+ Processing[top 185] 64700:29.625 92217:19.375 318:18.875 594:18.875 332:16.75
+:**[top 186] 561:25.875 4486:22.25 28477:20.125 22006:19.75 1061:19
+ The[top 187] 3134:23.875 5860:19.125 16905:18.75 1727:17.75 2560:17.625
+ query[top 188] 15339:23 1179:21.375 8570:18.25 26533:18.25 1301:17.5
+ reads[top 189] 279:28.5 411:23.375 321:20.625 1439:20.625 5860:20.625
+ the[top 190] 5860:26.25 2972:20.875 348:20.125 13238:19 1528:18.75
+ updated[top 191] 1528:23 61911:20.75 318:19.875 11:18.75 869:16.5
+ state[top 192] 13:22.625 310:21.375 494:21 1238:20.875 318:20.5
+.[top 193] 198:27.125 271:25.375 14095:17.625 318:17.25 561:16.875
+
+[top 194] 9:30.5 262:22.875 332:19.875 6391:17.875 1031:16.625
+*[top 195] 256:27.875 2972:16.625 262:16.375 257:14.8125 5690:14.6875
+  [top 196] 2972:27.875 173976:17 176217:16.5 348:16.375 171446:16.375
+ **[top 197] 66983:22 33398:21 22238:19.75 13673:19.25 8915:18.875
+Attention[top 198] 26898:19 22028:18.875 80931:18.5 18264:18.25 64700:18.25
+ Mechan[top 199] 2074:29.25 13271:23.125 1954:20.25 291:20.125 64700:19.625
+ism
+[ids] 27775 383 279 11173 8129 488 3766 11 424 7701 1017 369 264 4927 92824 303 279 1414 1881 2972 62394 220 16 332 321 2972 62394 220 17 332 318 429 4222 16905 15782 681 430 1575 430 264 7167 1500 303 2972 62394 220 24 159034 271 8160 369 264 34773 321 57287 2243 314 678 8129 11 16155 539 6236 321 37306 279 1328 10597 3447 25 271 13962 2972 14777 5027 639 17529 25 47955 11106 4744 36593 332 271 332 5218 36593 64700 198 9 256 2972 8915 3856 64700 469 639 24167 6738 318 4623 264 61911 1528 791 869 1901 4370 314 264 1328 18509 6297 553 198 9 256 2972 4741 347 26898 2074 64700 2332 1396 2234 11 279 61911 1528 1566 912 539 264 9218 7911 13 198 9 256 2972 21850 87269 5376 64700 561 1328 68279 279 1528 19039 364 1141 2234 13 561 6463 1881 279 869 321 411 19039 11 29689 539 264 9218 4238 11 369 5158 1142 430 264 6857 18030 2560 13 198 9 256 2972 2766 27212 64700 561 3134 15339 279 5860 1528 13 198 9 256 2972 66983 26898
+[decoded] "Based on the repeated notes you provided, it appears there is a significant inconsistency in the text between **Meeting 1** and **Meeting 2** (and likely subsequent meetings), as well as a missing line in **Meeting 9**.\n\nHere is a corrected and consolidated version of your notes, organized by meeting and highlighting the key technical details:\n\n### **Consolidated Notes: Hybrid Language Model Architecture**\n\n**Core Architecture:**\n*   **Layer Type:** Gated DeltaNet (uses a recurrent state per value head instead of a key-value cache).\n*   **Decay Mechanism:** At every position, the recurrent state decays by a learned factor.\n*   **Rank-One Update:** The key retrieves the state prediction for its position. The difference between the value and this prediction, scaled by a learned rate, is written back as a rank-one update.\n*   **Query Processing:** The query reads the updated state.\n*   **Attention Mechan"
+[turn 1] 1024 prompt tokens in 0.018 s (57996.2 tok/s) · 199 generated in 0.72 s (275.63 tok/s) · position 1223

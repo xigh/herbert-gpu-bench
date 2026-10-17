@@ -1,0 +1,30 @@
+[isa] avx2=yes fma=yes avxvnni=yes avx512f=yes avx512bf16=yes → GEMM lanes zmm
+[loader] qwen3_5_text — hidden 1024, 24 layers, 8 heads / 2 kv heads × 256, intermediate 3584, vocab 248320, rotary 64 dims, rope_theta 10000000, tied head true
+[loader] shard 1/1: 488 tensors, 1.63 GiB mapped, 0.3 s
+[loader] skipped, not used by the engine: model.visual.* ×153, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] 24 layers assembled, RoPE tables built, 0.7 s in all
+[loader] bf16 everywhere: 151 matrices packed R16 (1.40 GiB), 6 gated q_proj permuted, no Q4, no cache — linear_attn.in_proj_qkv.weight×18, linear_attn.in_proj_z.weight×18, linear_attn.out_proj.weight×18, lm_head.weight (tied)×1, mlp.down_proj.weight×24, mlp.gate_proj.weight×24, mlp.up_proj.weight×24, self_attn.k_proj.weight×6, self_attn.o_proj.weight×6, self_attn.q_proj.weight×6, self_attn.v_proj.weight×6
+[pool] 2 CCDs, 12 cores, worker order [0, 6, 1, 7, 2, 8, 3, 9, 4, 10, 5, 11]…
+[pool] 12 workers on cpus [0,6,1,7,2,8,3,9,4,10,5,11] · caller = worker 0: yes · spin 500 µs · coordinator spins: yes
+[engine] 1.40 GiB of weights touched in 0.002 s
+[engine] loaded in 0.8 s, mounted in 0.42 s — 8192 positions reserved, prefill program Some((3279462, 304571, 305330)), decode program Some((3279094, 304571, 305330))
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+
+>>> Here are my notes on a hybrid language model, repeated as I took them during several meetings.
+
+Meeting 1: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of ke
+
+[answer]
+Based on the notes you provided, here is a structured summary and expansion of the **GatedDeltaNet** mechanism. This model appears to be a hybrid approach combining the efficiency of a Gated Diffusion Model (GDM) with the memory preservation capabilities of a Transformer.
+
+### 1. Core Architecture Overview
+The GatedDeltaNet operates on a **value head** (which acts as the primary encoder) and a **key-value pair head** (which acts as the decoder).
+*   **Value Head**: Encodes the input sequence into a latent representation.
+*   **Key-Value Head**: Encodes the input sequence into a latent representation.
+*   **Interaction**: The value head's output is used as the "key" for the key-value head, while the key-value head's output is used as the "value" for the value head.
+
+### 2. The GatedDeltaNet Layer (The "Gated" Mechanism)
+This
+[ids] 27775 383 279 8129 488 3766 11 1532 369 264 31838 11782 321 14046 314 279 2972 38 639 19661 6738 332 16456 13 1061 1558 7701 310 381 264 24197 5313 33041 279 14588 314 264 469 639 27446 7321 4744 318 38 8135 8 440 279 4779 44026 16432 314 264 60277 13 271 13962 220 16 13 9237 36593 33655 198 760 469 639 19661 6738 25224 383 264 2972 927 1901 332 318 7949 13653 430 279 5839 22927 8 321 264 2972 767 18509 6505 1901 332 318 7949 13653 430 279 23776 553 198 9 256 2972 1094 10877 92217 10435 2458 279 1879 8240 1083 264 40290 12669 13 198 9 256 2972 1536 12 1094 10877 92217 10435 2458 279 1879 8240 1083 264 40290 12669 13 198 9 256 2972 30280 92217 561 869 1901 579 2468 369 1429 430 279 328 767 1 364 279 1328 18509 1901 11 1345 279 1328 18509 1901 579 2468 369 1429 430 279 328 927 1 364 279 869 1901 13 271 13962 220 17 13 561 469 639 19661 6738 22028 318 760 328 38 639 1 26898 2074 8 198
+[decoded] "Based on the notes you provided, here is a structured summary and expansion of the **GatedDeltaNet** mechanism. This model appears to be a hybrid approach combining the efficiency of a Gated Diffusion Model (GDM) with the memory preservation capabilities of a Transformer.\n\n### 1. Core Architecture Overview\nThe GatedDeltaNet operates on a **value head** (which acts as the primary encoder) and a **key-value pair head** (which acts as the decoder).\n*   **Value Head**: Encodes the input sequence into a latent representation.\n*   **Key-Value Head**: Encodes the input sequence into a latent representation.\n*   **Interaction**: The value head's output is used as the \"key\" for the key-value head, while the key-value head's output is used as the \"value\" for the value head.\n\n### 2. The GatedDeltaNet Layer (The \"Gated\" Mechanism)\n"
+[turn 1] 128 prompt tokens in 0.061 s (2082.5 tok/s) · 199 generated in 7.21 s (27.60 tok/s) · 0 tool calls · rewrite 0.000 s · position 327

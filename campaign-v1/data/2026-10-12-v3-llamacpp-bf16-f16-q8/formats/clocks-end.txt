@@ -1,0 +1,2 @@
+clocks.current.sm [MHz], clocks.current.memory [MHz], pstate
+2805 MHz, 11201 MHz, P0

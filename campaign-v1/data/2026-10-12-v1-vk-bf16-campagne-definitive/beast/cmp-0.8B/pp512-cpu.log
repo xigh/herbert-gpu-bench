@@ -1,0 +1,39 @@
+[isa] avx2=yes fma=yes avxvnni=yes avx512f=yes avx512bf16=yes → GEMM lanes zmm
+[loader] qwen3_5_text — hidden 1024, 24 layers, 8 heads / 2 kv heads × 256, intermediate 3584, vocab 248320, rotary 64 dims, rope_theta 10000000, tied head true
+[loader] shard 1/1: 488 tensors, 1.63 GiB mapped, 0.3 s
+[loader] skipped, not used by the engine: model.visual.* ×153, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] 24 layers assembled, RoPE tables built, 0.7 s in all
+[loader] bf16 everywhere: 151 matrices packed R16 (1.40 GiB), 6 gated q_proj permuted, no Q4, no cache — linear_attn.in_proj_qkv.weight×18, linear_attn.in_proj_z.weight×18, linear_attn.out_proj.weight×18, lm_head.weight (tied)×1, mlp.down_proj.weight×24, mlp.gate_proj.weight×24, mlp.up_proj.weight×24, self_attn.k_proj.weight×6, self_attn.o_proj.weight×6, self_attn.q_proj.weight×6, self_attn.v_proj.weight×6
+[pool] 2 CCDs, 12 cores, worker order [0, 6, 1, 7, 2, 8, 3, 9, 4, 10, 5, 11]…
+[pool] 12 workers on cpus [0,6,1,7,2,8,3,9,4,10,5,11] · caller = worker 0: yes · spin 500 µs · coordinator spins: yes
+[engine] 1.40 GiB of weights touched in 0.002 s
+[engine] loaded in 0.8 s, mounted in 0.43 s — 8192 positions reserved, prefill program Some((3279462, 304571, 305330)), decode program Some((3279094, 304571, 305330))
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+
+>>> Here are my notes on a hybrid language model, repeated as I took them during several meetings.
+
+Meeting 1: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 2: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 3: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 4: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 5: The GatedDeltaNet layer keeps a recur
+
+[answer]
+Based on the repeated notes you provided, it appears there is a slight inconsistency in the text between **Meeting 1** and **Meeting 5**.
+
+In **Meeting 1**, the text explicitly states: *"The query then reads the **updated state**."*
+However, in **Meeting 5**, the text continues: *"The GatedDeltaNet layer keeps a recur..."* (likely a typo for "recurrent state").
+
+**Analysis of the Consistency:**
+*   **Meeting 1** describes a specific mechanism: The query reads the **updated state** (which has been modified by the rank-one update).
+*   **Meeting 5** appears to be a continuation or a slightly different version of the same concept, but it cuts off mid-sentence. It likely intends to say the query reads the **updated recurrent state** (the state itself, not the value head's output).
+
+**Conclusion:**
+The core mechanism described in the notes is consistent
+[ids] 27775 383 279 11173 8129 488 3766 11 424 7701 1017 369 264 7856 92824 303 279 1414 1881 2972 62394 220 16 332 321 2972 62394 220 20 159034 271 623 2972 62394 220 16 93868 279 1414 20335 5134 25 88064 760 3134 1179 15339 279 2972 11431 1528 332 1149 9 198 10883 11 303 2972 62394 220 20 93868 279 1414 9257 25 88064 760 469 639 19661 6738 6000 13205 264 61400 20564 9 318 13873 264 82170 364 328 2670 921 1528 1764 271 332 25725 314 279 7065 45522 64700 198 9 256 2972 62394 220 16 332 16067 264 3050 16456 25 561 3134 15339 279 2972 11431 1528 332 318 7949 682 978 10490 539 279 6857 18030 2560 553 198 9 256 2972 62394 220 20 332 7701 310 381 264 39811 466 264 9781 2086 2243 314 279 1788 7059 11 694 424 14663 974 4937 1284 17834 13 1049 4222 41804 310 1910 279 3134 15339 279 2972 11431 61911 1528 332 318 1719 1528 4924 11 524 279 869 1901 579 2468 553 271 332 41998 64700 198 760 6007 16456 7246 303 279 8129 369
+[decoded] "Based on the repeated notes you provided, it appears there is a slight inconsistency in the text between **Meeting 1** and **Meeting 5**.\n\nIn **Meeting 1**, the text explicitly states: *\"The query then reads the **updated state**.\"*\nHowever, in **Meeting 5**, the text continues: *\"The GatedDeltaNet layer keeps a recur...\"* (likely a typo for \"recurrent state\").\n\n**Analysis of the Consistency:**\n*   **Meeting 1** describes a specific mechanism: The query reads the **updated state** (which has been modified by the rank-one update).\n*   **Meeting 5** appears to be a continuation or a slightly different version of the same concept, but it cuts off mid-sentence. It likely intends to say the query reads the **updated recurrent state** (the state itself, not the value head's output).\n\n**Conclusion:**\nThe core mechanism described in the notes is"
+[turn 1] 513 prompt tokens in 0.184 s (2783.6 tok/s) · 199 generated in 7.26 s (27.40 tok/s) · 0 tool calls · rewrite 0.000 s · position 712

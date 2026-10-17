@@ -1,0 +1,8 @@
+0.8B  p1-short    identical (7 of 7 tokens)
+0.8B  p2-explain  token 91: gpu 11 17.75 · cpu choice 513 17.75 · gap 0 = 0 bf16 quantum(s) of 0.125
+0.8B  p3-long     token 20: gpu 11173 18.375 · cpu choice 318 18.25 · gap 0.125 = 1 bf16 quantum(s) of 0.125
+0.8B  p4-xlong    token 83: gpu 318 24.875 · cpu choice 369 24.875 · gap 0 = 0 bf16 quantum(s) of 0.125
+2B    p1-short    identical (7 of 7 tokens)
+2B    p2-explain  token 15: gpu 15734 21.75 · cpu choice 12611 21.625 · gap 0.125 = 1 bf16 quantum(s) of 0.125
+2B    p3-long     identical (255 of 255 tokens)
+2B    p4-xlong    token 46: gpu 61911 22.0 · cpu choice 2972 21.875 · gap 0.125 = 1 bf16 quantum(s) of 0.125

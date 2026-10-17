@@ -1,0 +1,3 @@
+nvidia: default | pb256 (SIMT) | nv2st256 | dec | all = --tune prefill.block=256 --tune gemm=2 --tune gemm.stage=2 --tune sdpa.split=8 --tune rec.slices=8 --tune rec.cols=32 --tune copy.logits=0
+amd: default | pb256 | dec | all = --tune prefill.block=256 --tune sdpa.split=8 --tune rec.slices=8 --tune rec.cols=32 --tune copy.logits=0
+intel: default | pb256 | coopst256 | dec | all = --tune prefill.block=256 --tune gemm=1 --tune gemm.stage=2 --tune gemm.wave=16 --tune sdpa.split=16 --tune rec.slices=16 --tune rec.cols=16 --tune copy.logits=0

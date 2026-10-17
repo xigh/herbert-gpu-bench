@@ -1,0 +1,96 @@
+[vulkan] NVIDIA GeForce RTX 4080 [NVIDIA DISCRETE_GPU] Vulkan 1.4.329 · subgroup 32 (32..=32) · coopmat true · bf16 true [(16, 16, 16)] · coopmat2 true · driver 0x94d6c1c0
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=1024 prefill.split=0 rec.slices=8 rec.cols=32 sdpa.split=8 sdpa.prefill=2 rec.chunk=4 rec.pcols=16 rec.pslices=16 rec.vec=1 rec.stage=0 rec.pair=0 conv.cols=32 proj.pad=64 prefill.pipe=3 sdpa.bq=16 sdpa.bk=32 sdpa.qt=1 sdpa.qreg=1 gemm=2 gemm.wave=32 gemm.mt=64 gemm.nt=64 gemm.kt=64 gemm.tm=1 gemm.tn=1 gemm.sgm=8 gemm.sgn=1 gemm.stage=0 gemm.simt=1 gemm.simtk=16 gemm.simtr=0 gemm.mfirst=1 gemm.shapes=2 gemm.pack=0 gemm.direct=0 weights.local=0 fuse.norm=1 fuse.swiglu=1 fuse.dn=0 host.poll=0 copy.logits=0
+[vulkan] device memory: type 4 heap 0 (16.0 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 3 heap 1 (139.8 GiB) HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×297, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 2560, 32 layers, 16 heads / 4 kv × 256, intermediate 9216, vocab 248320, rotary 64, linear k 16×128 v 32×128, tied head true
+[vulkan] 8.15 GiB on the device, 0.5 MiB on the host, KV for 4096 positions, activations for 1024 rows
+[vulkan] 38 pipelines emitted and built
+[vulkan] step of 254 operations recorded, timed per operation
+[engine] loaded in 3.9 s, mounted in 0.02 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+[warmup 1] 2048 prompt tokens in 0.193 s (10621.3 tok/s) · 7 generated in 0.10 s (73.08 tok/s)
+
+>>> Here are my notes on a hybrid language model, repeated as I took them during several meetings.
+
+Meeting 1: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 2: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 3: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 4: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 5: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 6: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 7: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 8: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 9: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 10: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 11: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 12: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 13: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 14: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 15: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 16: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 17: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 18: The GatedDeltaNet layer keeps a recurrent state per value head ins
+Based on the notes you provided, it
+[ids] 27775 383 279 8129 488 3766 11
+[decoded] "Based on the notes you provided,"
+[turn 1] 2048 prompt tokens in 0.193 s (10586.3 tok/s) · 7 generated in 0.10 s (73.01 tok/s) · position 2055
+[profile prefill] 2 steps of 1024 rows on average · median GPU 98377.2 µs (10408.9 rows/s), host wall 99532.6 µs (10288.1 rows/s) · 367 operations
+[profile prefill] each step, rows:GPU ms/wall ms: 1024:92.4/93.6 1024:98.4/99.5
+[profile prefill]    33404.6 µs  34.0 %  ×32  gemm_coop_2560x18432_bf16_t64x64x64_1x1_8x1_wg_mf_sg32  (first step 32574.7 µs)
+[profile prefill]    18034.7 µs  18.3 %  ×32  gemm_coop_9216x2560_res_t64x64x64_1x1_8x1_wg_mf_sg32  (first step 17622.2 µs)
+[profile prefill]    16938.0 µs  17.2 %  ×24  gemm_coop_2560x12352_bf16_t64x64x64_1x1_8x1_wg_mf_sg32  (first step 16628.0 µs)
+[profile prefill]     8331.0 µs   8.5 %  ×32  gemm_coop_4096x2560_res_t64x64x64_1x1_8x1_wg_mf_sg32  (first step 8140.4 µs)
+[profile prefill]     4697.2 µs   4.8 %  ×8   gemm_coop_2560x10240_bf16_t64x64x64_1x1_8x1_wg_mf_sg32  (first step 4584.7 µs)
+[profile prefill]     3938.4 µs   4.0 %  ×8   sdpa_tc_h16kv4d256_k32_qr_sg32  (first step 1862.4 µs)
+[profile prefill]     2975.8 µs   3.0 %  ×24  dn_tc_state_k16v32_c32d32_sg32  (first step 2892.2 µs)
+[profile prefill]     2423.7 µs   2.5 %  ×24  dn_tc_prep_k16v32_c32_sg32  (first step 2356.8 µs)
+[profile prefill]     1970.7 µs   2.0 %  ×32  swiglu_rows_9216_sg32  (first step 1961.1 µs)
+[profile prefill]     1863.1 µs   1.9 %  ×1   matvec_2560x248320_bf16_r1_sg32  (first step 1863.1 µs)
+[profile prefill]     1181.7 µs   1.2 %  ×24  dn_conv_seg_8192x4_c32_sg32  (first step 1167.1 µs)
+[profile prefill]      846.6 µs   0.9 %  ×24  dn_gated_norm_rows_v32_sg32  (first step 830.2 µs)
+[profile prefill]      683.1 µs   0.7 %  ×64  rmsnorm_rows_2560_p1_sg32  (first step 673.1 µs)
+[profile prefill]      652.3 µs   0.7 %  ×24  dn_l2_gates_rows_k16v32_sg32  (first step 633.2 µs)
+[profile prefill]      409.7 µs   0.4 %  ×8   qk_rope_append_rows_h16kv4d256_sg32  (first step 404.1 µs)
+[profile prefill]       15.5 µs   0.0 %  ×1   embed_rows_2560_sg32  (first step 15.5 µs)
+[profile prefill]        8.2 µs   0.0 %  ×1   copy_out  (first step 8.2 µs)
+[profile prefill]        6.1 µs   0.0 %  ×1   rmsnorm_2560_p1_sg32  (first step 6.1 µs)
+[profile prefill]        3.1 µs   0.0 %  ×1   argmax_final_61_sg32  (first step 3.1 µs)
+[profile prefill]        2.6 µs   0.0 %  ×1   argmax_partial_248320_sg32  (first step 2.6 µs)
+[profile prefill]        2.0 µs   0.0 %  ×1   copy_in  (first step 1.9 µs)
+[profile decode] 7 steps of 1 rows on average · median GPU 13181.2 µs (75.9 rows/s), host wall 13387.4 µs (74.7 rows/s) · 254 operations
+[profile decode] each step, rows:GPU ms/wall ms: 1:13.2/13.8 1:13.2/13.4 1:13.2/13.4 1:13.2/13.4 1:13.2/13.4 1:13.2/13.7 1:13.2/13.7
+[profile decode]     4542.4 µs  34.5 %  ×32  matvec_norm_p1_2560x18432_bf16_r1_sg32  (first step 4548.8 µs)
+[profile decode]     2279.0 µs  17.3 %  ×32  matvec_swiglu_9216x2560_res_r1_sg32  (first step 2285.5 µs)
+[profile decode]     2261.7 µs  17.2 %  ×24  matvec_norm_p1_2560x12352_bf16_r1_sg32  (first step 2266.0 µs)
+[profile decode]     1826.2 µs  13.9 %  ×1   matvec_norm_p1_2560x248320_bf16_r1_sg32  (first step 1826.5 µs)
+[profile decode]     1049.1 µs   8.0 %  ×32  matvec_4096x2560_res_r1_sg32  (first step 1050.5 µs)
+[profile decode]      627.9 µs   4.8 %  ×8   matvec_norm_p1_2560x10240_bf16_r1_sg32  (first step 627.9 µs)
+[profile decode]      287.3 µs   2.2 %  ×8   sdpa_split_h16kv4d256_s8_sg32  (first step 299.9 µs)
+[profile decode]      116.4 µs   0.9 %  ×24  dn_recurrence_k16v32_c32s8_sg32  (first step 115.8 µs)
+[profile decode]       56.7 µs   0.4 %  ×24  dn_conv_8192x4_sg32  (first step 60.6 µs)
+[profile decode]       50.2 µs   0.4 %  ×24  dn_gated_norm_v32_sg32  (first step 52.5 µs)
+[profile decode]       41.9 µs   0.3 %  ×24  dn_l2_gates_k16v32_sg32  (first step 45.1 µs)
+[profile decode]       22.6 µs   0.2 %  ×8   qk_rope_append_h16kv4d256_sg32  (first step 23.3 µs)
+[profile decode]       15.1 µs   0.1 %  ×8   sdpa_combine_h16d256_s8_sg32  (first step 16.4 µs)
+[profile decode]        4.1 µs   0.0 %  ×1   argmax_partial_248320_sg32  (first step 4.3 µs)
+[profile decode]        3.7 µs   0.0 %  ×1   embed_2560_sg32  (first step 3.4 µs)
+[profile decode]        2.5 µs   0.0 %  ×1   copy_out  (first step 2.9 µs)
+[profile decode]        1.9 µs   0.0 %  ×1   argmax_final_61_sg32  (first step 1.9 µs)
+[profile decode]        0.7 µs   0.0 %  ×1   copy_in  (first step 0.7 µs)

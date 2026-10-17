@@ -1,0 +1,39 @@
+[vulkan] NVIDIA GeForce RTX 4080 [NVIDIA DISCRETE_GPU] Vulkan 1.4.329 · subgroup 32 (32..=32) · coopmat true · bf16 true [(16, 16, 16)] · coopmat2 true · driver 0x94d6c1c0
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=1024 prefill.split=0 rec.slices=8 rec.cols=32 sdpa.split=8 sdpa.prefill=2 rec.chunk=4 rec.pcols=16 rec.pslices=16 rec.vec=1 rec.stage=0 rec.pair=0 conv.cols=32 proj.pad=64 prefill.pipe=3 sdpa.bq=16 sdpa.bk=32 sdpa.qt=1 sdpa.qreg=1 gemm=2 gemm.wave=32 gemm.mt=64 gemm.nt=64 gemm.kt=64 gemm.tm=1 gemm.tn=1 gemm.sgm=8 gemm.sgn=1 gemm.stage=0 gemm.simt=1 gemm.simtk=16 gemm.simtr=0 gemm.mfirst=1 gemm.shapes=2 gemm.pack=0 gemm.direct=0 weights.local=0 fuse.norm=1 fuse.swiglu=1 fuse.dn=0 host.poll=0 copy.logits=0
+[vulkan] device memory: type 4 heap 0 (16.0 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 3 heap 1 (139.8 GiB) HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×297, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 2560, 32 layers, 16 heads / 4 kv × 256, intermediate 9216, vocab 248320, rotary 64, linear k 16×128 v 32×128, tied head true
+[vulkan] 8.15 GiB on the device, 0.5 MiB on the host, KV for 4096 positions, activations for 1024 rows
+[vulkan] 38 pipelines emitted and built
+[vulkan] step of 254 operations recorded
+[engine] loaded in 4.0 s, mounted in 0.02 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+[warmup 1] 511 prompt tokens in 0.051 s (10091.0 tok/s) · 255 generated in 3.37 s (75.65 tok/s)
+
+>>> Here are my notes on a hybrid language model, repeated as I took them during several meetings.
+
+Meeting 1: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 2: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 3: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 4: The GatedDeltaNet layer keeps a recurrent state per value head instead of a key-value cache. At every position the state decays by a learned factor, the key retrieves what the state predicts for it, and the difference between the value and that prediction, scaled by a learned rate, is written back as a rank-one update. The query then reads the updated state. Three such layers alternate with one full attention layer, which keeps a classic cache of keys and values and attends over every earlier position with a partial rotary embedding on a quarter of each head. 
+
+Meeting 5: The GatedDeltaNet layer keeps a recur
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Input: A series of meeting notes (Meetings 1-5) describing a hybrid language model architecture.
+    *   Observation: Meetings 1, 2, 3, and 4 contain identical text. Meeting 5 is cut off ("The GatedDeltaNet layer keeps a recur").
+    *   Task: The user hasn't explicitly stated a task, but typically when someone provides notes like this, they want a summary, clarification, completion, or analysis of the architecture described. Given the repetition and the cutoff, the most helpful response is to synthesize the information, acknowledge the repetition, and complete/clarify the architecture based on the available text.
+    *   Implicit Goal: Summarize the architecture, highlight the key components, and perhaps point out the redundancy or the cutoff.
+
+2.  **Analyze the Content:**
+    *   **Core Component:** GatedDeltaNet layer.
+    *   **Mechanism:**
+        *   Replaces standard Key-Value (KV) cache with a recurrent state per value head.
+        *   State decay: At every position, the state decays by a learned factor.
+[ids] 90700 8340 25 271 16 13 220 2972 2014 53983 279 5952 64700 198 262 348 256 5396 25 357 3878 314 6236 8129 318 39212 793 220 16 12 20 8 21988 264 24197 3992 1558 17120 13 198 262 348 256 83441 25 82627 220 16 11 220 17 11 220 18 11 321 220 19 6435 18922 1414 13 28107 220 20 369 3799 974 3376 760 469 639 19661 6738 6000 13205 264 61400 1764 198 262 348 256 5261 25 561 1156 12134 914 20335 10661 264 3274 11 694 10813 948 4184 5529 8129 1040 411 11 781 1318 264 11782 11 61535 11 9463 11 466 6157 314 279 17120 7246 13 15767 279 51623 321 279 42809 11 279 1379 10631 1965 369 310 6569 26025 279 1928 11 23868 279 51623 11 321 4434 14 12453 1386 279 17120 3018 383 279 2420 1414 13 198 262 348 256 93687 38622 25 7860 5437 537 279 17120 11 10842 279 1328 6599 11 321 8106 1406 680 279 86297 466 279 42809 13 271 17 13 220 2972 2014 53983 279 8615 64700 198 262 348 256 2972 5218 5403 64700 469 639 19661 6738 6000 13 198 262 348 256 2972 55157 65526 64700 198 285 348 256 997 25244 5129 5141 12 1094 318 79852 8 6297 440 264 61911 1528 791 869 1901 13 198 285 348 256 3130 29712 25 2332 1396 2234 11 279 1528 1566 912 539 264 9218 7911
+[decoded] "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A series of meeting notes (Meetings 1-5) describing a hybrid language model architecture.\n    *   Observation: Meetings 1, 2, 3, and 4 contain identical text. Meeting 5 is cut off (\"The GatedDeltaNet layer keeps a recur\").\n    *   Task: The user hasn't explicitly stated a task, but typically when someone provides notes like this, they want a summary, clarification, completion, or analysis of the architecture described. Given the repetition and the cutoff, the most helpful response is to synthesize the information, acknowledge the repetition, and complete/clarify the architecture based on the available text.\n    *   Implicit Goal: Summarize the architecture, highlight the key components, and perhaps point out the redundancy or the cutoff.\n\n2.  **Analyze the Content:**\n    *   **Core Component:** GatedDeltaNet layer.\n    *   **Mechanism:**\n        *   Replaces standard Key-Value (KV) cache with a recurrent state per value head.\n        *   State decay: At every position, the state decays by a learned factor"
+[turn 1] 511 prompt tokens in 0.050 s (10174.4 tok/s) · 255 generated in 3.38 s (75.55 tok/s) · position 766

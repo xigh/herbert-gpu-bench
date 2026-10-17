@@ -1,0 +1,3 @@
+cc51363 AMD, f16 build: gemm.h16=1 by default (wiki #547)
+aa4011a bench/_h16_summary.py
+02afa14 bench/_h16-ab.sh: variants without spaces

@@ -1,0 +1,16 @@
+[vulkan] Intel(R) Graphics (LNL) [Intel INTEGRATED_GPU] Vulkan 1.4.335 · subgroup 32 (16..=32) · coopmat true · bf16 true [(8, 16, 16)] · coopmat2 false · driver 0x6800003
+[tuning] wave=32 matvec.wave=32 matvec.rows=1 prefill.block=1 rec.slices=8 rec.cols=32 sdpa.split=8 gemm=0 gemm.wave=32 gemm.mt=8 gemm.nt=16 gemm.kt=16 gemm.tm=2 gemm.tn=2 gemm.sgm=2 gemm.sgn=2 copy.logits=1
+[vulkan] device memory: type 1 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT — written directly by the host · host memory: type 2 heap 0 (22.9 GiB) DEVICE_LOCAL | HOST_VISIBLE | HOST_COHERENT | HOST_CACHED
+[loader] skipped: model.visual.* ×153, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 1024, 24 layers, 8 heads / 2 kv × 256, intermediate 3584, vocab 248320, rotary 64, linear k 16×128 v 16×128, tied head true
+[vulkan] 1.47 GiB on the device, 0.5 MiB on the host, KV for 4096 positions, activations for 1 rows
+[vulkan] 18 pipelines emitted and built
+[vulkan] step of 265 operations recorded
+[engine] loaded in 1.0 s, mounted in 0.02 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+
+>>> Explain step by step, in about 150 words, why the sky is blue during the day and red at sunset.
+During the day, sunlight travels through the atmosphere, scattering shorter wavelengths of blue light more effectively than longer ones. This phenomenon, known as Rayleigh scattering, causes the sky to appear blue. As the sun sets, the light path through the atmosphere becomes longer, allowing longer wavelengths like red and orange to travel further. Eventually, these colors mix with the blue sky, creating a vibrant sunset. This is why the sky appears blue in the morning and red at sunset.
+[ids] 15542 279 1834 11 37728 33060 1472 279 16078 11 69377 22602 89661 314 6105 3000 777 13057 1056 4860 5981 13 1061 24057 11 3750 430 12870 60845 69377 11 10814 279 12515 310 4833 6105 13 1577 279 6797 7062 11 279 3000 1752 1472 279 16078 8772 4860 11 10377 4860 89661 1040 2438 321 18016 310 5640 4473 13 35943 11 1439 7736 6311 440 279 6105 12515 11 6611 264 31883 41564 13 1061 369 3069 279 12515 7701 6105 303 279 6353 321 2438 506 41564 13
+[decoded] "During the day, sunlight travels through the atmosphere, scattering shorter wavelengths of blue light more effectively than longer ones. This phenomenon, known as Rayleigh scattering, causes the sky to appear blue. As the sun sets, the light path through the atmosphere becomes longer, allowing longer wavelengths like red and orange to travel further. Eventually, these colors mix with the blue sky, creating a vibrant sunset. This is why the sky appears blue in the morning and red at sunset."
+[turn 1] 39 prompt tokens in 0.645 s (60.5 tok/s) · 93 generated in 1.52 s (61.38 tok/s) · position 132

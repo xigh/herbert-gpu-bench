@@ -1,0 +1,5 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 8191 MiB):
+  Device 0: NVIDIA GeForce RTX 3060 Ti, compute capability 8.6, VMM: yes, VRAM: 8191 MiB
+load_backend: loaded CUDA backend from C:\Users\zexig\bench-engines\llama-b11564\cuda\ggml-cuda.dll
+load_backend: loaded RPC backend from C:\Users\zexig\bench-engines\llama-b11564\cuda\ggml-rpc.dll
+load_backend: loaded CPU backend from C:\Users\zexig\bench-engines\llama-b11564\cuda\ggml-cpu-haswell.dll

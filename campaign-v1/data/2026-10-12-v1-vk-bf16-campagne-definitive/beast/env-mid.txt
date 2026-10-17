@@ -1,0 +1,20 @@
+Mon Oct 12 07:55:24 UTC 2026
+ 09:55:24 up  1:04,  2 users,  load average: 0.32, 0.78, 1.19
+NVRM version: NVIDIA UNIX Open Kernel Module for x86_64  595.99.02  Release Build  (dvs-builder@U22-I3-AF05-06-2)  Wed Aug 26 05:20:50 UTC 2026
+GCC version:  gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
+name, driver_version, clocks.current.sm [MHz], clocks.current.memory [MHz], pstate, persistence_mode
+NVIDIA GeForce RTX 4080, 595.99.02, 2790 MHz, 11201 MHz, P0, Disabled
+2f3ae48
+08ffba21e 2026-10-12 08:00:26 +0200
+11564
+ggml_vulkan: Found 2 Vulkan devices:
+ggml_vulkan: 0 = AMD Ryzen 9 9900X 12-Core Processor (RADV RAPHAEL_MENDOCINO) (radv) | uma: 1 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 32 | shared memory: 65536 | int dot: 0 | matrix cores: none
+ggml_vulkan: 1 = NVIDIA GeForce RTX 4080 (NVIDIA) | uma: 0 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 0 | matrix cores: NV_coopmat2
+Available devices:
+  Vulkan0: AMD Ryzen 9 9900X 12-Core Processor (RADV RAPHAEL_MENDOCINO) (97475 MiB, 97393 MiB free)
+  Vulkan1: NVIDIA GeForce RTX 4080 (16376 MiB, 15917 MiB free)
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 15945 MiB):
+  Device 0: NVIDIA GeForce RTX 4080, compute capability 8.9, VMM: yes, VRAM: 15945 MiB
+Available devices:
+  CUDA0: NVIDIA GeForce RTX 4080 (15945 MiB, 15683 MiB free)
+vllm 0.28.0 torch 2.13.0+cu130
